@@ -1,0 +1,37 @@
+---
+title: TermDocs
+description: Terminal Documentation and Software Engineer.
+template: splash
+import '@fontsource/jetbrains-mono/100.css';
+hero:
+  tagline: Welcome to TermDocs documentation website!
+  image:
+    file: ../../assets/shell.png
+  actions:
+    - text: Start docs
+      link: /guides/example/
+      icon: right-arrow
+    - text: Check my Github
+      link: https://github.com/F4NT0
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## My latest projects
+
+<CardGrid stagger>
+	<Card title=".NET generator scripts" icon="shell">
+		How to use C# scripting to generate template projects for .NET.
+	</Card>
+	<Card title="Add new content" icon="add-document">
+		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	</Card>
+	<Card title="Configure your site" icon="setting">
+		Edit your `sidebar` and other config in `astro.config.mjs`.
+	</Card>
+	<Card title="Read the docs" icon="open-book">
+		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	</Card>
+</CardGrid>
