@@ -8,6 +8,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'FantoDocs',
+      customCss: ['./src/styles/custom.css'],
       plugins: [ion()],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/F4NT0/fantodocs' }],
 			sidebar: [
@@ -42,7 +43,7 @@ export default defineConfig({
         {
           label: 'Windows Terminal',
           autogenerate: { directory: 'wt' },
-        }
+        },
 			],
 		}),
 	],

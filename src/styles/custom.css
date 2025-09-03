@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'JetBrainsMonoNerd';
+  src: url('/fonts/JetBrainsMonoNLNerdFont-Thin.ttf') format('truetype');
+  font-weight: 50;
+  font-style: thin;
+  font-display: swap;
+}
+
+body {
+  font-family: 'JetBrainsMonoNerd', monospace;
+  font-weight: 50;
+  font-size: 12px;
+  color: white;
+}
+
+h1 {
+  font-size: 30px;
+  color: #7DDA58;
+}
+
+h2 {
+  font-size: 25px;
+  color: #7DDA58;
+}
+
+h3 {
+  font-size: 20px;
+  color: #7DDA58;
+}
+
+/* Control the code block configuration */
+pre {
+  background-color: #121212;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'JetBrainsMonoNerd', monospace;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+/* Inline code inside the paragraphs */
+code {
+  background-color: #121212;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'JetBrainsMonoNerd', monospace;
+  font-size: 12px;
+  font-weight: 100;
+}
