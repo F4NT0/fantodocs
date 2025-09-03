@@ -7,21 +7,42 @@ import { ion } from 'starlight-ion-theme';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'TermDocs',
+			title: 'FantoDocs',
       plugins: [ion()],
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/F4NT0/TermDoc' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/F4NT0/fantodocs' }],
 			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+        {
+          label: 'Home',
+          items: [
+            { label: 'About Me', slug: 'home-doc'},
+          ],
+        },
+        {
+					label: 'C#',
+				  items: [
+            { label: 'Data Types', slug: 'csharp/data-types' },
+          ],	
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: '.NET',
+          autogenerate: { directory: 'dotnet' },
 				},
+        {
+          label: 'Linux',
+          autogenerate: { directory: 'linux' },
+        },
+        {
+          label: 'Powershell',
+          autogenerate: { directory: 'powershell' },
+        },
+        {
+          label: 'Java',
+          autogenerate: { directory: 'java' },
+        },
+        {
+          label: 'Windows Terminal',
+          autogenerate: { directory: 'wt' },
+        }
 			],
 		}),
 	],

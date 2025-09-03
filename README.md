@@ -1,15 +1,17 @@
-# Starlight Starter Kit: Basics
+# FantoDocs -> My Documentation website
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+
+## >_ How it was created
 
 ```powershell
 
 npm create astro@latest # Install latest astro option
-npm i starlight-ion-theme # Install the darkest theme for docs
+npm install starlight-ion-theme # Install the darkest theme for docs
 
 ```
 
-## 🚀 Project Structure
+## >_ Project Structure
 
 This is the structure of my Project documentation:
 
@@ -32,7 +34,7 @@ Images can be added to `src/assets/` and embedded in Markdown with a relative li
 
 Static assets, like favicons, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## >_ Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -45,7 +47,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## >_ Want to learn more?
 
 - Check out [Starlight’s docs](https://starlight.astro.build/).
 - Read [the Astro documentation](https://docs.astro.build).
