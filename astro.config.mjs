@@ -5,6 +5,8 @@ import { ion } from 'starlight-ion-theme';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://f4nt0.github.io',
+  base: '/fantodocs',
 	integrations: [
 		starlight({
 			title: 'FantoDocs',
