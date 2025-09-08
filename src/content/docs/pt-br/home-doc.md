@@ -1,0 +1,36 @@
+---
+title: Sobre mim
+description: PT-BR versão do meu Resume
+---
+
+## >_ Olá, sou Gabriel Fanto Stundner
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/me.jpg?raw=true" alt="My awesome picture" width="300" /> 
+</td></tr></table>
+
+### >_ Background tecnológico
+
+- Formado em Bacharel em Engenharia de Software na [PUCRS(Pontifícia Universidade Católica do Rio Grande do Sul).](https://portal.pucrs.br/en/ensino/cursos/graduacao/engenharia-de-software/) em 2023.
+- Sou apaixonado por CLI (Command Line Interface) e por sistemas Linux e Windows 11 (novo hobby).
+- Atualmente trabalho como Engenheiro de Software na [Dell Technologies](https://www.dell.com/en-us/lp/dt/who-we-are?msockid=13a6ae50813463391d39bb2080e2622b) em Eldorado, Rio Grande do Sul.
+
+### >_ Meus objetivos
+
+- <span style="color: orange">Curto Prazo</span>: Engenheiro de Software Pleno em .NET.
+- <span style="color: yellow">Longo Prazo</span>: Arquiteto de Software.
+
+### >_ Meus projetos de Sucesso
+
+#### Que estão no mercado hoje
+
+- [Joinfut](https://www.instagram.com/join.fut/) : Flutter Application to bring new young players to major football teams.
+    - [Documentation and launch](https://tools.ages.pucrs.br/Joinfut/joinfut-wiki/-/wikis/home)
+
+
+#### Projetos pessoais
+
+
+### >_ Minhas tecnologias que desenvolvo
+
+
