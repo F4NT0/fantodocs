@@ -9,7 +9,7 @@
 npm create astro@latest # Install latest astro option
 # Choose the option starlight
 npm install starlight-ion-theme # Install the darkest theme for docs
-npm install astro-expressive-code # To change the code blocks colors
+npm i starlight-sidebar-topics # Add custom sidebar
 
 ```
 

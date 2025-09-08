@@ -10,42 +10,63 @@ body {
   font-family: 'JetBrainsMonoNerd', monospace;
   font-weight: 50;
   font-size: 14px;
-  color: white;
 }
 
-h1 {
+html[data-theme='light'] h1 {
   font-size: 30px;
-  color: #7DDA58;
+  color: black;
 }
 
-h2 {
+html[data-theme='dark'] h1 {
+  font-size: 30px;
+  color: #16DB65;
+}
+
+html[data-theme='light'] h2 {
   font-size: 25px;
-  color: #7DDA58;
+  color: black;
 }
 
-h3 {
-  font-size: 20px;
-  color: #7DDA58;
+html[data-theme='dark'] h2 {
+  font-size: 25px;
+  color: #16DB65;
 }
 
-/* Control the code block configuration */
-pre {
-  background-color: #121212;
-  padding: 1rem;
+html[data-theme='light'] h3 {
+  font-size: 15px;
+  color: black;
+}
+
+html[data-theme='dark'] h3 {
+  font-size: 15px;
+  color: #16DB65;
+}
+
+html[data-theme='light'] h4 {
+  font-size: 12px;
+  color: black;
+}
+
+html[data-theme='dark'] h4 {
+  font-size: 12px;
+  color: #16DB65;
+}
+
+
+.starlight-button {
+  background-color: #3498db; /* azul */
+  color: #fff;
   border-radius: 8px;
-  overflow-x: auto;
-  font-family: 'JetBrainsMonoNerd', monospace;
-  font-size: 12px;
-  font-weight: 100;
-  line-height: 1.6;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-/* Inline code inside the paragraphs */
-code {
-  background-color: #121212;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-family: 'JetBrainsMonoNerd', monospace;
-  font-size: 12px;
-  font-weight: 100;
+html[data-theme='dark'] .starlight-button {
+  background-color: #7dda58; /* verde claro no modo escuro */
+  color: #000;
 }
+
+
+
+

@@ -18,12 +18,18 @@ description: First Page of the Documentation
 
 ### >_ My objectives
 
-- **Short-term**: Become Mid-term Software Engineer.
-- **Long-term**: Become Architect Software Engineer. 
+- __Short-term__: Become Mid-term Software Engineer.
+- __Long-term__: Become Architect Software Engineer.
 
 ### >_ My successfull projects
 
+#### In the market today
 
+- [Joinfut](https://www.instagram.com/join.fut/) : Flutter Application to bring new young players to major football teams.
+    - [Documentation and launch](https://tools.ages.pucrs.br/Joinfut/joinfut-wiki/-/wikis/home)
+
+
+#### Side Projects
 
 
 ### >_ My development stack of technology
