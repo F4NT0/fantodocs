@@ -52,21 +52,19 @@ html[data-theme='dark'] h4 {
   color: #16DB65;
 }
 
-
-.starlight-button {
-  background-color: #3498db; /* azul */
-  color: #fff;
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
 html[data-theme='dark'] .starlight-button {
   background-color: #7dda58; /* verde claro no modo escuro */
   color: #000;
 }
 
-
+{
+  background-color: #7dda58;
+  color: #000;
+  border: none;
+  border-radius: 0; /* Remove arredondamento */
+  padding: 10px 20px; /* Ajusta o tamanho interno */
+  font-size: 16px;
+  cursor: pointer;
+}
 
 

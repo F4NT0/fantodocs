@@ -1,7 +1,9 @@
 ---
-title: Data Types conversion
+title: Data types conversion
 description: How to convert data types
 ---
+
+# Data types
 
 - É comum precisarmos transformar um dado de tipo X para um tipo Y
 - Existem dois tipos de conversão, as __implícitas__ e __explicitas__
@@ -100,3 +102,4 @@ else
 }
 
 ```
+

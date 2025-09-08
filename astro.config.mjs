@@ -39,6 +39,21 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              label: 'Inglês',
+              link: '/en-us/',
+              icon: 'open-book',
+              items: [
+                {
+                  label: 'whoami',
+                  items: ['en-us/home-doc'],
+                },
+                {
+                  label: 'C#',
+                  items: ['en-us/csharp/data-types'],
+                },
+              ],
+            },
           ]),
       ],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/F4NT0/fantodocs' }],
