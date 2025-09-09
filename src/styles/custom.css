@@ -52,6 +52,10 @@ html[data-theme='dark'] h4 {
   color: #16DB65;
 }
 
+a {
+  color: #B3FBFF;
+}
+
 html[data-theme='dark'] .starlight-button {
   background-color: #7dda58; /* verde claro no modo escuro */
   color: #000;
@@ -66,5 +70,6 @@ html[data-theme='dark'] .starlight-button {
   font-size: 16px;
   cursor: pointer;
 }
+
 
 

@@ -22,10 +22,8 @@ description: PT-BR versão do meu Resume
 
 ### >_ Meus projetos de Sucesso
 
-#### Que estão no mercado hoje
-
-- [Joinfut](https://www.instagram.com/join.fut/) : Flutter Application to bring new young players to major football teams.
-    - [Documentation and launch](https://tools.ages.pucrs.br/Joinfut/joinfut-wiki/-/wikis/home)
+- [Joinfut](https://www.instagram.com/join.fut/) : Aplicativo em Flutter para auxiliar novos jogadores a serem selecionados por times grandes.
+    - [Documentação oficial](https://tools.ages.pucrs.br/Joinfut/joinfut-wiki/-/wikis/home)
 
 
 #### Projetos pessoais
