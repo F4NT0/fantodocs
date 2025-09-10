@@ -3,7 +3,7 @@ title: Sobre mim
 description: PT-BR versão do meu Resume
 ---
 
-## >_ Olá, sou Gabriel Fanto Stundner
+## >_ Olá, sou Gabriel Stundner
 
 <table align="center"><tr><td align="center" width="9999">
     <img src="https://github.com/F4NT0/fantodocs/blob/main/public/me.jpg?raw=true" alt="My awesome picture" width="300" /> 
