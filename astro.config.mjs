@@ -31,7 +31,7 @@ export default defineConfig({
               items: [
                 {
                   label: 'whoami',
-                  items: ['pt-br/home-doc'],
+                  items: ['pt-br/home-doc', 'pt-br/markdown-tests'],
                 },
                 {
                   label: 'C#',
