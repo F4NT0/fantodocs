@@ -54,3 +54,8 @@ All commands are run from the root of the project, from a terminal:
 - Check out [Starlight’s docs](https://starlight.astro.build/).
 - Read [the Astro documentation](https://docs.astro.build).
 - Speak with [Astro Discord server](https://astro.build/chat).
+
+## How to create new pages
+
+- Add into the folder `src/content/docs/pt-br` or `src/content/docs/en-us` your folders and markdown files.
+- Add the path to the new markdown file into the `astro.config.mjs` to show into the website the file to select.
