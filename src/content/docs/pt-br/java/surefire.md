@@ -48,7 +48,7 @@ description: Verificando os testes em pipelines
 Com essa configuração podemos ver no nosso pipeline o status dos testes para termos um overview de quais não passaram.
 
 <table align="center"><tr><td align="center" width="9999">
-    <img src="" alt="Surefire running into pipeline" width="300" /> 
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/java/surefire/surefire-running.png?raw=true" alt="Surefire running into pipeline" width="300" /> 
 </td></tr></table>
 
 
