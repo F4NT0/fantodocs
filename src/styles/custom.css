@@ -66,5 +66,8 @@ html[data-theme='dark'] .starlight-button {
 }
 
 
-
+a.heading-link:focus-visible svg {
+  opacity: 0;
+  pointer-events: none;
+}
 
