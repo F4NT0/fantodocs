@@ -37,6 +37,10 @@ export default defineConfig({
                   label: 'C#',
                   items: ['pt-br/csharp/data-types'],
                 },
+                {
+                  label: 'Java',
+                  items: ['pt-br/java/surefire'],
+                },
               ],
             },
             {
