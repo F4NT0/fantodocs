@@ -35,7 +35,15 @@ export default defineConfig({
                 },
                 {
                   label: 'C#',
-                  items: ['pt-br/csharp/data-types'],
+                  items: [
+                    'pt-br/csharp/data-types',
+                    'pt-br/csharp/primitive-types',
+                    'pt-br/csharp/operators',
+                    'pt-br/csharp/ifelse',
+                    'pt-br/csharp/switch',
+                    'pt-br/csharp/for',
+                    'pt-br/csharp/while'
+                  ],
                 },
                 {
                   label: 'Java',
