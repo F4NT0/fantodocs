@@ -1,10 +1,10 @@
 ---
-title: Laço de Repetição While
+title: Laço Repetição - WHILE
 description: Como utilizar o While no C#
 ---
 
-:::note
-    Verifica enquanto a condição for verdadeira
+:::tip
+Verifica enquanto a condição for verdadeira
 :::
 
 Palavra reservada __while__

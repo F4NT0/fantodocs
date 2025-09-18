@@ -8,7 +8,7 @@
 
 npm create astro@latest # Install latest astro option
 # Choose the option starlight
-npm install starlight-ion-theme # Install the darkest theme for docs
+npm install starlight-theme-galaxy  # Install the galaxy theme
 npm i starlight-sidebar-topics # Add custom sidebar
 
 ```
@@ -54,6 +54,8 @@ All commands are run from the root of the project, from a terminal:
 - Check out [Starlight’s docs](https://starlight.astro.build/).
 - Read [the Astro documentation](https://docs.astro.build).
 - Speak with [Astro Discord server](https://astro.build/chat).
+- Starlight Galaxy [Documentation](https://frostybee.github.io/starlight-theme-galaxy/).
+- Starlight [Icons](https://starlight.astro.build/reference/icons/).
 
 ## How to create new pages
 

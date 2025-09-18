@@ -1,14 +1,16 @@
 ---
-title: Estrutura condicional Switch
+title: Condicional - SWITCH
 description: Utilizando Switch
 ---
 
-- Quando temos muitas decisões ao mesmo tempo é o momento de usar __Switch__.
+:::tip
+- Quando temos muitas decisões ao mesmo tempo é o momento de usar `switch`.
 - Executado em forma de cascata, andando por cada opção configurada.
-- Devemos parar a execução com o comando __break__.
-- Possui uma execução padrão chamada __default__.
+- Devemos parar a execução com o comando `break`.
+- Possui uma execução padrão chamada `default`.
+:::
 
-Estrutura base de um Switch:
+## Estrutura base
 
 ```csharp
 
@@ -21,7 +23,7 @@ switch(valor)
 
 ```
 
-Exemplo para validar se um valor é 1:
+## Exemplo básico
 
 ```csharp
 
@@ -31,7 +33,7 @@ switch(valor)
     case 1: Console.WriteLine("Valor é 1"); break;
     case 2: Console.WriteLine("Valor é 2"); break;
     case 3: Console.WriteLine("Valor é 3"); break;
-    default: Console.WriteLine("Valor é maior que 3"); break; // Caso não for 1,2 ou 3
+    default: Console.WriteLine("Valor é maior que 3"); break;
 }
 
 ```

@@ -4,7 +4,7 @@ description: Tipos de dados e suas conversões
 ---
 
 - É comum precisarmos transformar um dado de tipo X para um tipo Y
-- Existem dois tipos de conversão, as __implícitas__ e __explicitas__
+- Existem dois tipos de conversão, as <span style="color: blue"><b>implícitas</b></span> e <span style="color: blue">explicitas</span>
 
 ## Conversão Implícita
 
@@ -31,9 +31,9 @@ outro = valor // NÃO PODE, um ponto real não cabe um valor inteiro0
 | int    | long, float, double, decimal                                                         |
 | unit   | long, ulong, float, double, decimal                                                  |
 | long   | float, double, decimal                                                               |
-| ulong  | - float<br>- double<br>- decimal                                                     |
-| char   | - ushort<br>- int<br>- uint<br>- long<br>- ulong<br>- float<br>- double<br>- decimal |
-| float  | - double                                                                             |
+| ulong  | float, double, decimal                                                               |
+| char   | ushort, int, uint, long, ulong, float, double, decimal                               |
+| float  | double                                                                               |
 
 ## Conversão Explícita
 
@@ -101,3 +101,6 @@ else
 
 ```
 
+## Exemplos:
+
+- TBD
