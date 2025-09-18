@@ -184,16 +184,19 @@ byte? valor = 123;
 - Como o C# é __Case Sensitive__ , não importa qual usarmos, mas recomendado usar os alias.
 
 
+
 | Alias  | Tipo Original |
 | ------ | ------------- |
 | string | System.String |
 | int    | Int32         |
+
 
 ## Valores Padrões
 
 - Todos os tipos primitivos do C# já vem com um valor default
 - nunca são iniciados como nulos
 - Se nenhum valor for informado, seu valor padrão será usado
+
 
 
 | Tipo    | Valor Padrão |

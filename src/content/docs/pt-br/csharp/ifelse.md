@@ -1,10 +1,10 @@
 ---
-title: Estrutura condicional IF-ELSE
+title: Condicional - IF-ELSE
 description: Estrutura de um IF-ELSE
 ---
 
 :::note
-    Utilizado para fazer uma tomada de decisão
+Utilizado para fazer uma tomada de decisão
 :::
 
 __if__ é a verificação, valida um conjunto operadores lógicos e se for **VERDADEIRO** ele faz um conjunto de comandos internos

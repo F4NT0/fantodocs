@@ -22,20 +22,13 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
 
 ## My latest projects
 
 <CardGrid>
-	<Card title=".NET generator scripts" icon="github">
-		[Repository](https://github.com/F4NT0/dotnet-generator-scripts) : How to generate .NET projects from an C# script.
-	</Card>
-	<Card title="Neovim IDE configuration" icon="github">
-		[Repository](https://github.com/F4NT0/nvim) : My neovim configuration to use in Windows 11.
-	</Card>
-	<Card title="Linux Rice configurations" icon="github">
-		[Organization website](https://github.com/Linux-Rice-Fanto) : My organization with the Arch Linux configurations.
-	</Card>
-	<Card title="My Leetcode solvings in C#" icon="github">
-		[Repository](https://github.com/F4NT0/My-LeetCode-Solvings) : My Leetcode solvings focused in C#.
-	</Card>
+	<LinkCard title=".NET Generator Scripts" href="https://github.com/F4NT0/dotnet-generator-scripts"/>
+	<LinkCard title="Neovim IDE configuration" href="https://github.com/F4NT0/nvim" />
+	<LinkCard title="Linux Rice configurations" href="https://github.com/Linux-Rice-Fanto" />
+	<LinkCard title="C# LeetCode Solvings" href="https://github.com/F4NT0/My-LeetCode-Solvings" />
 </CardGrid>

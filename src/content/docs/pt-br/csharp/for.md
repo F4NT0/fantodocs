@@ -1,10 +1,10 @@
 ---
-title: Laço de Repetição FOR
+title: Laço Repetição - FOR
 description: Como utilizar o FOR no C#
 ---
 
 :::note
-    Verifica cada item dentro de um conjunto de items
+Verifica cada item dentro de um conjunto de items
 :::
 
 Executa uma determinada operação várias vezes
@@ -53,7 +53,7 @@ for (int i = 0 ; i <= 5 ; i++)
 // 5
 ```
 
-# For each
+## For each
 
 Com vetores podemos usar um tipo diferente de for chamado __foreach__ com ele podemos interagir com os valores definidos dentro de um vetor
 
