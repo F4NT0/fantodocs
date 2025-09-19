@@ -23,21 +23,28 @@ dotnet --version
 Podemos criar facilmente um projeto template de uma MinimalAPI, somente temos que rodar o seguinte comando pelo terminal para poder criar um template:
 
 ```bash title="Criando um projeto MinimalAPI template"
-dotnet new web -n MinimalApiDemo
+dotnet new web -n TestingMinimalAPI
+cd TestingMinimalAPI
 ```
+
+## Organização dos arquivos
+
 import { FileTree } from '@astrojs/starlight/components'
 
 <FileTree>
 
-- astro.config.mjs an **important** file
-- package.json
-- README.md
-- src
-  - components
-    - **Header.astro**
-  - …
-- pages/
+- Properties/
+    - launchSettings.json
+- obj/
+- Program.cs
+- TestingMinimalAPI.csproj
+- appsettings.Development.json
+- appsettings.json
 
 </FileTree>
+
+Um pouco de informação de cada arquivo:
+
+- <span style="color: orange">launchSettings.json</span> &#8594;
 
 
