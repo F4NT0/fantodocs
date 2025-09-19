@@ -38,7 +38,9 @@ export default defineConfig({
               label: 'Markdown',
               link: '/pt-br/markdown/markdown-tests',
               icon: 'seti:markdown',
-              items: ['pt-br/markdown/markdown-tests'],
+              items: [
+                'pt-br/markdown/markdown-tests',
+                'pt-br/markdown/unicode'],
             },
             {
               label: 'Estudos C#',
