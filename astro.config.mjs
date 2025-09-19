@@ -82,6 +82,19 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              label: 'Estudos Spring',
+              link: '/pt-br/spring/intro',
+              icon: 'seti:spring',
+              items: [
+                {
+                  label: 'Dependências',
+                  items: [
+                    'pt-br/spring/dependencies/surefire',
+                  ],
+                },
+              ],
+            },
           ]),
       ],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/F4NT0/fantodocs' }],
