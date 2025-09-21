@@ -1,0 +1,124 @@
+---
+title: Notas Personalizadas
+description: Exemplo de notas
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+# Utilizando Asides
+
+Asides é um plugin que podemos usar para criar notas personalizadas.
+
+Utilizo Asides para apresentar uma informação importante na linguagem desejada.
+
+## Importando Asides no arquivo mdx
+<br></br>
+
+Após o título do arquivo mdx, coloque o seguinte import:
+
+```js
+import { Aside } from '@astrojs/starlight/components';
+```
+
+## Criando notas com títulos personalizados
+
+<br></br>
+
+<Aside type="note" title="Nota">
+  Isto é uma note com titulo personalizado.
+</Aside>
+
+```js
+<Aside type="note" title="Nota">
+  Isto é uma note com titulo personalizado.
+</Aside>
+
+```
+
+<Aside type="tip" title="Dica">
+  Isto é uma tip com titulo personalizado.
+</Aside>
+
+```js
+<Aside type="tip" title="Dica">
+  Isto é uma tip com titulo personalizado.
+</Aside>
+```
+
+<Aside type="caution" title="Atenção!">
+  Isto é uma caution com titulo personalizado.
+</Aside>
+
+```js
+<Aside type="caution" title="Atenção!">
+  Isto é uma caution com titulo personalizado.
+</Aside>
+```
+
+<Aside type="danger" title="Perigo!">
+  Isto é uma danger com titulo personalizado.
+</Aside>
+
+```js
+<Aside type="danger" title="Perigo!">
+  Isto é uma danger com titulo personalizado.
+</Aside>
+```
+
+## Adicionando código
+
+<br></br>
+
+Podemos adicionar código e outros detalhes em markdown dentro de um Aside.
+
+<Aside type="caution" title="Atenção!">
+  Podemos adicionar código e outros detalhes utilizando a seguinte estrutura:
+
+  ```js
+  import { Aside } from '@astrojs/starlight/components';  
+  ```
+
+  Podemos `destacar` uma informação também. 
+
+  Podemos adicionar [Links]() e <span style="color: red">Destacar</span> informações.
+</Aside>
+
+```js
+<Aside type="caution" title="Atenção!">
+  Podemos adicionar código e outros detalhes utilizando a seguinte estrutura:
+  
+  //coloque aqui o ```js  
+  import { Aside } from '@astrojs/starlight/components';  
+  //coloque aqui os 3 finais
+  
+  Podemos `destacar` uma informação também. 
+
+  Podemos adicionar [Links]() e <span style="color: red">Destacar</span> informações.
+</Aside>
+
+```
+
+## Adicionando icones personalizados
+
+<br></br>
+
+Podemos colocar icones personalizados disponiveis pelo starlight
+
+<Aside type="note" title="Dica!" icon="seti:c-sharp">
+    Este é um exemplo de uma dica para código C#.
+
+    ```csharp
+    Console.WriteLine("Hello World");
+    ```
+</Aside>
+
+```js
+<Aside type="note" title="Dica!" icon="seti:c-sharp">
+    Este é um exemplo de uma dica para código C#.
+
+    //```csharp
+    Console.WriteLine("Hello World");
+    //``
+</Aside>
+
+```

@@ -10,6 +10,7 @@ npm create astro@latest # Install latest astro option
 # Choose the option starlight
 npm install starlight-theme-galaxy  # Install the galaxy theme
 npm i starlight-sidebar-topics # Add custom sidebar
+npm install remark-math rehype-katex # latex usage
 
 ```
 

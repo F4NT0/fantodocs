@@ -1,0 +1,38 @@
+---
+title: Botão de Links
+description: Como usar LinkCards
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+# Botão de Links
+
+Podemos criar um botão utilizando `LinkCards` do starlight para criar botões para sites externos ou internos.
+
+## Import dos LinkCards
+
+Podemos importar nos nosso arquivos .mdx com o seguinte import após o título:
+
+```js
+import { LinkCard } from '@astrojs/starlight/components';
+```
+
+## Botão de Link de exemplo com descrição
+
+<br></br>
+
+<LinkCard
+  title="Site oficial do C#"
+  href="https://learn.microsoft.com/pt-br/dotnet/csharp/"
+  description="Documentação oficial do C# da Microsoft."
+/>
+
+```js
+<LinkCard
+  title="Site oficial do C#"
+  href="https://learn.microsoft.com/pt-br/dotnet/csharp/"
+  description="Documentação oficial do C# da Microsoft."
+/>
+```
+
+
