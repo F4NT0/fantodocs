@@ -1,0 +1,153 @@
+---
+title: Código e Comandos
+description: Como utilizar código e comandos
+---
+
+# Utilizando códigos e comandos
+
+## Estrutura base do markdown
+
+<br></br>
+
+Podemos usar a estrutura base de um código
+
+```csharp
+Console.WriteLine("Hello World!");
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block1.png?raw=true" alt="code-block1" width="200" /> 
+</td></tr></table>
+
+
+## Código com título
+
+<br></br>
+
+Podemos colocar um título em nosso bloco de código, para referenciar algum arquivo específico.
+
+
+```csharp title="Program.cs"
+public void Main(){
+    Console.WriteLine("Test");
+}
+
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block2.png?raw=true" alt="code-block2" width="200" /> 
+</td></tr></table>
+
+## Frame de Terminal
+
+<br></br>
+
+Podemos construir uma estrutura que lembra um frame de terminal, para mostrar um comando específico do terminal.
+
+
+```bash title="Verificando versão no Terminal"
+    dotnet --version
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block3.png?raw=true" alt="code-block3" width="200" /> 
+</td></tr></table>
+
+## Adicionando Labels
+
+<br></br>
+
+Podemos colocar informações extras no nosso código para ajudar a destacar informações
+
+### Destaque padrão
+
+```csharp title="Destaque" {"ReadLine() salva o valor definido pelo usuário":4-5}
+// Entrada de valor esperando o usuário
+
+Console.Write("Insira um valor de 0 a 10: ");
+
+string entrada = Console.ReadLine();
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block4.png?raw=true" alt="code-block4" width="200" /> 
+</td></tr></table>
+
+### Destaque de remoção
+
+Podemos mostrar um valor específico que foi ou deve ser removido:
+
+```csharp title="Delete" del={1}
+using System;
+
+namespace TestProcess
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //...
+        }
+    }
+}
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block5.png?raw=true" alt="code-block5" width="200" /> 
+</td></tr></table>
+
+
+### Destaque de inserção
+
+Podemos mostrar um valor específico que foi ou deve ser adicionado:
+
+```csharp title="Add" ins={3}
+using System;
+
+namespace TestProcess
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //...
+        }
+    }
+}
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block6.png?raw=true" alt="code-block6" width="200" /> 
+</td></tr></table>
+
+### Destacando uma palavra específica
+
+Podemos destacar uma palavra específica no texto, onde colocamos em uma lista.
+
+```csharp title="Defining Gets" mark="get"
+using System.ComponentModel.DataAnnotations;
+
+namespace MinimalAPI.Models
+{
+    public class Product 
+    {
+        public Product() { }
+
+        [Key]
+        public long Id { get; set; }
+        
+        [StringLength(50)]
+        [Required]
+        public required string Name { get; set; }
+
+        [Range(0, double.MaxValue)]
+        [Required]
+        public double Price { get; set; }
+    }
+}
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block7.png?raw=true" alt="code-block7" width="200" /> 
+</td></tr></table>
+

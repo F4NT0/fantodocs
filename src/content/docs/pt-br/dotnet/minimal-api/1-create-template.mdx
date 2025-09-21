@@ -4,19 +4,23 @@ description: Como criar uma MinimalAPI pelo Terminal ou Visual Studio
 ---
 import { Steps } from '@astrojs/starlight/components'
 import { Tabs, TabItem } from '@astrojs/starlight/components'
-
+import { Aside } from '@astrojs/starlight/components';
 
 <span style="color: orange">MinimalAPI</span> é uma estrutura nova de requisição para API REST introduzida no .NET 8 que nos auxilia a criar API RESTs mais rápido utilizando uma implementação simples mas eficiente.
 
-Essa nova estrutura ajuda a construir mais rapidamente projetos .NET em microserviços e requer poucas con
+Essa nova estrutura ajuda a construir mais rapidamente APIs REST em .NET para uma arquitetura em Microserviços, diminuindo a necessidade de uma estrutura mais robusta para processos simples.
 
-:::caution
-- Certifique-se que tenha instalado o .NET 8 ou maior no seu terminal.
-- Para instalar acesse o [Site Oficial](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
-:::
+
+<Aside type="caution" title="Atenção!" icon="seti:c-sharp">
+    - Certifique-se que tenha instalado o .NET 8 ou maior no seu terminal.
+    - Verifique a versão do seu dotnet com `dotnet --version`.
+    - Para instalar acesse o [Site Oficial](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+</Aside>
 
 
 ## Criando pelo Terminal
+
+<br></br>
 
 <Steps>
 
@@ -42,6 +46,8 @@ Essa nova estrutura ajuda a construir mais rapidamente projetos .NET em microser
 
 ## Criando pelo Visual Studio 2022
 
+<br></br>
+
 <Steps>
 
 1. Inicie o Visual Studio sem vinculo a um projeto, clique em `Create a new project`
@@ -59,6 +65,8 @@ Essa nova estrutura ajuda a construir mais rapidamente projetos .NET em microser
 
 
 ## Organização dos arquivos
+
+<br></br>
 
 O comando `dotnet new web` irá criar um projeto template com uma rota de exemplo, sendo definida no arquivo `Program.cs`
 
@@ -87,6 +95,8 @@ Um pouco de informação de cada arquivo:
 - <span style="color: orange">appSettings.json</span> &#8594; Este arquivo é usado para armazenar configurações da aplicação, como strings de conexão, chaves de API, configurações de Logging e muito mais. Podemos definir configurações diferentes para cada ambiente de desenvolvimento que temos (Prod, Dev, Testing, entre outros) assim evita de utilizar as mesmas configurações em ambientes de teste e os de produção.
 
 ## Código padrão inicial
+
+<br></br>
 
 Temos os seguintes códigos templates que vem junto da aplicação:
 
