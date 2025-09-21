@@ -3,17 +3,17 @@ title: Laço Repetição - WHILE
 description: Como utilizar o While no C#
 ---
 
-:::tip
-Verifica enquanto a condição for verdadeira
-:::
+import { Aside } from '@astrojs/starlight/components';
 
-Palavra reservada __while__
+<Aside type="tip" title="Resumo" icon="seti:c-sharp">
+  - Continua validando enquanto a condição definida for `verdadeira`.
+  - A palavra <span style="color: magenta">while</span> é reservada.
+  - Existe apenas uma condição e é verificada `ANTES` de começar.  
+</Aside>
 
-Exige apenas uma condição e verifica __ANTES__ de executar
+Estrutura base de um while:
 
-Estrutura base de um While:
-
-```csharp
+```csharp title="Incrementador.cs"
 var valor = 0;
 
 while (valor <= 5)
@@ -33,7 +33,7 @@ while (valor <= 5)
 
 Podemos criar um while que roda infinitamente:
 
-```csharp
+```csharp title="Loop.cs"
 var valor = 0;
 
 while (true)

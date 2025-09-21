@@ -66,7 +66,8 @@ export default defineConfig({
                     'pt-br/csharp/3-ifelse',
                     'pt-br/csharp/4-switch',
                     'pt-br/csharp/5-for',
-                    'pt-br/csharp/6-while'
+                    'pt-br/csharp/6-while',
+                    'pt-br/csharp/7-do'
                   ],
                 },
                 {

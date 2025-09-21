@@ -1,0 +1,31 @@
+---
+title: Laço Repetição - DO
+description: Como utilizar a estrutura DO
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Resumo" icon="seti:c-sharp">
+  - Verifica a condição `DEPOIS` de ter executado pelo menos uma vez.
+  - A palavra <span style="color: magenta">do while</span> é reservada.  
+</Aside>
+
+
+Exemplo básico de um DO WHILE:
+
+```csharp title="DoWhile.cs"
+var valor = 0;
+do
+{
+    Console.WriteLine(valor);
+    valor++;
+} while (valor <= 5);
+
+// SAÍDA
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+```
