@@ -1,0 +1,47 @@
+---
+title: Estrutura de arquivos
+description: Como mostrar estrutura de arquivos
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+# Utilizando FileTree do Starlight
+
+Podemos mostrar no site como é a estrutura de arquivos de um projeto usando o `FileTree` do Starlight.
+
+## Importanto FileTree
+
+Colocamos o seguinte import após o título do arquivo .mdx:
+
+```js
+import { FileTree } from '@astrojs/starlight/components';
+```
+
+## Exemplo de um FileTree
+
+<FileTree>
+
+- Properties/
+    - launchSettings.json
+- obj/
+- Program.cs
+- MinimalProject.csproj
+- appsettings.Development.json
+- appsettings.json
+
+</FileTree>
+
+```js
+<FileTree>
+
+- Properties/
+    - launchSettings.json
+- obj/
+- Program.cs
+- MinimalProject.csproj
+- appsettings.Development.json
+- appsettings.json
+
+</FileTree>
+
+```

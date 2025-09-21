@@ -1,4 +1,6 @@
 import { defineConfig } from 'astro/config';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import starlight from '@astrojs/starlight';
 import starlightThemeGalaxy from 'starlight-theme-galaxy';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
@@ -14,6 +16,8 @@ export default defineConfig({
         dark: 'github-dark',
       },
     },
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
   },
 	integrations: [
 		starlight({
@@ -36,10 +40,15 @@ export default defineConfig({
             },
             {
               label: 'Markdown',
-              link: '/pt-br/markdown/markdown-tests',
+              link: '/pt-br/markdown/intro',
               icon: 'seti:markdown',
               items: [
-                'pt-br/markdown/markdown-tests',
+                'pt-br/markdown/notes',
+                'pt-br/markdown/linkcard',
+                'pt-br/markdown/filetree',
+                'pt-br/markdown/steps',
+                'pt-br/markdown/tabs',
+                'pt-br/markdown/latex',
                 'pt-br/markdown/unicode'],
             },
             {
