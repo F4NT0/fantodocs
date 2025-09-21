@@ -48,6 +48,7 @@ export default defineConfig({
                 'pt-br/markdown/filetree',
                 'pt-br/markdown/steps',
                 'pt-br/markdown/tabs',
+                'pt-br/markdown/code',
                 'pt-br/markdown/latex',
                 'pt-br/markdown/unicode'],
             },
@@ -60,7 +61,7 @@ export default defineConfig({
                   label: 'Básico',
                   items: [
                     'pt-br/csharp/1-data-types',
-                    'pt-br/csharp/1-primitive-types',
+                    'pt-br/csharp/1-data-conversion',
                     'pt-br/csharp/2-operators',
                     'pt-br/csharp/3-ifelse',
                     'pt-br/csharp/4-switch',
