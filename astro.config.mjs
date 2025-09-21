@@ -50,13 +50,13 @@ export default defineConfig({
                 {
                   label: 'Básico',
                   items: [
-                    'pt-br/csharp/data-types',
-                    'pt-br/csharp/primitive-types',
-                    'pt-br/csharp/operators',
-                    'pt-br/csharp/ifelse',
-                    'pt-br/csharp/switch',
-                    'pt-br/csharp/for',
-                    'pt-br/csharp/while'
+                    'pt-br/csharp/1-data-types',
+                    'pt-br/csharp/1-primitive-types',
+                    'pt-br/csharp/2-operators',
+                    'pt-br/csharp/3-ifelse',
+                    'pt-br/csharp/4-switch',
+                    'pt-br/csharp/5-for',
+                    'pt-br/csharp/6-while'
                   ],
                 },
                 {
