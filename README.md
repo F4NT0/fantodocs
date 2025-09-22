@@ -7,10 +7,10 @@
 ```powershell
 
 npm create astro@latest # Install latest astro option
-# Choose the option starlight
 npm install starlight-theme-galaxy  # Install the galaxy theme
 npm i starlight-sidebar-topics # Add custom sidebar
 npm install remark-math rehype-katex # latex usage
+npm i starlight-videos # Add videos on Starlight
 
 ```
 
@@ -57,6 +57,7 @@ All commands are run from the root of the project, from a terminal:
 - Speak with [Astro Discord server](https://astro.build/chat).
 - Starlight Galaxy [Documentation](https://frostybee.github.io/starlight-theme-galaxy/).
 - Starlight [Icons](https://starlight.astro.build/reference/icons/).
+- Starlight [Videos](https://starlight-videos.netlify.app/getting-started/)
 
 ## How to create new pages
 
