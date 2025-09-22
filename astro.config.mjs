@@ -49,6 +49,7 @@ export default defineConfig({
                 'pt-br/markdown/steps',
                 'pt-br/markdown/tabs',
                 'pt-br/markdown/code',
+                'pt-br/markdown/colors',
                 'pt-br/markdown/latex',
                 'pt-br/markdown/unicode'],
             },
@@ -86,6 +87,12 @@ export default defineConfig({
               icon: 'seti:powershell',
               items: [
                 {
+                  label: 'Sobre .NET',
+                  items: [
+                    'pt-br/dotnet/knowledge/runtime',
+                  ],
+                },
+                {
                   label: 'MinimalAPIs',
                   items: [
                     'pt-br/dotnet/minimal-api/1-create-template',
@@ -105,6 +112,25 @@ export default defineConfig({
                   ],
                 },
               ],
+            },
+            {
+              label: 'Neovim IDE',
+              link: '/pt-br/neovim/intro',
+              icon: 'vim',
+              items: [
+                {
+                  label: 'Config Inicial',
+                  items: [
+                    'pt-br/neovim/basic/install',
+                  ],
+                },
+              ],
+            },
+            {
+              label: 'Arch Linux',
+              link: '/pt-br/arch/intro',
+              icon: 'linux',
+              items: [],
             },
           ]),
       ],
