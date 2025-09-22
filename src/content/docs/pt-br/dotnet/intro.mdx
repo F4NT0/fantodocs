@@ -1,6 +1,120 @@
 ---
-title: Páginas inicial sobre .NET
+title: Estudos Framework .NET
 description: Primeira página sobre .NET
 ---
 
-## TBD
+# O que é .NET?
+
+<br></br>
+<span style="color: lightgreen">.NET</span> é uma plataforma de desenvolvimento (ou _Framework_ em inglês) criada pela Microsoft.
+
+Totalmente gratuita e de código aberto, permite construir os seguintes tipos de aplicações:
+
+- Web (Utilizando <span style="color:orange">ASP.NET Core</span>).
+- Desktop (Utilizando <span style="color:orange">Windows Forms ou WPF</span>).
+- Mobile (Utilizando <span style="color:orange">.NET MAUI</span>).
+- Cloud (Utilizando <span style="color:orange">Azure</span>).
+- IOT
+- Games (Utilizando <span style="color:orange">Unity</span> que é uma plataforma onde roda .NET com C#).
+- IA e Machine Learning (utilizando <span style="color:orange">ML.NET</span>).
+
+# Componentes principais
+
+<br></br>
+
+O .NET tem vários detalhes e componentes, como as seguintes principais:
+
+- <span style="color: orange">Linguagem C#</span> → Linguagem principal da Microsoft e do .NET.
+- <span style="color: orange">F# e VB.NET</span> → São linguagens também suportadas.
+- <span style="color: orange">.NET SDK</span> → Ferramenta de desenvolvimento para instalar no Sistema Operacional.
+- <span style="color: orange">NuGet</span> → Gerenciador de pacotes do .NET para instalar softwares terceiros.
+- <span style="color: orange">Visual Studio</span> → IDE (_Integrated Developmen Environment_) que é uma programa para escrever e gerenciar o código utilizando C# e .NET.
+- <span style="color: orange">.NET CLI</span> → Interface de linha de comando para compilar, testar e publicar projetos.
+
+# Histórico do .NET
+
+<br></br>
+
+O .NET passou por 3 grandes mudanças e inovações que fizeram uma grande diferença na plataforma, onde devemos ficar sempre atentos as diferenças.
+
+## .NET Framework
+
+<br></br>
+
+- Ano de Lançamento: 2002.
+- Continua ativo até hoje.
+- Última versão: .NET Framework 4.8 (Ainda utilizado, sem novos recursos).
+
+## .NET Core 
+
+<br></br>
+
+- Ano de Lançamento: 2016.
+- Multiplataforma, podendo ser usado no Windows, Linux e MacOSX.
+- Versões do .NET Core: .NET Core 1.0 e .NET Core 3.1 (LTS).
+
+## .NET Unificado
+
+<br></br>
+
+- Ano de Lançamento: 2020.
+- Unificação do Framework e o Core.
+- Começa na versão .NET 5 em 2020.
+- Versão LTS hoje é a versão .NET 8 lançado em 2023
+- Hoje se encontra na versão .NET 10 para Novembro de 2025.
+
+Detalhes de cada versão:
+
+### .NET 6 (LST - 2021)
+
+- Objetivo: Unificação do .NET Core + Xamarin + Mono
+- Principais melhorias:
+    - Unificação total de todos os runtimes.
+    - C# 10: adicionado _global using_, _file-scoped_, _namespace_, _record_, _struct_.
+    - .NET MAUI: susbstitui Xamarin.
+    - Minimal APIs: criação de APIs REST com menos código.
+    - Hot Reload: atualização em tempo real no Visual Studio.
+    - Crossgen2: Nova ferramenta de pré-compilação.
+
+### .NET 7 (STS - 2022)
+
+- Objetivo: Performance, Modernidade, Simplicidade
+- Principais melhorias:
+    - C# 11: adicionado _required_, _raw_, _string literals_, _generic_, _math_.
+    - Native AOT: executáveis nativos sem IL ou JIT.
+    - System.Text.Json: serialização polimórfica e contratos personalizados.
+    - LINQ: melhorias de performance.
+    - .NET MAUI: controle de mapas, renderização mais rápida.
+    - Blazor: melhorias em interatividade e desempenho.
+    - Suporte ARM64.
+
+### .NET 8 (LTS - 2023)
+
+- Objetivo: Pronto para nuvem, mais rápido e mais produtivo.
+- Principais melhorias:
+    - C# 12: primary constructors, default interpolated strings.
+    - .NET Aspire: nova pilha para apps distribuídos e observáveis.
+    - Blazor Full-Stack: front-end e back-end com C#.
+    - AOT Nativo: mais rápido e com menor footprint.
+    - EF Core 8: suporte a JSON, HierarchyId, tipos complexos.
+    - System.Text.Json: serialização de membros privados.
+    - MAUI: novos controles, gestos, navegação.
+    - ASP.NET Core: melhorias em Minimal APIs, SignalR, Kestrel, HTTP.sys3.
+
+### .NET 9 (STS - 2024)
+
+- Objetivos: Aplicações nativas na nuvem e desempenho extremo.
+- Principais melhorias:
+    - Runtime: coleta de lixo adaptativo, vetorização Arm64, otimização de Loop.
+    - LINQ: Adicionado _CountBy_, _AggregateBy_, _Index_.
+    - Criptografia: Suporte ao KMAC, HashData, AES KeyWrap.
+    - TypedResults: respostas HTTP tipadas para Minimal APIs.
+    - .NET MAUI: suporte ao Blazor Hybrid, Hot Reload aprimorado.
+    - .NET Aspire 9: Integração com OpenAI, Milvus, containers persistentes.
+
+### .NET 10 (Novembro 2025)
+
+- Ainda em desenvolvimento.
+
+
+
