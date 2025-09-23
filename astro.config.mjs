@@ -4,6 +4,7 @@ import rehypeKatex from 'rehype-katex';
 import starlight from '@astrojs/starlight';
 import starlightThemeGalaxy from 'starlight-theme-galaxy';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
+import starlightVideos from 'starlight-videos';
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,6 +28,7 @@ export default defineConfig({
         ProgressScroll: './src/components/EmptyProgressScroll.astro',
       },
       plugins: [
+        starlightVideos(),
         starlightThemeGalaxy(),
         starlightSidebarTopics(
           [
@@ -50,6 +52,7 @@ export default defineConfig({
                 'pt-br/markdown/tabs',
                 'pt-br/markdown/code',
                 'pt-br/markdown/colors',
+                'pt-br/markdown/videos',
                 'pt-br/markdown/latex',
                 'pt-br/markdown/unicode'],
             },
