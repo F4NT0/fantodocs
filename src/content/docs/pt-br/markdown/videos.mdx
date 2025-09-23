@@ -1,0 +1,40 @@
+---
+title: Adicionando Videos
+description: Como adicionar videos no Site
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { VideoPlayer } from 'starlight-videos/components'
+
+<Aside type="caution" title="Atenção" icon="seti:markdown">
+    - Essa configuração vem de um plugin chamado `starlight-videos`.
+    - Documentação inicial está em [https://starlight-videos.netlify.app/](https://starlight-videos.netlify.app/).
+    - [Repositório Oficial](https://github.com/HiDeoo/starlight-videos).
+
+    ```js
+      npm i starlight-videos
+    ```
+</Aside>
+
+
+## Como colocar videos no site
+
+- Importe o plugin `VideoPlayer` no seu site:
+
+```js
+import { VideoPlayer } from 'starlight-videos/components'
+```
+
+- Adicione o video no site:
+
+<VideoPlayer link="https://youtu.be/zwxll667cwM"/>
+
+- Esse é a Tag para adicionar um video solto assim:
+
+```js
+<VideoPlayer link="https://youtu.be/zwxll667cwM"/>
+```
+## Colocando um video no inicio da página
+
+
+
