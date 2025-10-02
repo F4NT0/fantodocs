@@ -11,6 +11,7 @@ npm install starlight-theme-galaxy  # Install the galaxy theme
 npm i starlight-sidebar-topics # Add custom sidebar
 npm install remark-math rehype-katex # latex usage
 npm i starlight-videos # Add videos on Starlight
+npm i starlight-kbd # Add Keyboard shortcuts plugin
 
 ```
 
@@ -58,7 +59,7 @@ All commands are run from the root of the project, from a terminal:
 - Starlight Galaxy [Documentation](https://frostybee.github.io/starlight-theme-galaxy/).
 - Starlight [Icons](https://starlight.astro.build/reference/icons/).
 - Starlight [Videos](https://starlight-videos.netlify.app/getting-started/)
-
+- Starlight [Keyboard Shortcuts](https://starlight-kbd.netlify.app/getting-started/)
 ## How to create new pages
 
 - Add into the folder `src/content/docs/pt-br` or `src/content/docs/en-us` your folders and markdown files.

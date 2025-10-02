@@ -5,6 +5,7 @@ import starlight from '@astrojs/starlight';
 import starlightThemeGalaxy from 'starlight-theme-galaxy';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
 import starlightVideos from 'starlight-videos';
+import starlightKbd from 'starlight-kbd'
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,6 +30,14 @@ export default defineConfig({
       },
       plugins: [
         starlightVideos(),
+        starlightKbd(
+          {
+            types: [
+              { id: 'mac', label: 'macOS'},
+              { id: 'windows', label: 'Windows', default: true },
+              { id: 'linux', label: 'Linux'},
+            ],
+          }),
         starlightThemeGalaxy(),
         starlightSidebarTopics(
           [
@@ -53,6 +62,7 @@ export default defineConfig({
                 'pt-br/markdown/code',
                 'pt-br/markdown/colors',
                 'pt-br/markdown/videos',
+                'pt-br/markdown/kbd',
                 'pt-br/markdown/latex',
                 'pt-br/markdown/unicode'],
             },
