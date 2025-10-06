@@ -104,6 +104,12 @@ export default defineConfig({
                     'pt-br/csharp/solid/intro',
                   ],
                 },
+                {
+                  label: 'Scripting',
+                  items: [
+                    'pt-br/csharp/scripting/intro'
+                  ],
+                },
               ],
             },
             {
