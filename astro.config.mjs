@@ -74,23 +74,35 @@ export default defineConfig({
                 {
                   label: 'Básico',
                   items: [
-                    'pt-br/csharp/1-data-types',
-                    'pt-br/csharp/1-data-conversion',
-                    'pt-br/csharp/2-operators',
-                    'pt-br/csharp/3-ifelse',
-                    'pt-br/csharp/4-switch',
-                    'pt-br/csharp/5-for',
-                    'pt-br/csharp/6-while',
-                    'pt-br/csharp/7-do'
+                    'pt-br/csharp/basic/intro',
+                    'pt-br/csharp/basic/1-data-types',
+                    'pt-br/csharp/basic/1-data-conversion',
+                    'pt-br/csharp/basic/2-operators',
+                    'pt-br/csharp/basic/3-ifelse',
+                    'pt-br/csharp/basic/4-switch',
+                    'pt-br/csharp/basic/5-for',
+                    'pt-br/csharp/basic/6-while',
+                    'pt-br/csharp/basic/7-do',
+                    'pt-br/csharp/basic/8-functions',
                   ],
                 },
                 {
                   label: 'Orientação a Objetos',
-                  items: [],
+                  items: [
+                    'pt-br/csharp/object_oriented/intro',
+                  ],
+                },
+                {
+                  label: 'Estrutura de Dados',
+                  items: [
+                    'pt-br/csharp/data_structures/intro',
+                  ],
                 },
                 {
                   label: 'SOLID',
-                  items: [],
+                  items: [
+                    'pt-br/csharp/solid/intro',
+                  ],
                 },
               ],
             },
@@ -144,6 +156,15 @@ export default defineConfig({
               link: '/pt-br/arch/intro',
               icon: 'linux',
               items: [],
+            },
+            {
+              label: 'AI',
+              link: '/pt-br/ai/intro',
+              icon: 'puzzle',
+              items: [
+                'pt-br/ai/llms',
+                'pt-br/ai/prompt-eng'
+              ],
             },
           ]),
       ],
