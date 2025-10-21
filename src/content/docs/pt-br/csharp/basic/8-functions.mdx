@@ -4,7 +4,7 @@ title: Métodos no C#
 
 import { Aside } from '@astrojs/starlight/components';
 
-<Aside type="tip" title="Importante!" icon="seti:c-sharp">
+<Aside type="tip" title="Resumo" icon="seti:c-sharp">
   - <span style="color: orange">função</span> e <span style="color: orange">método</span> são quase a mesma coisa.
   - <span style="color: orange">função</span> é o termo mais genérico, descreve qualquer bloco de código que realiza uma tarefa.
   - <span style="color: orange">método</span> é uma função que pertence a uma classe ou objeto.
@@ -13,22 +13,165 @@ import { Aside } from '@astrojs/starlight/components';
 
 ## O que é um Método
 
+Um método em C# é um bloco de código que executa uma tarefa específica. 
+
+Ele pode receber parâmetros, retornar valores e ser chamado por outras partes do programa. 
+
+Métodos são definidos dentro de _classes_ ou _structs_ e podem ser estáticos, de instância, genéricos, assíncronos, entre outros.
+
 ### Métodos de instância
+
+Documentação Oficial: [Visão geral dos métodos](https://learn.microsoft.com/pt-br/dotnet/csharp/methods)
+
+São métodos que operam sobre uma instância da classe. Requerem que um objeto seja criado para serem chamados.
+
+```csharp
+public class Calculadora {
+    public int Somar(int a, int b) {
+        return a + b;
+    }
+}
+
+var calc = new Calculadora();
+int resultado = calc.Somar(2, 3); // Output: 5
+
+```
 
 ### Métodos Estáticos
 
+Documentação oficial: [Classes Estáticas e Membros estáticos](https://learn.microsoft.com/pt-br/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members)
+
+Pertencem à classe e não à instância. São chamados diretamente pela classe.
+
+```csharp
+
+public class Util {
+    public static int Dobrar(int x) {
+        return x * 2;
+    }
+}
+
+int resultado = Util.Dobrar(4); // Output: 8
+
+```
+
 ### Métodos com retorno
+
+Documentação Oficial: [Criar método que retornam valores](https://learn.microsoft.com/pt-pt/training/modules/create-c-sharp-methods-return-values/)
+
+Retornam um valor após a execução. O tipo de retorno é especificado na assinatura.
+
+```csharp
+
+public string Saudacao(string nome) {
+    return $"Olá, {nome}!";
+}
+
+```
 
 ### Métodos com parâmetro opcional
 
+Documentação Oficial: [Argumentos opcionais](https://learn.microsoft.com/pt-br/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments)
+
+Permitem definir valores padrão para parâmetros.
+
+```csharp
+public void MostrarMensagem(string msg = "Mensagem padrão") {
+    Console.WriteLine(msg);
+}
+
+MostrarMensagem(); // Output: Mensagem padrão
+MostrarMensagem("Olá!"); // Output: Olá!
+
+```
+
 ### Métodos com params
+
+Documentação Oficial: [Métodos com parâmetros](https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/method-parameters)
+
+Permitem passar um número variável de argumentos como array.
+
+```csharp
+public int Somar(params int[] numeros) {
+    return numeros.Sum();
+}
+
+Somar(1, 2, 3, 4); // Output: 10
+```
 
 ### Métodos com ref e out
 
+Documentação Oficial: [ref](https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/ref) e [out](https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/out)
+
+Permitem passar variáveis por referência.
+
+ref: variável deve ser inicializada antes.
+
+out: variável será inicializada dentro do método.
+
+```csharp
+public void Dobrar(ref int valor) {
+    valor *= 2;
+}
+
+public void GerarNumero(out int numero) {
+    numero = 42;
+}
+
+```
+
 ### Método genérico
+
+Documentação Oficial: [Método genérico](https://learn.microsoft.com/pt-br/dotnet/csharp/programming-guide/generics/generic-methods)
+
+Permite trabalhar com tipos parametrizados.
+
+```csharp
+public T RetornarValor<T>(T valor) {
+    return valor;
+}
+
+int x = RetornarValor<int>(10); // Output: 10
+string s = RetornarValor<string>("teste"); // Output: teste
+```
 
 ### Método Assíncrono (async)
 
+Documentação Oficial: [Método Assíncrono](https://learn.microsoft.com/pt-br/dotnet/csharp/asynchronous-programming/)
+
+Executa operações assíncronas com await.
+
+```csharp
+public async Task<string> BuscarDadosAsync() {
+    await Task.Delay(1000);
+    return "Dados recebidos";
+}
+```
+
 ### Métodos lambda (Função Anônima)
 
+Documentação Oficial: [Expressões Lambda](https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/operators/lambda-expressions)
+
+Funções inline que podem ser atribuídas a delegates ou usadas em LINQ.
+
+```csharp
+Func<int, int> quadrado = x => x * x;
+Console.WriteLine(quadrado(5)); // Output: 25
+
+```
+
 ### Método de extensão
+
+Documentação Oficial: [Métodos de Extensão](https://learn.microsoft.com/pt-br/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
+
+Permite adicionar métodos a tipos existentes sem modificar o código original.
+
+```csharp
+public static class Extensoes {
+    public static int Dobrar(this int valor) {
+        return valor * 2;
+    }
+}
+
+int resultado = 5.Dobrar(); // Output: 10
+```

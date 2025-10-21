@@ -99,6 +99,13 @@ export default defineConfig({
                   ],
                 },
                 {
+                  label: 'Programação Funcional',
+                  items: [
+                    'pt-br/csharp/functional/intro',
+                    'pt-br/csharp/functional/lambda',
+                  ],
+                },
+                {
                   label: 'SOLID',
                   items: [
                     'pt-br/csharp/solid/intro',
