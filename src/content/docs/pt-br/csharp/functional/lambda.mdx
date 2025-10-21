@@ -1,0 +1,93 @@
+---
+title: Lambda Expression e Statement
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Resumo" icon="seti:c-sharp">
+    - <span style="color: orange">Lambda Expressions</span> são expressões anônimas que podem ser usadas para criar delegates ou expressões de árvores (expression trees).
+        - Sintaxe: `(input) => expression`
+        - Observação: o expression é somente uma linha nesse caso.
+ 
+ - <span style="color: orange">Lambda Statements</span> são lambdas com corpo de bloco, permitindo multiplas instruções.
+    - Sintaxe: `(input) => { expression1, expression2 }`
+    - Observação: Não esquecer de fazer um  <span style="color: magenta">return</span> com a expressão final do lambda statements.
+
+</Aside>
+
+## Cálculo padrão de um vetor
+
+Podemos pegar um vetor (array) e ir somando um a um dos valores dentro dele dentro de um laço For para ir andando em cada valor em cada posição e ir salvando em uma variável auxiliar, como no exemplo abaixo:
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        var numbers = new int[] { 1, 2 , 3, 4, 5 };
+        var sum = 0;
+        for (var n = 0; n < numbers.Length; n++)
+        {
+            sum += numbers[n];
+            
+        }
+        Console.WriteLine(sum);
+    }
+}
+```
+
+O retorno desse cálculo é <span style="color: orange">15</span> onde ele vai atualizando o valor da variável sum até o final do tamanho do vetor numbers.
+
+Podemos fazer o mesmo cálculo sem necessitar utilizar a estrutura do For, melhorando a performance do projeto.
+
+## Utilizando o C# Lambda Expression
+
+Para utilizarmos lambda no código devemos utilizar o simbolo <span style="orange"> => </span> que utiliza as variáveis chamadas para controlar o fluxo do processamento
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        var numbers = new int[] { 1, 2, 3, 4, 5 };
+        var sum = numbers.Aggregate(0, (total, num) => total + num);
+        Console.WriteLine(sum);
+    }
+}
+
+```
+
+Nesse código utilizamos o método da extensão [LINQ](https://learn.microsoft.com/en-us/dotnet/csharp/linq/) para utiliza uma função acumuladora sobre uma sequência, ou seja, ele vai pegar da posição inicial e utilizar uma função lambda para interagir com os próximos valores.
+
+O método <span style="color: orange">Aggregate</span> pertence a classe _System.Linq.Enumerable_ e é uma operação de redução que utiliza uma função acumuladora sobre uma sequencia de valores, produzindo um único valor.
+
+Foi criado internamente a variável <span style="color: orange">total</span> que vai sendo atualizada a cada interação dentro do lambda e a variável <span style="color: orange">num</span> que vai pegando o próximo valor do vetor começando na posição 0 definida no incio.
+
+## Utilizando o C# Lambda Statement
+
+É a mesma ideia do Lambda Expression, mas nesse caso abrimos uma nova área para colocarmos mais métodos e outros processos de forma organizada, como no seguinte exemplo:
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        var numbers = new int[] { 1, 2, 3, 4, 5 };
+        var sum = numbers.Aggregate(0, (total, sum) => {
+            Console.WriteLine("total = {0}, num = {1}", total, num);
+            return total + num;
+        });
+    }
+}
+```
+
+Nessa estrutura estamos fazendo o mesmo que no C# lambda expression, mas podemos interagir com as variáveis criada para fazermos validações ou definir o que quisermos, mas devemos sempre no final fazer um <span style="color: orange">return</span> dos valores desejados, diferente de fazer em uma linha, dessa forma podemos ter mais controle do que queremos fazer no processo de leitura.
+
+
+

@@ -1,10 +1,96 @@
 ---
 title: Engenharia de Prompt
 ---
+import { Aside } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
 
-## O que é Engenharia de Prompt
+<Aside type="tip" title="Resumo" icon="seti:powershell">
+    Prompt Engineering é a prática de projetar, testar e otimizar promts (entrada de texto criado pelo ser humano para conversar com a IA) para conversar com modelos de linguagem (LLMs) com o objetivo de obter respostas mais precisas, úteis e controladas.
+</Aside>
 
-TBD
+
+
+## Porque isso é importante?
+
+Para conseguir uma resposta dentro do que deseja da IA, onde ela possa procurar padrões e estrutura de informações tem que ter uma boa explicação pelo ser humano para poder tirar o melhor proveito de resposta, caso não seja bem explicito o que é desejado a IA começa a `alucinar` onde começa a trazer uma resposta que muitas vezes não é o correto, onde ela pode acabar misturando assuntos e respondendo inverdades que podem prejudicar algum processo esperado.
+
+Um prompt bem elaborado pode transformar uma resposta bem genérica em uma solução altamente especializada.
+
+## Processo de construção de Prompts.
+
+<Steps>
+    1. Entendimento do modelo: Saber como o modelo escolhido (Gemini, ChatGPT, Copilot) funciona, suas limitações e capacidades.
+    2. Formulação do Prompt:
+        - Clareza: Evite ambiguidade do Prompt criado.
+        - Contexto: Forneça o máximo de informações relevantes.
+        - Formato: Usar listas, exemplos, instruções, etc.
+    3. Interação e ajuste:
+        - Testar variações e ver os melhores resultados.
+        - Medir qualidade das respostas.
+        - Refinar com base em feedbacks ou métricas.
+</Steps>
+
+## Tipos de ferramentas de prompt
+
+- Few-shot prompting: Dar exemplos para o Prompt.
+- Chain-of-thought prompting: induzir o modelo a pensar passo a passo.
+- Zero-shot prompting: Fazer perguntas diretas sem nenhum exemplo.
+- Prompt templates: Criar estruturas reutilizáveis para tarefas recorrentes.
+
+### Zero-shot
+
+- Não é apresentado nenhum exemplo.
+- Serve para respostas mais simples, nada específico.
+- Perguntas diretas sem preparação.
+
+```shell
+Crie uma legenda para uma foto de uma cafeteria artesanal.
+```
+
+### One-shot
+
+- É apresentado um exemplo.
+- Fornece um exemplo para a IA, de algo específico.
+- A IA segue o modelo especificado para criar o texto.
+
+```shell
+Crie uma legenda para uma foto de uma cafeteria artesanal.
+Exemplo de legenda: Nada como começar o dia com um café especial feito com carinho.
+Agora crie uma legenda semelhante para uma nova publicação. 
+```
+
+### Few-shot
+
+- É dado alguns exemplos.
+- Temos que preparar mais de 3 exemplos e ele irá formar um padrão que irá auxiliar na criação.
+
+```shell
+Me explique o que é disciplina seguindo os seguintes modelos:
+
+Exemplo 1:
+Pergunta: O que é Produtividade?
+Resposta: Capacidade de produzir mais resultados com menos esforço.
+
+Exemplo 2:
+Pergunta: O que é Foco?
+Resposta: Habilidade de direcionar sua atenção a uma unica tarefa.
+
+Exemplo 3:
+Pergunta: O que é motivação?
+Resposta: Motivação é a energia interna que impulsiona uma pessoa a agir.
+```
+
+### Técnica Role Play
+
+- Atribui uma função para a IA.
+- Ela vai filtrar o conhecimento que tem para ser de um foco expecífico.
+- Muda o tipo de resposta para a função dela.
+- Se unificar a atribuição de uma função mais exemplos e mais detalhes vai entregar uma resposta completa sem muitos erros.
+
+```shell
+Atue como um Engenheiro de Software que tenha conhecimento em C#, .NET e ASP.NET Core.
+Me explique de forma direta como funciona o Garbage Collection no .NET e me apresente um exemplo da utilização dele.
+```
 
 ## CARE Framework
 
@@ -29,3 +115,5 @@ Me ajude a construir uma mensagem de atualização para o meu time
 Este é um prompt utilizando o padrão CARE:
 
 <span style="color: lightblue">Você está ajudando um lider de projeto a comunicar um update para times remotos.</span> <span style="color: yellow">Escreva uma mensagem amigável e concisa</span> <span style="color: tomato">que tenha no máximo 100 palavras sumarizando no timeline do projeto.</span> <span style="color: lightgreen">Use um tom similar como "Rápido update para todos - aqui está o que foi mudado..."</span>.
+
+
