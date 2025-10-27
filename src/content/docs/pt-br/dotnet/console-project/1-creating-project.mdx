@@ -1,0 +1,60 @@
+---
+title: Criando projeto console
+---
+import { FileTree } from '@astrojs/starlight/components';
+
+# O que é um projeto console
+
+Projetos console são projetos simples do .NET para criar exemplos ou simples códigos para validar alguma informação ou necessidade.
+
+Podemos criar quantos projeto console quisermos e são bem simples, irei explicar cada arquivo e suas utilidades.
+
+## Criando um projeto console usando .NET CLI
+
+Se você tiver o compilador do .NET instalado em seu computador, você pode criar um projeto diretamente em seu console, onde primeiro deve ser visto qual é a versão do seu .NET instalado.
+
+```bash title="Verificando versão do .NET no terminal"
+dotnet --version
+```
+
+Agora podemos criar um template inicial de um projeto usando o seguinte comando, onde irei mostrar os arquivos gerados:
+
+```bash title="Criando um projeto console chamado MyApp"
+dotnet new console -n MyApp
+```
+
+Quando rodamos esse comando ele irá criar os seguintes arquivos em um diretório:
+
+<FileTree>
+
+- MyApp/
+    - MyApp.csproj
+    - Program.cs
+    - appsettings.Development.json
+    - appsetings.json
+
+</FileTree>
+
+Uma pequena descrição de cada arquivo:
+
+- <span style="color: orange">MyApp.csproj</span>
+    - Arquivo em XML
+    - Define quais arquivos fazem parte da compilação
+    - Gerência dependências (Pacotes Nuget, Referências, etc)
+    - Configura o Build (Versão do .NET, Tipo de Saída,etc)
+    - Integra com ferramentas (dotnet CLI)
+    - OBS: sem esse arquivo, o .NET não saberia como compilar o projeto ou executar.
+- <span style="color: orange">Program.cs</span>
+    - Arquivo C# com a incialização de código do nosso projeto, com a Main().
+    - Esta é a porta de entrada de configurações do nosso projeto, onde podemos criar multiplos arquivos C# com o que precisamos e os conectamos nesse arquivo para ser iniciado no inicio do projeto.
+- <span style="color: orange">appsettings.json</span>
+    - É um arquivo JSON que tem as configurações necessárias de forma estruturada.
+    - Serve para colocar configurações do RabbitMQ, Logs, Conexão com banco de dados, etc.
+    - Possui todas as configurações necessárias para projetos ou programas externos necessários para a aplicação.
+
+## Criando um projeto console pelo visual studio 2022
+
+
+
+No próximo passo, irei mostrar como configurar um solution e projetos de testes.
+
