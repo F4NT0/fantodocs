@@ -131,6 +131,12 @@ export default defineConfig({
                   ],
                 },
                 {
+                  label: 'Console Projects',
+                  items: [
+                    'pt-br/dotnet/console-project/1-creating-project',
+                  ],
+                },
+                {
                   label: 'MinimalAPIs',
                   items: [
                     'pt-br/dotnet/minimal-api/1-create-template',
