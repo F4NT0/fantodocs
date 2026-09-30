@@ -5,7 +5,8 @@ import starlight from '@astrojs/starlight';
 import starlightThemeGalaxy from 'starlight-theme-galaxy';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
 import starlightVideos from 'starlight-videos';
-import starlightKbd from 'starlight-kbd'
+import starlightKbd from 'starlight-kbd';
+import mermaid from 'astro-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,11 +23,15 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
   },
 	integrations: [
+		mermaid({
+			theme: 'neutral',
+			autoTheme: true,
+		}),
 		starlight({
 			title: 'FantoDocs',
       customCss: ['./src/styles/custom.css'],
-      components: {
-        ProgressScroll: './src/components/EmptyProgressScroll.astro',
+      markdown: {
+        headingLinks: false,
       },
       plugins: [
         starlightVideos(),

@@ -69,43 +69,51 @@ html[data-theme='dark'] .sidebar{
 
 /* TITLES CONFIGURATIONS */
 html[data-theme='light'] h1 {
-  font-size: 25px;
-  color: black;
+  font-size: 32px;
+  color: #000000;
+  font-weight: 700;
 }
 
 html[data-theme='dark'] h1 {
-  font-size: 25px;
-  color: #16DB65;
+  font-size: 32px;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 html[data-theme='light'] h2 {
-  font-size: 20px;
-  color: black;
+  font-size: 26px;
+  color: #111111;
+  font-weight: 600;
 }
 
 html[data-theme='dark'] h2 {
-  font-size: 20px;
-  color: #BF4FE6;
+  font-size: 26px;
+  color: #f0f0f0;
+  font-weight: 600;
 }
 
 html[data-theme='light'] h3 {
-  font-size: 15px;
-  color: black;
+  font-size: 20px;
+  color: #222222;
+  font-weight: 600;
 }
 
 html[data-theme='dark'] h3 {
-  font-size: 15px;
-  color: #20C8F2;
+  font-size: 20px;
+  color: #e0e0e0;
+  font-weight: 600;
 }
 
 html[data-theme='light'] h4 {
-  font-size: 13px;
-  color: black;
+  font-size: 16px;
+  color: #333333;
+  font-weight: 600;
 }
 
 html[data-theme='dark'] h4 {
-  font-size: 13px;
-  color: #F2CF20;
+  font-size: 16px;
+  color: #d0d0d0;
+  font-weight: 600;
 }
 
 html[data-theme='dark'] a {
@@ -116,9 +124,12 @@ html[data-theme='light'] a {
   color: #black;
 }
 
-
-a.heading-link:focus-visible svg {
-  opacity: 0;
-  pointer-events: none;
+/* Esconde a barra de progresso de scroll do Galaxy theme */
+header .progress-scroll-container,
+header > div[style*="position: fixed"],
+header > div[style*="width"] {
+  display: none !important;
+  height: 0 !important;
+  opacity: 0 !important;
 }
 
