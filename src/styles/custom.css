@@ -117,19 +117,75 @@ html[data-theme='dark'] h4 {
 }
 
 html[data-theme='dark'] a {
-  color: #black;
+  color: #60a5fa;
 }
 
 html[data-theme='light'] a {
-  color: #black;
+  color: #1e3a8a;
 }
 
-/* Esconde a barra de progresso de scroll do Galaxy theme */
-header .progress-scroll-container,
-header > div[style*="position: fixed"],
-header > div[style*="width"] {
-  display: none !important;
-  height: 0 !important;
-  opacity: 0 !important;
+/* LinkCards minimalistas com sobrescrita do Rapide theme */
+@layer my-overrides {
+  .sl-card,
+  .card {
+    --sl-card-border: #1e3a8a !important;
+    --sl-card-bg: #ffffff !important;
+    border: 1px solid var(--sl-card-border) !important;
+    background-color: var(--sl-card-bg) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  html[data-theme='dark'] .sl-card,
+  html[data-theme='dark'] .card {
+    --sl-card-border: #a855f7 !important;
+    --sl-card-bg: #1a1a1a !important;
+  }
+
+  .sl-card:hover,
+  .card:hover {
+    border-color: #1e40af !important;
+    background-color: #f0f9ff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15) !important;
+  }
+
+  html[data-theme='dark'] .sl-card:hover,
+  html[data-theme='dark'] .card:hover {
+    border-color: #c084fc !important;
+    background-color: #2d1b3d !important;
+    box-shadow: 0 4px 12px rgba(192, 132, 252, 0.2) !important;
+  }
+
+  .sl-card:active,
+  .card:active {
+    border-color: #1e3a8a !important;
+    background-color: #dbeafe !important;
+  }
+
+  html[data-theme='dark'] .sl-card:active,
+  html[data-theme='dark'] .card:active {
+    border-color: #9333ea !important;
+    background-color: #3d2a52 !important;
+  }
+
+  .sl-card .title,
+  .card .title {
+    color: #1a1a1a !important;
+  }
+
+  html[data-theme='dark'] .sl-card .title,
+  html[data-theme='dark'] .card .title {
+    color: #e0e0e0 !important;
+  }
+
+  .sl-card .body,
+  .card .body {
+    color: #404040 !important;
+  }
+
+  html[data-theme='dark'] .sl-card .body,
+  html[data-theme='dark'] .card .body {
+    color: #a0a0a0 !important;
+  }
 }
 
