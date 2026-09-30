@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import starlight from '@astrojs/starlight';
-import starlightThemeGalaxy from 'starlight-theme-galaxy';
+import starlightThemeRapide from 'starlight-theme-rapide';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
 import starlightVideos from 'starlight-videos';
 import starlightKbd from 'starlight-kbd';
@@ -43,7 +43,7 @@ export default defineConfig({
               { id: 'linux', label: 'Linux'},
             ],
           }),
-        starlightThemeGalaxy(),
+        starlightThemeRapide(),
         starlightSidebarTopics(
           [
             {
