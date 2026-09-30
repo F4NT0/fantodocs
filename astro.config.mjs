@@ -166,11 +166,13 @@ export default defineConfig({
               label: 'Neovim IDE',
               link: '/pt-br/neovim/intro',
               icon: 'vim',
+              badge: { text: 'Novo', variant: 'success' },
               items: [
                 {
                   label: 'Config Inicial',
                   items: [
                     'pt-br/neovim/basic/install',
+                    'pt-br/neovim/basic/basic-config',
                   ],
                 },
               ],
