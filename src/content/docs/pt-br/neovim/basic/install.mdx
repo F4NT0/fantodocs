@@ -1,6 +1,223 @@
 ---
 title: Como instalar Neovim
-description: Tutorial de instalação
+description: Tutorial completo de instalação do Neovim no Windows e Linux
 ---
 
-# TBD
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
+import { Kbd } from 'starlight-kbd/components';
+import { Aside } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+
+# Instalando o Neovim
+
+O Neovim é um editor de texto moderno, extensível e baseado em Vim. Este guia mostra como instalá-lo no Windows e Linux.
+
+<Aside type="caution" title="Pré-requisitos" icon="vim">
+Antes de começar, certifique-se de ter:
+- Windows: <Badge text="PowerShell 5.1" variant="success"></Badge> ou superior
+- Linux: Acesso ao terminal com permissões de sudo
+</Aside>
+
+## Instalação por Sistema Operacional
+
+<Tabs>
+<TabItem label="Windows (PowerShell)" icon="seti:windows">
+
+## Instalação no Windows via PowerShell
+
+<Steps>
+
+1. Abra o PowerShell como Administrador
+
+   Pressione <Kbd windows="Windows+X" /> e selecione "Windows PowerShell (Admin)" ou "Terminal (Admin)"
+
+2. Verifique se tem o winget instalado
+
+   ```bash title="Verificando winget"
+   winget --version
+   ```
+
+   Se não tiver, instale pelo Microsoft Store ou atualize o Windows.
+
+3. Instale o Neovim usando winget
+
+   ```bash title="Instalando Neovim"
+   winget install Neovim.Neovim
+   ```
+
+4. Verifique a instalação
+
+   ```bash title="Verificando versão do Neovim"
+   nvim --version
+   ```
+
+5. Adicione o Neovim ao PATH (se necessário)
+
+   O winget geralmente faz isso automaticamente, mas se o comando `nvim` não funcionar, adicione o caminho às variáveis de ambiente:
+   - Caminho típico: `C:\Users\SeuUsuario\AppData\Local\nvim-data\nvim-win64\bin`
+
+</Steps>
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
+
+## Instalação no Linux
+
+<Steps>
+
+1. Para Ubuntu/Debian
+
+   ```bash title="Atualizando repositórios"
+   sudo apt update
+   ```
+
+   ```bash title="Instalando Neovim"
+   sudo apt install neovim
+   ```
+
+2. Para Fedora/RHEL
+
+   ```bash title="Instalando Neovim no Fedora"
+   sudo dnf install neovim
+   ```
+
+3. Para Arch Linux
+
+   ```bash title="Instalando Neovim no Arch"
+   sudo pacman -S neovim
+   ```
+
+4. Verifique a instalação
+
+   ```bash title="Verificando versão do Neovim"
+   nvim --version
+   ```
+
+</Steps>
+
+</TabItem>
+</Tabs>
+
+## Configuração Inicial
+
+Após instalar, é recomendado criar o diretório de configuração:
+
+<Tabs>
+<TabItem label="Windows" icon="seti:windows">
+
+```bash title="Criando diretório de configuração no Windows"
+mkdir $env:LOCALAPPDATA\nvim
+```
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
+
+```bash title="Criando diretório de configuração no Linux"
+mkdir -p ~/.config/nvim
+```
+
+</TabItem>
+</Tabs>
+
+## Comandos Básicos para Iniciar
+
+Aqui estão os comandos essenciais para começar a usar o Neovim:
+
+### Abrindo o Neovim
+
+<Tabs>
+<TabItem label="Windows" icon="seti:windows">
+
+```bash title="Abrindo Neovim no Windows"
+nvim
+```
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
+
+```bash title="Abrindo Neovim no Linux"
+nvim
+```
+
+</TabItem>
+</Tabs>
+
+### Abrindo um arquivo específico
+
+<Tabs>
+<TabItem label="Windows" icon="seti:windows">
+
+```bash title="Abrindo arquivo no Windows"
+nvim arquivo.txt
+```
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
+
+```bash title="Abrindo arquivo no Linux"
+nvim arquivo.txt
+```
+
+</TabItem>
+</Tabs>
+
+## Atalhos de Teclado Essenciais
+
+### Navegação
+
+- <Kbd windows="h" /> - Mover para esquerda
+- <Kbd windows="j" /> - Mover para baixo
+- <Kbd windows="k" /> - Mover para cima
+- <Kbd windows="l" /> - Mover para direita
+- <Kbd windows="0" /> - Ir para o início da linha
+- <Kbd windows="$" /> - Ir para o final da linha
+- <Kbd windows="G" /> - Ir para o final do arquivo
+- <Kbd windows="g g" /> - Ir para o início do arquivo
+
+### Modos
+
+- <Kbd windows="i" /> - Entrar no modo de inserção (antes do cursor)
+- <Kbd windows="a" /> - Entrar no modo de inserção (após o cursor)
+- <Kbd windows="Esc" /> - Sair do modo de inserção para modo normal
+- <Kbd windows=":" /> - Entrar no modo de comando
+
+### Edição
+
+- <Kbd windows="x" /> - Deletar caractere sob o cursor
+- <Kbd windows="d d" /> - Deletar linha inteira
+- <Kbd windows="y y" /> - Copiar (yank) linha inteira
+- <Kbd windows="p" /> - Colar após o cursor
+- <Kbd windows="u" /> - Desfazer última ação
+- <Kbd windows="Control+r" /> - Refazer ação desfeita
+
+### Salvando e Saindo
+
+- <Kbd windows=":" /> <Kbd windows="w" /> <Kbd windows="Enter" /> - Salvar arquivo
+- <Kbd windows=":" /> <Kbd windows="q" /> <Kbd windows="Enter" /> - Sair sem salvar
+- <Kbd windows=":" /> <Kbd windows="w q" /> <Kbd windows="Enter" /> - Salvar e sair
+- <Kbd windows=":" /> <Kbd windows="q !" /> <Kbd windows="Enter" /> - Forçar saída sem salvar
+
+### Busca
+
+- <Kbd windows="/" /> <Kbd windows="texto" /> <Kbd windows="Enter" /> - Buscar texto
+- <Kbd windows="n" /> - Próxima ocorrência
+- <Kbd windows="N" /> - Ocorrência anterior
+
+### Janelas
+
+- <Kbd windows="Control+w" /> <Kbd windows="v" /> - Dividir verticalmente
+- <Kbd windows="Control+w" /> <Kbd windows="s" /> - Dividir horizontalmente
+- <Kbd windows="Control+w" /> <Kbd windows="h" /> - Mover para janela esquerda
+- <Kbd windows="Control+w" /> <Kbd windows="j" /> - Mover para janela abaixo
+- <Kbd windows="Control+w" /> <Kbd windows="k" /> - Mover para janela acima
+- <Kbd windows="Control+w" /> <Kbd windows="l" /> - Mover para janela direita
+- <Kbd windows="Control+w" /> <Kbd windows="q" /> - Fechar janela atual
+
+## Próximos Passos
+
+<Aside type="note" title="Dica">
+Recomendo instalar um plugin manager como [lazy.nvim](https://github.com/folke/lazy.nvim) para gerenciar extensões e melhorar sua experiência com o Neovim.
+</Aside>
+
+Para configurar o Neovim com plugins e temas, consulte a documentação oficial em [neovim.io](https://neovim.io/doc/).
