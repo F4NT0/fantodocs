@@ -169,6 +169,19 @@ main .hero .actions {
   justify-content: center !important;
 }
 
+html[data-theme='dark'] main .hero .actions a.sl-link-button {
+  color: #4ade80 !important;
+}
+
+html[data-theme='dark'] main .hero .actions a.sl-link-button.secondary {
+  border-color: #4ade80 !important;
+}
+
+html[data-theme='dark'] main .hero .actions a.sl-link-button:hover {
+  color: #86efac !important;
+  border-color: #86efac !important;
+}
+
 /* LinkCards minimalistas com sobrescrita do Rapide theme */
 @layer my-overrides {
   .sl-card,
