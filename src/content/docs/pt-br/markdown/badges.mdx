@@ -1,0 +1,130 @@
+---
+title: Badges
+description: Utilizando badges no markdown
+---
+
+import { Badge } from '@astrojs/starlight/components';
+
+# Utilizando Badges
+
+Badges são pequenas etiquetas que podemos usar para destacar um status, uma versão ou uma novidade.
+
+Utilizo Badges para marcar conteúdos como `Novo`, `Beta` ou `Obsoleto`.
+
+## Importando Badges no arquivo mdx
+<br></br>
+
+Após o título do arquivo mdx, coloque o seguinte import:
+
+```js
+import { Badge } from '@astrojs/starlight/components';
+```
+
+## Criando um badge simples
+
+<br></br>
+
+Por padrão o badge usa a cor de destaque do site:
+
+<br></br>
+
+<Badge text="Padrão" />
+
+```js
+<Badge text="Padrão" />
+```
+
+## Variantes de cores
+
+<br></br>
+
+Podemos usar a propriedade `variant` para escolher a cor do badge:
+
+<br></br>
+
+<Badge text="Note" variant="note" />
+<Badge text="Success" variant="success" />
+<Badge text="Tip" variant="tip" />
+<Badge text="Caution" variant="caution" />
+<Badge text="Danger" variant="danger" />
+
+<br></br>
+
+```js
+<Badge text="Note" variant="note" />
+<Badge text="Success" variant="success" />
+<Badge text="Tip" variant="tip" />
+<Badge text="Caution" variant="caution" />
+<Badge text="Danger" variant="danger" />
+```
+
+## Tamanhos
+
+<br></br>
+
+Podemos usar a propriedade `size` para alterar o tamanho do badge:
+
+<br></br>
+
+<Badge text="Small" variant="success" size="small" />
+<Badge text="Medium" variant="success" size="medium" />
+<Badge text="Large" variant="success" size="large" />
+
+<br></br>
+
+```js
+<Badge text="Small" variant="success" size="small" />
+<Badge text="Medium" variant="success" size="medium" />
+<Badge text="Large" variant="success" size="large" />
+```
+
+## Badge dentro de títulos
+
+<br></br>
+
+Podemos colocar um badge ao lado de um título para destacar uma novidade:
+
+```md
+## Nova funcionalidade <Badge text="Novo" variant="success" />
+```
+
+## Nova funcionalidade <Badge text="Novo" variant="success" />
+
+## Estilo personalizado
+
+<br></br>
+
+Podemos usar a propriedade `style` para criar um badge com cores próprias:
+
+<Badge text="Personalizado" variant="note" style={{ fontStyle: 'italic' }} />
+
+```js
+<Badge text="Personalizado" variant="note" style={{ fontStyle: 'italic' }} />
+```
+
+## Badge no menu lateral
+
+<br></br>
+
+Podemos adicionar um badge em uma página específica do menu lateral usando o frontmatter do arquivo:
+
+```md
+---
+title: Minha página
+sidebar:
+  badge:
+    text: Novo
+    variant: success
+---
+```
+
+Para adicionar um badge em um tópico do `starlight-sidebar-topics`, use a propriedade `badge` no `astro.config.mjs`:
+
+```js
+{
+  label: 'Neovim IDE',
+  link: '/pt-br/neovim/intro',
+  badge: { text: 'Novo', variant: 'success' },
+  items: [],
+}
+```

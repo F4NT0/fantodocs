@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import starlight from '@astrojs/starlight';
-import starlightThemeRapide from 'starlight-theme-rapide';
+import starlightCatppuccin from '@catppuccin/starlight';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
 import starlightVideos from 'starlight-videos';
 import starlightKbd from 'starlight-kbd';
@@ -43,7 +43,10 @@ export default defineConfig({
               { id: 'linux', label: 'Linux'},
             ],
           }),
-        starlightThemeRapide(),
+        starlightCatppuccin({
+          dark: { flavor: 'mocha', accent: 'mauve' },
+          light: { flavor: 'latte', accent: 'mauve' },
+        }),
         starlightSidebarTopics(
           [
             {
@@ -60,6 +63,8 @@ export default defineConfig({
               icon: 'seti:markdown',
               items: [
                 'pt-br/markdown/notes',
+                'pt-br/markdown/badges',
+                'pt-br/markdown/mermaid',
                 'pt-br/markdown/linkcard',
                 'pt-br/markdown/filetree',
                 'pt-br/markdown/steps',

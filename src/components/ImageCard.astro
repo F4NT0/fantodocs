@@ -1,0 +1,115 @@
+---
+interface Badge {
+  text: string;
+  color?: string;
+}
+
+interface Props {
+  href: string;
+  image: string;
+  title: string;
+  subtitle?: string;
+  alt?: string;
+  language?: string;
+  languageIcon?: string;
+  badges?: Badge[];
+}
+
+const { href, image, title, subtitle, alt = title, language, languageIcon, badges = [] } = Astro.props;
+const iconUrl = languageIcon && (languageIcon.startsWith('/') || languageIcon.startsWith('http')
+  ? languageIcon
+  : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${languageIcon}/${languageIcon}-original.svg`);
+---
+
+<a class="image-card" href={href}>
+  <img class="image-card-img" src={image} alt={alt} loading="lazy" />
+  <div class="image-card-body">
+    <div class="image-card-header">
+      <strong class="image-card-title">{title}</strong>
+      {language && (
+        <span class="image-card-lang">
+          {iconUrl && <img src={iconUrl} alt="" width="16" height="16" />}
+          {language}
+        </span>
+      )}
+      {badges.map((b) => (
+        <span class="image-card-badge" style={`--badge-color: ${b.color ?? 'var(--sl-color-accent)'}`}>{b.text}</span>
+      ))}
+    </div>
+    {subtitle && <span class="image-card-subtitle">{subtitle}</span>}
+  </div>
+</a>
+
+<style>
+  .image-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 12px;
+    background: var(--sl-color-bg-nav);
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .image-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--sl-color-accent);
+  }
+
+  .image-card-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin: 0 !important;
+  }
+
+  .image-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .image-card-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .image-card-title {
+    font-size: 1.1rem;
+    color: var(--sl-color-white);
+  }
+
+  .image-card-lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--sl-color-gray-2);
+  }
+
+  .image-card-lang img {
+    display: inline-block;
+    margin: 0 !important;
+  }
+
+  .image-card-badge {
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--badge-color);
+    border-radius: 0.25rem;
+    background: color-mix(in srgb, var(--badge-color) 20%, transparent);
+    color: var(--badge-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .image-card-subtitle {
+    font-size: 0.9rem;
+    color: var(--sl-color-gray-2);
+  }
+</style>

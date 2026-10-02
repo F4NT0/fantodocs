@@ -23,47 +23,61 @@ ul,ol {
 
 /* TABLE CONFIGURATIONS */
 
-table {
+.sl-markdown-content table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 8px;
-  overflow: hidden;
+  border-collapse: collapse;
+  border: 1px solid var(--sl-color-hairline);
   font-size: 15px;
-  margin: 2 auto;
+  display: table;
 }
 
-
-th {
-  padding: 1rem;
-  text-align: center;
-  font-weight: bold;
+.sl-markdown-content th,
+.sl-markdown-content td {
+  padding: 0.6rem 1rem;
+  text-align: start;
+  border: 1px solid var(--sl-color-hairline);
+  background: transparent !important;
 }
 
-td {
-  padding: 1rem;
-  border-top: 1px solid #444;
+.sl-markdown-content th {
+  font-weight: 700;
+  color: var(--sl-color-white);
 }
 
-table thead tr:first-child th:first-child {
-  border-top-left-radius: 8px;
-}
-table thead tr:first-child th:last-child {
-  border-top-right-radius: 8px;
-}
-table tbody tr:last-child td:first-child {
-  border-bottom-left-radius: 8px;
-}
-table tbody tr:last-child td:last-child {
-  border-bottom-right-radius: 8px;
+.sl-markdown-content tr:nth-child(2n) {
+  background: transparent !important;
 }
 
 
 /* SIDEBAR CONFIGURATIONS */
 
-html[data-theme='dark'] .sidebar{
-  --sl-color-bg-sidebar: #black; 
+html[data-theme='dark'] {
+  --sl-color-bg: #07090a;
+  --sl-color-bg-nav: #07090a;
+  --sl-color-bg-sidebar: #07090a;
+  --sl-color-black: #07090a;
+  --sl-color-hairline-shade: #151a1c;
+  --sl-color-hairline: #1d2427;
+}
+
+html[data-theme='dark'] .sidebar {
   font-family: 'JetBrainsMonoNerd', monospace;
+}
+
+html[data-theme='dark'] .sidebar a,
+html[data-theme='dark'] .sidebar-content a {
+  color: #4ade80;
+}
+
+html[data-theme='dark'] .sidebar a:hover {
+  color: #86efac;
+}
+
+html[data-theme='dark'] .sidebar a[aria-current='page'],
+html[data-theme='dark'] .sidebar a[aria-current='page']:hover {
+  background-color: #16a34a !important;
+  color: #000000 !important;
+  font-weight: 600;
 }
 
 
@@ -122,6 +136,37 @@ html[data-theme='dark'] a {
 
 html[data-theme='light'] a {
   color: #1e3a8a;
+}
+
+/* Imagens centralizadas no conteúdo */
+.sl-markdown-content img {
+  display: block;
+  margin-inline: auto !important;
+}
+
+.sl-markdown-content td:has(> img),
+.sl-markdown-content td:has(> a > img) {
+  text-align: center !important;
+}
+
+/* Remove o logo "6" do tema Six no topo esquerdo */
+.site-title img {
+  display: none !important;
+}
+
+/* HERO da página inicial centralizado (Six theme) */
+main .hero {
+  align-items: center !important;
+  text-align: center !important;
+}
+
+main .hero .tagline {
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+main .hero .actions {
+  justify-content: center !important;
 }
 
 /* LinkCards minimalistas com sobrescrita do Rapide theme */
