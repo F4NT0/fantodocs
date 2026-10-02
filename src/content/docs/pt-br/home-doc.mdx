@@ -5,6 +5,7 @@ description: PT-BR versão do meu Resume
 
 import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 import { Badge } from '@astrojs/starlight/components';
+import ImageCard from '../../../components/ImageCard.astro';
 
 <table align="center"><tr><td align="center" width="9999">
     <img src="https://github.com/F4NT0/fantodocs/blob/main/public/me.png?raw=true" alt="My awesome picture" width="300" /> 
@@ -40,95 +41,41 @@ import { Badge } from '@astrojs/starlight/components';
 ### Projetos pessoais
 
 <CardGrid>
-  <LinkCard
-    title="Neovim IDE"
-    href="https://github.com/F4NT0/nvim"
-    description="IDE de desenvolvimento no terminal"
-  />
-  <LinkCard
-    title=".NET Project generation"
-    href="https://github.com/F4NT0/dotnet-generator-scripts"
-    description="Gerador de Script em C# para projetos .NET."
-  />
-  <LinkCard
-    title="cash-ctrl"
+  <ImageCard
     href="https://github.com/F4NT0/cash-ctrl"
-    description="Gerenciamento financeiro pelo terminal."
+    image="/fantodocs/projects/cash-ctrl.png"
+    title="cash-ctrl"
+    subtitle="Financeiro pelo terminal."
+    language="C#"
+    languageIcon="csharp"
+    badges={[{ text: 'TUI', color: '#86efac' }]}
   />
-</CardGrid> 
+  <ImageCard
+    href="https://github.com/F4NT0/nvim"
+    image="/fantodocs/projects/neovim.png"
+    title="Neovim"
+    language="lua"
+    languageIcon="lua"
+    subtitle="Minha configuração do Neovim."
+    badges={[{ text: 'TUI', color: '#86efac'}]}
+  />
+  <ImageCard
+    href="https://github.com/F4NT0/clidocs"
+    image="/fantodocs/projects/clidocs.png"
+    title="clidocs"
+    subtitle="Documentação pelo Terminal."
+    language="go"
+    languageIcon="go"
+    badges={[{ text: 'TUI', color: '#86efac'}]}
+  />
+  <ImageCard
+    href="https://github.com/F4NT0/JsonFormatter"
+    image="/fantodocs/projects/jsonformatter.png"
+    title="JsonFormatter"
+    subtitle="Formatador de JSON."
+    language="C#"
+    languageIcon="csharp"
+    badges={[{ text: 'Desktop', color: '#9A00FF'}]}
+  />
+</CardGrid>
 
-### >_ Minhas tecnologias que desenvolvo
-
-
-#### Framework
-
-<table align="center">
-    <tr>
-      <td><img src="https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=fff"/></td>
-      <td><img src="https://img.shields.io/badge/Blazor-512BD4?logo=blazor&logoColor=fff"/></td>
-      <td><img src="https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff"/></td>
-      <td><img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=fff"/></td>
-      <td><img src="https://img.shields.io/badge/Spring%20Security-6DB33F?logo=springsecurity&logoColor=fff"/></td>
-    </tr>
-  </table>
-
-
-#### Testes
-
-[![JUnit5](https://img.shields.io/badge/JUnit5-C21325?logo=junit5&logoColor=fff)](#)
-
-#### Sistemas Operacionais
-
-
-<table align="center">
-    <tr>
-        <td><img src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff"/></td>
-        <td><img src="https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=fff"/></td>
-        <td><img src="https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white"/></td>
-        <td><img src="https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white"/></td>
-    </tr>
-</table>
-
-#### ORM
-
-<table align="center">
-    <tr>
-        <td><img src="https://img.shields.io/badge/Hibernate-59666C?logo=hibernate&logoColor=fff"/></td>
-        <td><img src="https://img.shields.io/badge/Sequelize-52B0E7?logo=sequelize&logoColor=fff"/></td>
-    </tr>
-</table>
-
-#### Package Manager
-
-<table align="center">
-    <tr>
-        <td><img src="https://img.shields.io/badge/NuGet-004880?logo=nuget&logoColor=fff"/></td>
-        <td><img src="https://img.shields.io/badge/Chocolatey-80B5E3?logo=chocolatey&logoColor=fff"/></td>
-        <td><img src="https://img.shields.io/badge/Nix-5277C3?logo=nixos&logoColor=fff"/></td>
-    </tr>
-</table>
-
-#### Linguagens de Programação
-
-<table align="center">
-    <tr>
-        <td><img src="https://custom-icon-badges.demolab.com/badge/C%23-%654FF0.svg?logo=cshrp&logoColor=white"/></td>
-        <td><img src="https://img.shields.io/badge/Go-%2300ADD8.svg?&logo=go&logoColor=white"/></td>
-        <td><img src="https://img.shields.io/badge/Java-%23ED8B00.svg?logo=openjdk&logoColor=white"/></td>
-        <td><img src="https://img.shields.io/badge/Lua-%232C2D72.svg?logo=lua&logoColor=white"/></td>
-        <td><img src="https://img.shields.io/badge/Markdown-%23000000.svg?logo=markdown&logoColor=white"/></td>
-        <td><img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff"/></td>
-        <td><img src="https://img.shields.io/badge/JSON-000?logo=json&logoColor=fff"/></td>
-    </tr>
-</table>
-
-#### Frontend
-
-<table align="center">
-    <tr>
-        <td><img src="https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white"/></td>
-        <td><img src="https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff"/></td>
-        <td><img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff"/></td>
-        <td><img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000"/></td>
-    </tr>
-</table>
