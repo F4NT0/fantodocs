@@ -18,13 +18,13 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
-import { LinkCard } from '@astrojs/starlight/components';
+import ProjectLinkCard from '../../components/ProjectLinkCard.astro';
 
 ## My latest projects
 
 <CardGrid>
-	<LinkCard title=".NET Generator Scripts" href="https://github.com/F4NT0/dotnet-generator-scripts"/>
-	<LinkCard title="Neovim IDE configuration" href="https://github.com/F4NT0/nvim" />
-	<LinkCard title="Linux Rice configurations" href="https://github.com/Linux-Rice-Fanto" />
-	<LinkCard title="C# LeetCode Solvings" href="https://github.com/F4NT0/My-LeetCode-Solvings" />
+	<ProjectLinkCard title=".NET Generator Scripts" href="https://github.com/F4NT0/dotnet-generator-scripts" language="Bash" languageIcon="bash" />
+	<ProjectLinkCard title="Neovim IDE configuration" href="https://github.com/F4NT0/nvim" language="Lua" languageIcon="lua" />
+	<ProjectLinkCard title="Linux Rice configurations" href="https://github.com/Linux-Rice-Fanto" language="Linux" languageIcon="linux" />
+	<ProjectLinkCard title="C# LeetCode Solvings" href="https://github.com/F4NT0/My-LeetCode-Solvings" language="C#" languageIcon="csharp" />
 </CardGrid>

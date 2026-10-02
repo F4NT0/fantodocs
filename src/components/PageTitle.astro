@@ -1,0 +1,48 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+
+const id = Astro.locals.starlightRoute.entry.id.replace(/\.mdx?$/, '');
+const [lang, topic] = id.split('/');
+const topics: Record<string, string> = {
+  markdown: 'Markdown',
+  csharp: 'Estudos C#',
+  dotnet: 'Estudos .NET',
+  neovim: 'Neovim IDE',
+  arch: 'Arch Linux',
+  ai: 'AI',
+};
+const label = topics[topic];
+const isTopicIntro = id === `${lang}/${topic}/intro`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const backLabel = isTopicIntro ? 'Página Inicial' : label;
+const href = isTopicIntro ? `${base}/${lang}/initial-page/` : `${base}/${lang}/${topic}/intro/`;
+const showBack = label && backLabel;
+---
+
+{showBack && (
+  <a class="back-to-topic" href={href}>
+    <span aria-hidden="true">←</span> {backLabel}
+  </a>
+)}
+<Default><slot /></Default>
+
+<style>
+  .back-to-topic {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid #ffffff;
+    border-radius: 999px;
+    color: #4ade80 !important;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .back-to-topic:hover {
+    color: #86efac !important;
+    border-color: #ffffff;
+  }
+</style>

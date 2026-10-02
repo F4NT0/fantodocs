@@ -6,7 +6,7 @@ description: Primeira página sobre C#
 # O que é C#?
 
 <table align="center"><tr><td align="center" width="9999">
-    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/csharp/csharp_devkit.png?raw=true" alt="csharp_logo" width="100" /> 
+    <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/csharp/csharp_devkit.png`} alt="csharp_logo" width="100" /> 
 </td></tr></table>
 
 
@@ -18,7 +18,7 @@ Desenvolvida pela Microsoft em 2000 como parte da plataforma <span style="color:
 
 É uma das linguagens mais populares no mundo corporativo e entre desenvolvedores que utilizam Softwares da Microsoft.
 
-import { LinkCard } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 <LinkCard
   title="Documentação da Linguagem C#"
@@ -43,6 +43,54 @@ import { LinkCard } from '@astrojs/starlight/components';
 &#8594; <span style="color: orange">LINQ</span> : Consulta a banco de dados e processos de forma integrada na linguagem, esse é um dos diferenciais do C#.
 
 &#8594; <span style="color: orange">Async/Await</span> : Suporte nativo a programação assíncrona.
+
+## Conteúdo
+
+### Básico
+
+<CardGrid>
+  <LinkCard title="Básico do C#" href="/fantodocs/pt-br/csharp/basic/intro/" />
+  <LinkCard title="Tipos de dados" href="/fantodocs/pt-br/csharp/basic/1-data-types/" />
+  <LinkCard title="Conversão de dados" href="/fantodocs/pt-br/csharp/basic/1-data-conversion/" />
+  <LinkCard title="Operadores" href="/fantodocs/pt-br/csharp/basic/2-operators/" />
+  <LinkCard title="Condicional - IF-ELSE" href="/fantodocs/pt-br/csharp/basic/3-ifelse/" />
+  <LinkCard title="Condicional - SWITCH" href="/fantodocs/pt-br/csharp/basic/4-switch/" />
+  <LinkCard title="Laço Repetição - FOR" href="/fantodocs/pt-br/csharp/basic/5-for/" />
+  <LinkCard title="Laço Repetição - WHILE" href="/fantodocs/pt-br/csharp/basic/6-while/" />
+  <LinkCard title="Laço Repetição - DO" href="/fantodocs/pt-br/csharp/basic/7-do/" />
+  <LinkCard title="Métodos no C#" href="/fantodocs/pt-br/csharp/basic/8-functions/" />
+</CardGrid>
+
+### Orientação a Objetos
+
+<CardGrid>
+  <LinkCard title="Orientação a Objetos" href="/fantodocs/pt-br/csharp/object_oriented/intro/" />
+</CardGrid>
+
+### Estrutura de Dados
+
+<CardGrid>
+  <LinkCard title="Estrutura de Dados" href="/fantodocs/pt-br/csharp/data_structures/intro/" />
+</CardGrid>
+
+### Programação Funcional
+
+<CardGrid>
+  <LinkCard title="Programação Funcional" href="/fantodocs/pt-br/csharp/functional/intro/" />
+  <LinkCard title="Lambda Expression e Statement" href="/fantodocs/pt-br/csharp/functional/lambda/" />
+</CardGrid>
+
+### SOLID
+
+<CardGrid>
+  <LinkCard title="SOLID no C#" href="/fantodocs/pt-br/csharp/solid/intro/" />
+</CardGrid>
+
+### Scripting
+
+<CardGrid>
+  <LinkCard title="Scripts em C#" href="/fantodocs/pt-br/csharp/scripting/intro/" />
+</CardGrid>
 
 ## Histórico de versões
 

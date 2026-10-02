@@ -29,7 +29,11 @@ export default defineConfig({
 		}),
 		starlight({
 			title: 'FantoDocs',
+      pagination: false,
       customCss: ['./src/styles/custom.css'],
+      components: {
+        PageTitle: './src/components/PageTitle.astro',
+      },
       markdown: {
         headingLinks: false,
       },
@@ -55,6 +59,7 @@ export default defineConfig({
               icon: 'open-book',
               items: [
                 'pt-br/home-doc',
+                'pt-br/initial-page',
               ]
             },
             {
@@ -150,19 +155,6 @@ export default defineConfig({
                   label: 'MinimalAPIs',
                   items: [
                     'pt-br/dotnet/minimal-api/1-create-template',
-                  ],
-                },
-              ],
-            },
-            {
-              label: 'Estudos Spring',
-              link: '/pt-br/spring/intro',
-              icon: 'seti:spring',
-              items: [
-                {
-                  label: 'Dependências',
-                  items: [
-                    'pt-br/spring/dependencies/surefire',
                   ],
                 },
               ],
