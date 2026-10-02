@@ -4,10 +4,52 @@ description: Como configurar seu Neovim para programação
 ---
 
 import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import ImageCard from '../../../../components/ImageCard.astro';
 
-Neovim é um software de edição de texto pelo terminal, onde é altamente configurável e pode ser configurado para ser uma IDE completa.
+<img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/projects/neovim.png`} alt="Neovim" style={{ width: '100%', borderRadius: '12px' }} />
 
-#### Páginas
+## O que é Neovim?
+
+Neovim é um software de edição de texto pelo terminal, altamente configurável e pode ser configurado para ser uma IDE completa.
+
+Após anos usando IDEs pesadas como Visual Studio e Intellij (também Eclipse, mas isso entrega minha idade) aprendi que são softwares muito pesados para somente fazer ajustes e validar código.
+
+Conheci o Neovim ainda quando estava no inicio da faculdade em 2016, desde aquele momento fui aprendendo a usar essa ferramenta tão complexa e cheia de detalhes, como atalhos do teclado, movimentação no arquivo e configurações personalizadas.
+
+Comecei a criar a minha própria configuração pessoal para testar e desenvolver, o que me fez se apaixonar por essa tecnologia, podemos conectar plugins e configurar cores e atalhos para o nosso gosto.
+
+Hoje com o mundo focado 100% no terminal e com IA sendo rodadas diretamente na fonte do computador, ficou cada vez mais necessário saber usar essa ferramenta.
+
+## Porque usar
+
+Após anos usando Neovim, conheci um grupo de plugins e configurações usando a linguagem <span style="color: lightblue">Lua</span> (Linguagem criada no Brasil) que auxiliou a facilitar a configuração e organização do meu Neovim.
+
+Agora, tenho uma versão particular com um conjunto de plugins (e alguns que criei) que me ajudam no desenvolvimento diariamente.
+
+Além de ser gratuito o uso, deixei o software da maneira que gosto e preciso para criar meus projetos.
+
+## Como usar a minha versão
+
+Esta documentação serve para mostrar cada configuração e detalhe do que fiz nos ultimos anos para deixar meu Neovim como está atualmente, além de mostrar ao mundo como eu configurei eu tenho por escrito todo o processo para refazer de novo caso necessário.
+
+Abaixo se encontra a lista em ordem de como configurar e usar esta maravilhosa IDE que construi, sente-se e aproveite a viagem.
+
+## Projeto no Github
+
+<CardGrid>
+    <ImageCard
+        href="https://github.com/F4NT0/nvim"
+        image="/fantodocs/projects/neovim.png"
+        title="Neovim"
+        language="lua"
+        languageIcon="lua"
+        size="full"
+        subtitle="Minha configuração do Neovim."
+        badges={[{ text: 'TUI', color: '#86efac'}]}
+    />
+</CardGrid>
+
+## Documentação do projeto
 
 <CardGrid>
   <LinkCard title="Como instalar Neovim" href="/fantodocs/pt-br/neovim/basic/install" />
