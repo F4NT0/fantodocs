@@ -170,6 +170,7 @@ export default defineConfig({
                   items: [
                     'pt-br/neovim/basic/install',
                     'pt-br/neovim/basic/basic-config',
+                    'pt-br/neovim/basic/shortcuts',
                   ],
                 },
               ],
