@@ -11,18 +11,38 @@ import ImageCard from '../../../components/ImageCard.astro';
     <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/me2.png`} alt="Gabriel Stundner" width="300" /> 
 </td></tr></table>
 
+<div class="profile-id">
+  <div class="profile-name">Gabriel Fanto Stundner</div>
+  <div class="profile-role">Engenheiro de Software</div>
+</div>
+
+<style is:global>{`
+  .profile-id { text-align:center; margin-top:1.2rem; font-family:'JetBrainsMonoNerd','JetBrains Mono',monospace; }
+  .profile-name { font-size:1.8rem; font-weight:700; letter-spacing:0.04em; color:#07090a; }
+  .profile-role { font-size:1rem; letter-spacing:0.25em; text-transform:uppercase; color:#16a34a; margin-top:0.3rem; }
+  :root[data-theme='dark'] .profile-name { color:#ffffff; }
+  :root[data-theme='dark'] .profile-role { color:#4ade80; }
+  :root[data-theme='dark'] .gh-chart { filter: invert(1) hue-rotate(180deg) brightness(1.3) saturate(1.4); }
+`}</style>
+
+<div style="text-align:center; overflow-x:auto; margin-top:1rem;">
+  <a href="https://github.com/F4NT0" target="_blank" rel="noopener noreferrer">
+    <img class="gh-chart" src="https://ghchart.rshah.org/40c463/F4NT0" alt="Contribuições do GitHub de F4NT0" style="max-width:100%; min-width:600px;" />
+  </a>
+</div>
+
 ### Formação e Profissão
 
-- Formado em Bacharel em Engenharia de Software na [PUCRS(Pontifícia Universidade Católica do Rio Grande do Sul).](https://portal.pucrs.br/en/ensino/cursos/graduacao/engenharia-de-software/) em 2023.
-- Sou apaixonado por CLI (Command Line Interface) e por sistemas Linux e Windows 11 (novo hobby).
-- Atualmente trabalho como Engenheiro de Software na [Dell Technologies](https://www.dell.com/en-us/lp/dt/who-we-are?msockid=13a6ae50813463391d39bb2080e2622b) em Eldorado, Rio Grande do Sul.
+- Formado como Bacharel em Engenharia de Software na [PUCRS](https://portal.pucrs.br/en/ensino/cursos/graduacao/engenharia-de-software/) em 2023.
+- Engenheiro de sistemas de alto impacto e escaláveis na área de gerenciamento.
+- Atualmente trabalho como Engenheiro de Software na [Dell Technologies](https://www.dell.com/en-us/lp/dt/who-we-are?msockid=13a6ae50813463391d39bb2080e2622b)
 
 ### Objetivos
 
 - <Badge text="Curto prazo" variant="caution" />: Engenheiro de Software Pleno em .NET.
 - <Badge text="Longo prazo" variant="success" />: Arquiteto de Software.
 
-### Projetos de sucesso
+### Projetos desenvolvidos para empresas
 
 <CardGrid>
   <LinkCard
