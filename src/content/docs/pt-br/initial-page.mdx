@@ -1,17 +1,49 @@
 ---
-title: Página Inicial da Documentação
+title: Minhas Documentações
 description: Links para todos os grupos de documentação
 prev: false
 next: false
 ---
 
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import DocLinkCard from '../../../components/DocLinkCard.astro';
 
-<CardGrid>
-  <LinkCard title="Markdown" href="/fantodocs/pt-br/markdown/intro/" />
-  <LinkCard title="Estudos C#" href="/fantodocs/pt-br/csharp/intro/" />
-  <LinkCard title="Estudos .NET" href="/fantodocs/pt-br/dotnet/intro/" />
-  <LinkCard title="Neovim IDE" href="/fantodocs/pt-br/neovim/intro/" />
-  <LinkCard title="Arch Linux" href="/fantodocs/pt-br/arch/intro/" />
-  <LinkCard title="AI" href="/fantodocs/pt-br/ai/intro/" />
-</CardGrid>
+Bem-vindo à documentação! Aqui você encontrará guias e estudos sobre várias tecnologias e ferramentas que utilizo no meu dia a dia como desenvolvedor.
+
+<div class="doc-grid">
+  <DocLinkCard
+    title="Markdown"
+    description="Sintaxe e recursos para escrever documentação em Markdown"
+    href="/fantodocs/pt-br/markdown/intro/"
+    icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg"
+  />
+  <DocLinkCard
+    title="Estudos C#"
+    description="Fundamentos e conceitos da linguagem C#"
+    href="/fantodocs/pt-br/csharp/intro/"
+    icon="csharp"
+  />
+  <DocLinkCard
+    title="Estudos .NET"
+    description="Framework .NET e suas aplicações"
+    href="/fantodocs/pt-br/dotnet/intro/"
+    icon="dotnetcore"
+  />
+  <DocLinkCard
+    title="Neovim IDE"
+    description="Configuração e uso do Neovim como editor de código"
+    href="/fantodocs/pt-br/neovim/intro/"
+    icon="vim"
+  />
+  <DocLinkCard
+    title="Arch Linux"
+    description="Guia de instalação e configuração do Arch Linux"
+    href="/fantodocs/pt-br/arch/intro/"
+    icon="linux"
+  />
+  <DocLinkCard
+    title="AI"
+    description="Inteligência artificial e ferramentas de IA"
+    href="/fantodocs/pt-br/ai/intro/"
+    icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+  />
+</div>

@@ -1,0 +1,16 @@
+---
+const target = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/pt-br/`;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>FantoDocs</title>
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+  </head>
+  <body>
+    <a href={target}>FantoDocs</a>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+---
+title: Methods in C#
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:c-sharp">
+  - <span style="color: orange">function</span> and <span style="color: orange">method</span> are almost the same thing.
+  - <span style="color: orange">function</span> is the more generic term; it describes any block of code that performs a task.
+  - <span style="color: orange">method</span> is a function that belongs to a class or object.
+  - Since C# is an object-oriented language, all functions are methods, because they all live inside a class.
+</Aside>
+
+## What is a Method
+
+A method in C# is a block of code that performs a specific task. 
+
+It can receive parameters, return values, and be called from other parts of the program. 
+
+Methods are defined inside _classes_ or _structs_ and can be static, instance, generic, asynchronous, and more.
+
+### Instance methods
+
+Official Documentation: [Methods overview](https://learn.microsoft.com/en-us/dotnet/csharp/methods)
+
+These are methods that operate on an instance of the class. An object must be created in order to call them.
+
+```csharp
+public class Calculator {
+    public int Add(int a, int b) {
+        return a + b;
+    }
+}
+
+var calc = new Calculator();
+int result = calc.Add(2, 3); // Output: 5
+
+```
+
+### Static Methods
+
+Official Documentation: [Static Classes and Static Class Members](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members)
+
+They belong to the class and not to an instance. They are called directly on the class.
+
+```csharp
+
+public class Util {
+    public static int Double(int x) {
+        return x * 2;
+    }
+}
+
+int result = Util.Double(4); // Output: 8
+
+```
+
+### Methods with return values
+
+Official Documentation: [Create C# methods that return values](https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/)
+
+They return a value after execution. The return type is specified in the signature.
+
+```csharp
+
+public string Greeting(string name) {
+    return $"Hello, {name}!";
+}
+
+```
+
+### Methods with optional parameters
+
+Official Documentation: [Optional arguments](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments)
+
+They allow default values to be defined for parameters.
+
+```csharp
+public void ShowMessage(string msg = "Default message") {
+    Console.WriteLine(msg);
+}
+
+ShowMessage(); // Output: Default message
+ShowMessage("Hello!"); // Output: Hello!
+
+```
+
+### Methods with params
+
+Official Documentation: [Method parameters](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/method-parameters)
+
+They allow a variable number of arguments to be passed as an array.
+
+```csharp
+public int Sum(params int[] numbers) {
+    return numbers.Sum();
+}
+
+Sum(1, 2, 3, 4); // Output: 10
+```
+
+### Methods with ref and out
+
+Official Documentation: [ref](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ref) and [out](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out)
+
+They allow variables to be passed by reference.
+
+ref: the variable must be initialized beforehand.
+
+out: the variable will be initialized inside the method.
+
+```csharp
+public void Double(ref int value) {
+    value *= 2;
+}
+
+public void GenerateNumber(out int number) {
+    number = 42;
+}
+
+```
+
+### Generic method
+
+Official Documentation: [Generic methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/generic-methods)
+
+It allows working with parameterized types.
+
+```csharp
+public T ReturnValue<T>(T value) {
+    return value;
+}
+
+int x = ReturnValue<int>(10); // Output: 10
+string s = ReturnValue<string>("test"); // Output: test
+```
+
+### Asynchronous method (async)
+
+Official Documentation: [Asynchronous programming](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/)
+
+It runs asynchronous operations with await.
+
+```csharp
+public async Task<string> FetchDataAsync() {
+    await Task.Delay(1000);
+    return "Data received";
+}
+```
+
+### Lambda methods (Anonymous Function)
+
+Official Documentation: [Lambda Expressions](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/lambda-expressions)
+
+Inline functions that can be assigned to delegates or used in LINQ.
+
+```csharp
+Func<int, int> square = x => x * x;
+Console.WriteLine(square(5)); // Output: 25
+
+```
+
+### Extension method
+
+Official Documentation: [Extension Methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
+
+It allows adding methods to existing types without modifying the original code.
+
+```csharp
+public static class Extensions {
+    public static int Double(this int value) {
+        return value * 2;
+    }
+}
+
+int result = 5.Double(); // Output: 10
+```

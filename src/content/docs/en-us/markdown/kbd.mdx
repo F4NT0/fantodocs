@@ -1,0 +1,31 @@
+---
+title: Keyboard shortcut
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Kbd } from 'starlight-kbd/components'
+
+<Aside type="caution" title="Attention" icon="seti:markdown">
+    - This setup comes from a plugin called `starlight-kbd`.
+
+    ```js
+      npm i starlight-kbd
+    ```
+</Aside>
+
+
+## How to use
+
+First we need to import the kbd shortcut
+
+```js
+import { Kbd } from 'starlight-kbd/components'
+```
+
+Then we can use the following tag:
+
+```js
+Use <Kbd mac="Command+S" windows="Control+S" /> to get started.
+```
+
+Use <Kbd mac="Command+S" windows="Control+S" /> to get started.

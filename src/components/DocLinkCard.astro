@@ -1,0 +1,73 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const { href, title, description, icon } = Astro.props;
+const iconUrl = icon.startsWith('/') || icon.startsWith('http')
+  ? icon
+  : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`;
+---
+
+<a class="doc-card" href={href}>
+  <img class="doc-card-icon" src={iconUrl} alt="" width="48" height="48" />
+  <div class="doc-card-content">
+    <strong class="doc-card-title">{title}</strong>
+    <span class="doc-card-description">{description}</span>
+  </div>
+</a>
+
+<style>
+  :global(.doc-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .doc-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 12px;
+    background: var(--sl-color-bg-nav);
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .doc-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--sl-color-accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .doc-card-icon {
+    flex-shrink: 0;
+    margin: 0 !important;
+  }
+
+  .doc-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .doc-card-title {
+    font-size: 1.2rem;
+    color: var(--sl-color-white);
+  }
+
+  .doc-card-description {
+    font-size: 0.9rem;
+    color: var(--sl-color-gray-3);
+    line-height: 1.4;
+  }
+</style>

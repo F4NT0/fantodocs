@@ -1,0 +1,34 @@
+---
+title: Conditional - IF-ELSE
+description: Structure of an IF-ELSE
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:c-sharp">
+    - Used to make a decision
+    - <span style="color: orange">if</span> is the check; it validates a set of logical operators.
+    - If the logical check is <span style="color: magenta">true</span>, it runs a set of inner commands.
+    - If the logical check is <span style="color: magenta">false</span>, it either jumps to another if or enters the else block, which is used when there are no other options.
+</Aside>
+
+Base structure:
+
+```csharp
+
+if (condition) 
+{
+    // Enters here if the condition is true
+}
+else if (anotherCondition)
+{
+    // Enters here if the first condition is false
+}
+else {
+    // Enters here if there are no more options
+}
+
+// NOTE: we can add as many else if blocks as we want
+
+```
+

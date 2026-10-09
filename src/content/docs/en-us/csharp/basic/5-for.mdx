@@ -1,0 +1,78 @@
+---
+title: Loop - FOR
+description: How to use FOR in C#
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:c-sharp">
+  - Visits each item within a set of items.
+  - The word <span style="color: magenta">for</span> is reserved.
+  - Runs a given operation several times.
+</Aside>
+
+
+## Base structure 
+
+- It has 3 parts:
+    - Counter
+    - Condition
+    - Increment
+
+Let's look at the following example:
+
+```csharp
+for (int i = 0 ; i <= 5 ; i++)
+```
+
+- `int i = 0` is the counter, starting at zero
+- `i <= 5` is the condition, which runs until the value reaches 5
+- `i++` is the increment, where the value of i goes up one by one
+
+Other examples:
+
+```csharp
+for (var i = 0 ; i <= 5 ; i++) // Counts from 0 to 5
+
+for (var i = 0 ; i < 5 ; i++) // Counts from 0 to 4
+
+for (var i = 5 ; i >= 0 ; i--) // Counts from 5 down to 0
+```
+
+Now the complete example of a For that prints the value of i
+
+```csharp
+for (int i = 0 ; i <= 5 ; i++)
+{
+    Console.WriteLine(i); // Every time it gets here it prints i
+}
+
+// OUTPUT: 
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+```
+
+## For each
+
+With arrays we can use a different kind of for called __foreach__, which lets us iterate over the values stored in an array
+
+Let's look at the following array:
+
+```csharp
+int[] numbers = { 10, 20, 30, 40 };
+```
+
+We want to work with the values inside this array. Instead of choosing a position, we can iterate over all of its values
+
+```csharp
+int[] numbers = { 10, 20, 30, 40 };
+
+foreach (int num in numbers)
+{
+    Console.WriteLine($"Number: {num}"); // prints every value
+}
+```

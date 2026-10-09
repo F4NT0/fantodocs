@@ -8,6 +8,8 @@ import starlightVideos from 'starlight-videos';
 import starlightKbd from 'starlight-kbd';
 import mermaid from 'astro-mermaid';
 
+const t = (pt, en) => ({ 'pt-BR': pt, 'pt-br': pt, 'en-US': en, 'en-us': en });
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://f4nt0.github.io',
@@ -29,7 +31,13 @@ export default defineConfig({
 		}),
 		starlight({
 			title: 'FantoDocs',
+      defaultLocale: 'pt-br',
+      locales: {
+        'pt-br': { label: 'PT-BR', lang: 'pt-BR' },
+        'en-us': { label: 'EN-US', lang: 'en-US' },
+      },
       pagination: false,
+      tableOfContents: false,
       customCss: ['./src/styles/custom.css'],
       components: {
         PageTitle: './src/components/PageTitle.astro',
@@ -54,140 +62,162 @@ export default defineConfig({
         starlightSidebarTopics(
           [
             {
-              label: 'Sobre mim',
-              link: '/pt-br/home-doc',
+              label: t('Introdução', 'Introduction'),
+              link: '/profile',
               icon: 'open-book',
               items: [
-                'pt-br/home-doc',
-                'pt-br/initial-page',
+                'profile',
+                'initial-page',
               ]
             },
             {
               label: 'Markdown',
-              link: '/pt-br/markdown/intro',
+              link: '/markdown/intro',
               icon: 'seti:markdown',
               items: [
-                'pt-br/markdown/notes',
-                'pt-br/markdown/badges',
-                'pt-br/markdown/mermaid',
-                'pt-br/markdown/linkcard',
-                'pt-br/markdown/filetree',
-                'pt-br/markdown/steps',
-                'pt-br/markdown/tabs',
-                'pt-br/markdown/code',
-                'pt-br/markdown/colors',
-                'pt-br/markdown/videos',
-                'pt-br/markdown/kbd',
-                'pt-br/markdown/latex',
-                'pt-br/markdown/unicode'],
+                'markdown/notes',
+                'markdown/badges',
+                'markdown/mermaid',
+                'markdown/linkcard',
+                'markdown/filetree',
+                'markdown/steps',
+                'markdown/tabs',
+                'markdown/code',
+                'markdown/colors',
+                'markdown/videos',
+                'markdown/kbd',
+                'markdown/latex',
+                'markdown/unicode'],
             },
             {
-              label: 'Estudos C#',
-              link: '/pt-br/csharp/intro', 
+              label: t('Estudos C#', 'C# Studies'),
+              link: '/csharp/intro', 
               icon: 'seti:c-sharp',
               items: [
                 {
                   label: 'Básico',
+                  translations: { 'en-US': 'Basic' },
                   items: [
-                    'pt-br/csharp/basic/intro',
-                    'pt-br/csharp/basic/1-data-types',
-                    'pt-br/csharp/basic/1-data-conversion',
-                    'pt-br/csharp/basic/2-operators',
-                    'pt-br/csharp/basic/3-ifelse',
-                    'pt-br/csharp/basic/4-switch',
-                    'pt-br/csharp/basic/5-for',
-                    'pt-br/csharp/basic/6-while',
-                    'pt-br/csharp/basic/7-do',
-                    'pt-br/csharp/basic/8-functions',
+                    'csharp/basic/intro',
+                    'csharp/basic/1-data-types',
+                    'csharp/basic/1-data-conversion',
+                    'csharp/basic/2-operators',
+                    'csharp/basic/3-ifelse',
+                    'csharp/basic/4-switch',
+                    'csharp/basic/5-for',
+                    'csharp/basic/6-while',
+                    'csharp/basic/7-do',
+                    'csharp/basic/8-functions',
                   ],
                 },
                 {
                   label: 'Orientação a Objetos',
+                  translations: { 'en-US': 'Object-Oriented Programming' },
                   items: [
-                    'pt-br/csharp/object_oriented/intro',
+                    'csharp/object_oriented/intro',
                   ],
                 },
                 {
                   label: 'Estrutura de Dados',
+                  translations: { 'en-US': 'Data Structures' },
                   items: [
-                    'pt-br/csharp/data_structures/intro',
+                    'csharp/data_structures/intro',
                   ],
                 },
                 {
                   label: 'Programação Funcional',
+                  translations: { 'en-US': 'Functional Programming' },
                   items: [
-                    'pt-br/csharp/functional/intro',
-                    'pt-br/csharp/functional/lambda',
+                    'csharp/functional/intro',
+                    'csharp/functional/lambda',
                   ],
                 },
                 {
                   label: 'SOLID',
                   items: [
-                    'pt-br/csharp/solid/intro',
+                    'csharp/solid/intro',
                   ],
                 },
                 {
                   label: 'Scripting',
+                  translations: { 'en-US': 'Scripting' },
                   items: [
-                    'pt-br/csharp/scripting/intro'
+                    'csharp/scripting/intro'
                   ],
                 },
               ],
             },
             {
-              label: 'Estudos .NET',
-              link: '/pt-br/dotnet/intro',
+              label: t('Estudos .NET', '.NET Studies'),
+              link: '/dotnet/intro',
               icon: 'seti:powershell',
               items: [
                 {
                   label: 'Sobre .NET',
+                  translations: { 'en-US': 'About .NET' },
                   items: [
-                    'pt-br/dotnet/knowledge/runtime',
+                    'dotnet/knowledge/runtime',
                   ],
                 },
                 {
                   label: 'Console Projects',
                   items: [
-                    'pt-br/dotnet/console-project/1-creating-project',
+                    'dotnet/console-project/1-creating-project',
                   ],
                 },
                 {
                   label: 'MinimalAPIs',
                   items: [
-                    'pt-br/dotnet/minimal-api/1-create-template',
+                    'dotnet/minimal-api/1-create-template',
                   ],
                 },
               ],
             },
             {
               label: 'Neovim IDE',
-              link: '/pt-br/neovim/intro',
+              link: '/neovim/intro',
               icon: 'vim',
-              badge: { text: 'Novo', variant: 'success' },
               items: [
                 {
                   label: 'Config Inicial',
+                  translations: { 'en-US': 'Initial Setup' },
                   items: [
-                    'pt-br/neovim/basic/install',
-                    'pt-br/neovim/basic/basic-config',
-                    'pt-br/neovim/basic/shortcuts',
+                    'neovim/basic/install',
+                    'neovim/basic/basic-config',
+                    'neovim/basic/shortcuts',
+                  ],
+                },
+              ],
+            },
+            {
+              label: t('Projetos', 'Projects'),
+              link: '/projects/intro',
+              icon: 'rocket',
+              badge: { text: t('Novo', 'New'), variant: 'caution' },
+              items: [
+                'projects/intro',
+                {
+                  label: 'clidocs',
+                  items: [
+                    'projects/clidocs/intro',
+                    'projects/clidocs/install',
                   ],
                 },
               ],
             },
             {
               label: 'Arch Linux',
-              link: '/pt-br/arch/intro',
+              link: '/arch/intro',
               icon: 'linux',
               items: [],
             },
             {
               label: 'AI',
-              link: '/pt-br/ai/intro',
+              link: '/ai/intro',
               icon: 'puzzle',
               items: [
-                'pt-br/ai/llms',
-                'pt-br/ai/prompt-eng'
+                'ai/llms',
+                'ai/prompt-eng'
               ],
             },
           ]),

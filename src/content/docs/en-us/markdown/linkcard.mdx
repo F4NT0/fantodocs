@@ -1,0 +1,38 @@
+---
+title: Link Buttons
+description: How to use LinkCards
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+# Link Buttons
+
+We can create a button using Starlight's `LinkCards` to link to external or internal sites.
+
+## Importing LinkCards
+
+We can import it in our .mdx files with the following import after the frontmatter:
+
+```js
+import { LinkCard } from '@astrojs/starlight/components';
+```
+
+## Example link button with description
+
+<br></br>
+
+<LinkCard
+  title="Official C# website"
+  href="https://learn.microsoft.com/en-us/dotnet/csharp/"
+  description="Official C# documentation from Microsoft."
+/>
+
+```js
+<LinkCard
+  title="Official C# website"
+  href="https://learn.microsoft.com/en-us/dotnet/csharp/"
+  description="Official C# documentation from Microsoft."
+/>
+```
+
+

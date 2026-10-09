@@ -1,0 +1,31 @@
+---
+title: Loop - DO
+description: How to use the DO structure
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:c-sharp">
+  - Checks the condition `AFTER` having run at least once.
+  - The words <span style="color: magenta">do while</span> are reserved.  
+</Aside>
+
+
+Basic example of a DO WHILE:
+
+```csharp title="DoWhile.cs"
+var value = 0;
+do
+{
+    Console.WriteLine(value);
+    value++;
+} while (value <= 5);
+
+// OUTPUT
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+```

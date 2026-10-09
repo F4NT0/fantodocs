@@ -1,0 +1,90 @@
+---
+title: Lambda Expression and Statement
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:c-sharp">
+    - <span style="color: orange">Lambda Expressions</span> are anonymous expressions that can be used to create delegates or expression trees.
+        - Syntax: `(input) => expression`
+        - Note: in this case the expression is a single line.
+ 
+ - <span style="color: orange">Lambda Statements</span> are lambdas with a block body, allowing multiple statements.
+    - Syntax: `(input) => { expression1, expression2 }`
+    - Note: don't forget to <span style="color: magenta">return</span> the final expression of the lambda statement.
+
+</Aside>
+
+## Standard array calculation
+
+We can take an array and add its values one by one inside a For loop, walking through each position and saving the result in an auxiliary variable, as in the example below:
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        var numbers = new int[] { 1, 2 , 3, 4, 5 };
+        var sum = 0;
+        for (var n = 0; n < numbers.Length; n++)
+        {
+            sum += numbers[n];
+            
+        }
+        Console.WriteLine(sum);
+    }
+}
+```
+
+The result of this calculation is <span style="color: orange">15</span>, as it keeps updating the value of the sum variable until the end of the numbers array.
+
+We can do the same calculation without the For structure, improving the performance of the project.
+
+## Using a C# Lambda Expression
+
+To use a lambda in code we use the <span style="orange"> => </span> symbol, which uses the named variables to control the flow of processing
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        var numbers = new int[] { 1, 2, 3, 4, 5 };
+        var sum = numbers.Aggregate(0, (total, num) => total + num);
+        Console.WriteLine(sum);
+    }
+}
+
+```
+
+In this code we use a method from the [LINQ](https://learn.microsoft.com/en-us/dotnet/csharp/linq/) extension to apply an accumulator function over a sequence. In other words, it takes the initial position and uses a lambda function to work with the following values.
+
+The <span style="color: orange">Aggregate</span> method belongs to the _System.Linq.Enumerable_ class and is a reduction operation that applies an accumulator function over a sequence of values, producing a single value.
+
+The <span style="color: orange">total</span> variable is created internally and updated at each iteration of the lambda, while the <span style="color: orange">num</span> variable takes the next value of the array, starting at position 0 defined at the beginning.
+
+## Using a C# Lambda Statement
+
+It is the same idea as the Lambda Expression, but here we open a new block where we can place more methods and other processes in an organized way, as in the following example:
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        var numbers = new int[] { 1, 2, 3, 4, 5 };
+        var sum = numbers.Aggregate(0, (total, num) => {
+            Console.WriteLine("total = {0}, num = {1}", total, num);
+            return total + num;
+        });
+    }
+}
+```
+
+This structure does the same as the C# lambda expression, but we can work with the created variables to perform validations or define whatever we want. In the end we must always <span style="color: orange">return</span> the desired values, unlike the single-line form, which gives us more control over the reading process.

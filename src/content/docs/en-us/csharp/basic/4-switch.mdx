@@ -1,0 +1,56 @@
+---
+title: Conditional - SWITCH
+description: Using Switch
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:c-sharp">
+    - When we have many decisions at once, it is time to use `switch`.
+    - Executed in a cascade, walking through each configured option.
+    - We must stop the execution with the `break` command.
+    - It has a default execution called `default`.
+</Aside>
+
+## Base structure
+
+```csharp
+
+switch(value)
+{
+    case option: doSomething; break;
+    //...
+    default: doSomethingDefault; break;
+}
+
+```
+
+## Basic example
+
+```csharp
+
+int value = 1;
+switch(value)
+{
+    case 1: Console.WriteLine("Value is 1"); break;
+    case 2: Console.WriteLine("Value is 2"); break;
+    case 3: Console.WriteLine("Value is 3"); break;
+    default: Console.WriteLine("Value is greater than 3"); break;
+}
+
+```
+
+We can use any type of data:
+
+```csharp
+
+string value = "Test";
+switch(value)
+{
+    case "John": Console.WriteLine("Value is John"); break;
+    case "Test": Console.WriteLine("Value is Test"); break;
+    case "Pope": Console.WriteLine("Value is Pope"); break;
+    default: Console.WriteLine("Unexpected value"); break;
+}
+
+```

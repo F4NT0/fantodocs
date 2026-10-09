@@ -1,0 +1,119 @@
+---
+title: Using tabs
+description: How to use tabs
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+# Using multiple code blocks in tabs
+
+We can show more than one piece of code or commands at the same time.
+
+## Importing tabs
+
+Always add the imports after the page frontmatter.
+
+We can use the following import to start using tabs:
+
+```js
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+```
+
+`Tabs` is the container that organizes how many tabs there will be.
+
+`TabItem` holds the data of one specific tab.
+
+## Example of using tabs
+
+<br></br>
+
+<Tabs>
+<TabItem label="launchSettings.json" icon="seti:json">
+```json
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5020",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7179;http://localhost:5020",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+```
+</TabItem>
+<TabItem label="appsettings.json" icon="seti:json">
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
+</TabItem>
+</Tabs>
+
+
+```js
+<Tabs>
+<TabItem label="launchSettings.json" icon="seti:json">
+//```json
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5020",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7179;http://localhost:5020",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+//``
+</TabItem>
+<TabItem label="appsettings.json" icon="seti:json">
+//```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+//``
+</TabItem>
+</Tabs>
+
+
+```

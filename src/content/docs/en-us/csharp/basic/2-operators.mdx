@@ -1,0 +1,177 @@
+---
+title: Operators
+description: Data operators
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:c-sharp">
+    - Operators are mathematical symbols for different processes in the language
+    - They are divided into the following kinds:
+        - <span style="color: orange">Arithmetic</span> → Mathematical calculations.
+        - <span style="color: orange">Assignment</span> → Reusing values for calculations.
+        - <span style="color: orange">Comparison</span> → Checks between values.
+        - <span style="color: orange">Conditional</span> → Boolean check between values (true or false).
+        - <span style="color: orange">Increment and Decrement</span> → Increase or decrease a value one step at a time.
+        - <span style="color: orange">Logical</span> → Logical check between values for a process.
+</Aside>
+
+
+
+## Arithmetic Operators
+
+---
+
+- **+** = Addition
+- **-** = Subtraction
+- `*` = Multiplication
+- **/** = Division
+- **%** = Remainder of the division
+
+```csharp
+
+int value = 2 + 2; // 4
+int value = 2 - 2; // 0
+int value = 2 * 2; // 4
+int value = 2 / 2; // 1
+int value = 2 % 2; // 0
+
+```
+
+## Assignment Operators
+
+---
+
+- **=** = Assigns a value
+- **+=** = Adds a new value to the current value
+- **-=** = Subtracts a new value from the current value
+- `*=` = Multiplies the current value by a new value
+- **/=** = Divides the current value by a new value
+
+```csharp
+
+int x = 0; // Assigns a value to a variable
+x += 5; // same as x = x + 5; and results in x = 5
+x -= 1; // same as x = x - 1; and results in x = 4 (5 - 1 = 4)
+x *= 10; // same as x = x * 10; and results in 40 (4 * 10 = 40)
+x /= 2; // same as x = x / 2; and results in 20 (40 / 2 = 20)
+
+```
+
+## Comparison Operators
+
+---
+
+Return boolean values
+
+- `==` = Equal to
+- `!=` = Not equal to
+- `>` = Greater than
+- `<` = Less than
+- `>=` = Greater than or equal to
+- `<=` = Less than or equal to
+
+```csharp
+
+5 == 5; // True
+4 != 3; // True
+4 != 4; // False
+6 > 5; // True
+4 < 5; // True
+4 <= 4; // True
+5 >= 3; // True
+
+```
+
+## Conditional Operators
+
+---
+
+The conditional operator is a one-line construct to check two values using the __?__ and __:__ operators, in the following structure:
+
+```csharp
+
+<condition> ? <if true, returns this value> : <if false, returns this value>
+
+```
+
+Let's look at the following example:
+
+```csharp
+
+int saleAmount = 1001;
+
+int discount = saleAmount > 1000 ? 100 : 50;
+
+```
+
+In the example above, if the value of __saleAmount__ is greater than 1000, the variable __discount__ receives 100; otherwise it receives 50.
+
+## Increment and Decrement Operators
+
+---
+
+→ We can change the value of a variable every time it is used
+
+In C#, as in any high-level language, we can change the value of a variable every time we use it in a process.
+
+| Symbol  | What it does      |
+| ------- | ----------------- |
+| **++**  | Increments by 1   |
+| **--**  | Decrements by 1   |
+
+- We can increment the value __before__ using the variable
+
+```csharp
+int x = 5;
+Console.WriteLine(++x); // 6
+```
+
+- We can increment the value __after__ using the variable
+
+```csharp
+int x = 5;
+Console.WriteLine(x++); // 5
+Console.WriteLine(x); // 6
+```
+
+- We can decrement the value __before__ using the variable
+
+```csharp
+int x = 5;
+Console.WriteLine(--x); // 4
+```
+
+- We can decrement the value __after__ using the variable
+
+```csharp
+
+int x = 5;
+Console.WriteLine(x--); // 5
+Console.WriteLine(x); // 4
+
+```
+
+## Logical Operators
+
+---
+
+Return boolean values
+
+Used for conditional operations
+
+- `&&` = Logical AND
+    - All conditions must be true
+- `||` = Logical OR
+    - At least one must be true
+- `!` = Logical NOT
+    - Negates the value: true becomes false and vice versa
+
+```csharp
+
+int x = 12;
+bool value = (x > 25) && (x < 40); // False
+bool value = (x > 25) || (x < 40); // True
+bool value = !(x > 25) && (x < 40); // True
+
+```

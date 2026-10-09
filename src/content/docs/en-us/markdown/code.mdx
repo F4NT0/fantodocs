@@ -1,0 +1,156 @@
+---
+title: Code and Commands
+description: How to use code and commands
+---
+
+# Using code and commands
+
+## Basic markdown structure
+
+<br></br>
+
+We can use the basic structure of a code block
+
+```csharp
+Console.WriteLine("Hello World!");
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block1.png?raw=true" alt="code-block1" width="400" /> 
+</td></tr></table>
+
+
+## Code with a title
+
+<br></br>
+
+We can add a title to our code block to reference a specific file.
+
+
+```csharp title="Program.cs"
+public void Main(){
+    Console.WriteLine("Test");
+}
+
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block2.png?raw=true" alt="code-block2" width="400" /> 
+</td></tr></table>
+
+## Terminal Frame
+
+<br></br>
+
+We can build a structure that resembles a terminal frame to show a specific terminal command.
+
+
+```bash title="Checking the version in the Terminal"
+    dotnet --version
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block3.png?raw=true" alt="code-block3" width="400" /> 
+</td></tr></table>
+
+## Adding Labels
+
+<br></br>
+
+We can add extra information to our code to help highlight things
+
+### Default highlight
+
+```csharp title="Highlight" {"ReadLine() saves the value entered by the user":4-5}
+// Value input waiting for the user
+
+Console.Write("Enter a value from 0 to 10: ");
+
+string input = Console.ReadLine();
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block4.png?raw=true" alt="code-block4" width="400" /> 
+</td></tr></table>
+
+### Deletion highlight
+
+We can show a specific value that was or should be removed:
+
+```csharp title="Delete" del={1}
+using System;
+
+namespace TestProcess
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //...
+        }
+    }
+}
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block5.png?raw=true" alt="code-block5" width="400" /> 
+</td></tr></table>
+
+
+### Insertion highlight
+
+We can show a specific value that was or should be added:
+
+```csharp title="Add" ins={3}
+using System;
+
+namespace TestProcess
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //...
+        }
+    }
+}
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block6.png?raw=true" alt="code-block6" width="400" /> 
+</td></tr></table>
+
+### Highlighting a specific word
+
+We can highlight a specific word in the text by placing it in a list.
+
+```csharp title="Defining Gets" mark="get"
+using System.ComponentModel.DataAnnotations;
+
+namespace MinimalAPI.Models
+{
+    public class Product 
+    {
+        public Product() { }
+
+        [Key]
+        public long Id { get; set; }
+        
+        [StringLength(50)]
+        [Required]
+        public required string Name { get; set; }
+
+        [Range(0, double.MaxValue)]
+        [Required]
+        public double Price { get; set; }
+    }
+}
+```
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/markdown/code-block7.png?raw=true" alt="code-block7" width="400" /> 
+</td></tr></table>
+
+
+
+

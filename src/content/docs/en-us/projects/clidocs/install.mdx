@@ -1,0 +1,97 @@
+---
+title: Installing clidocs
+description: How to install and test clidocs on Windows and Linux
+---
+
+import { Aside, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Requirements
+
+| Requirement | Purpose |
+|---|---|
+| **Windows 10 / 11 (64-bit)** | Supported OS |
+| **PowerShell 5.1+** | Built into Windows, used for file dialogs |
+| **Neovim (`nvim`)** | Editing snippets |
+| **Git** | GitHub sync |
+| **Windows Terminal (`wt`)** | Recommended, opens Neovim in a new tab |
+| **Nerd Font** (e.g. JetBrainsMono) | Folder icons |
+| **Go 1.24+** | Only to build from source |
+
+```powershell
+winget install Neovim.Neovim
+winget install Git.Git
+winget install Microsoft.WindowsTerminal
+```
+
+## Installation
+
+<Tabs>
+  <TabItem label="Windows">
+
+### Option A: installer (recommended)
+
+<Steps>
+1. Download `clidocs.exe` and `clidocs-install.exe` from the [releases page](https://github.com/F4NT0/clidocs/releases).
+2. Place both files in the same folder.
+3. Run the installer as **Administrator**:
+
+   ```powershell
+   .\clidocs-install.exe
+   ```
+
+4. Choose the installation folder and confirm. `clidocs` is added to the `PATH` automatically.
+5. Open a **new** terminal and run `clidocs`.
+</Steps>
+
+### Option B: build from source
+
+```powershell
+git clone https://github.com/F4NT0/clidocs.git
+cd clidocs
+go mod tidy
+go build -o clidocs.exe .
+.\clidocs.exe
+```
+
+  </TabItem>
+  <TabItem label="Linux">
+
+<Aside type="caution" title="Linux is not supported yet">
+
+clidocs relies on Windows APIs (for example `syscall.NewLazyDLL`, PowerShell and native file dialogs). Building with `GOOS=linux` fails. Today the project only runs on **Windows**.
+
+</Aside>
+
+On Linux, the alternative is to use **WSL 2** and run `clidocs.exe` from the Windows side. This page will be updated once native support exists.
+
+  </TabItem>
+</Tabs>
+
+## Testing the project
+
+After installing, open PowerShell and run:
+
+```powershell
+# Open the default folder (%USERPROFILE%\clidocs_snippets)
+clidocs
+
+# Use the current folder as the snippets root
+clidocs .
+
+# Open a specific folder
+clidocs C:\Users\You\my-snippets
+```
+
+A quick test run inside the app:
+
+<Steps>
+1. On the splash screen, press `Enter` to use the default folder.
+2. In the **Folders** panel, press `n` and create a folder.
+3. In the **Snippets** panel (`Tab`), press `n` and create a file, for example `test.go`.
+4. Press `Enter` to edit it in Neovim and save with `:wq`.
+5. Press `/` to search and `L` to toggle line numbers.
+6. Press `:` and type `help` to see the console commands.
+7. Press `q` to quit.
+</Steps>
+
+Snippets are stored in `%USERPROFILE%\clidocs_snippets\`.

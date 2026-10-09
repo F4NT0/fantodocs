@@ -247,3 +247,86 @@ html[data-theme='dark'] main .hero .actions a.sl-link-button:hover {
   }
 }
 
+
+/* Asides */
+.starlight-aside {
+  --aside-color: #3b82f6;
+  border: 1px solid color-mix(in srgb, var(--aside-color) 35%, transparent);
+  border-left: 4px solid var(--aside-color);
+  border-radius: 12px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--aside-color) 14%, var(--sl-color-bg)), color-mix(in srgb, var(--aside-color) 5%, var(--sl-color-bg)));
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  padding: 1rem 1.25rem;
+}
+.starlight-aside--note { --aside-color: #3b82f6; }
+.starlight-aside--tip { --aside-color: #10b981; }
+.starlight-aside--caution { --aside-color: #f59e0b; }
+.starlight-aside--danger { --aside-color: #ef4444; }
+.starlight-aside .starlight-aside__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--aside-color);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.starlight-aside .starlight-aside__title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--aside-color) 45%, transparent), transparent);
+}
+.starlight-aside .starlight-aside__icon { color: var(--aside-color); flex-shrink: 0; }
+.starlight-aside a { color: var(--aside-color); }
+
+/* Sidebar - softer palette */
+html[data-theme='dark'] .sidebar a,
+html[data-theme='dark'] .sidebar-content a {
+  color: #9db4a6;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+html[data-theme='dark'] .sidebar a:hover {
+  color: #d7f5e3;
+  background-color: rgba(74, 222, 128, 0.08);
+}
+html[data-theme='dark'] .sidebar a[aria-current='page'],
+html[data-theme='dark'] .sidebar a[aria-current='page']:hover {
+  background-color: rgba(74, 222, 128, 0.14) !important;
+  color: #86efac !important;
+  box-shadow: inset 3px 0 0 #4ade80;
+  font-weight: 600;
+}
+html[data-theme='dark'] .sidebar summary,
+html[data-theme='dark'] .sidebar .large {
+  color: #e6edf3;
+}
+html[data-theme='dark'] .sidebar-content details > summary .group-label span,
+html[data-theme='dark'] .sidebar-content summary span {
+  color: #e6edf3;
+}
+html[data-theme='dark'] .sidebar-content ul ul {
+  border-inline-start-color: rgba(74, 222, 128, 0.18);
+}
+
+/* 404 buttons */
+.notfound-actions { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem; }
+.notfound-btn {
+  --c: #fff;
+  padding: 0.8rem 1.6rem;
+  color: var(--c) !important;
+  font-weight: 700;
+  text-decoration: none !important;
+  background: rgba(7, 9, 10, 0.85);
+  border: 2px solid var(--c);
+  border-radius: 14px;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--c) 40%, transparent);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.notfound-red { --c: #ff3b3b; }
+.notfound-blue { --c: #3b82f6; }
+.notfound-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: color-mix(in srgb, var(--c) 14%, #07090a);
+  box-shadow: 0 0 24px var(--c);
+}

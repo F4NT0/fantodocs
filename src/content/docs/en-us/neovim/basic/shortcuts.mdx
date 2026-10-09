@@ -1,0 +1,283 @@
+---
+title: Keyboard shortcuts
+description: All the shortcuts configured in my Neovim
+---
+
+import { Kbd } from 'starlight-kbd/components'
+
+All the shortcuts below are configured in the [F4NT0/nvim](https://github.com/F4NT0/nvim) repository.
+
+The `<leader>` key is mapped to <Kbd windows="Space" />, so `Space H S` means pressing **Space**, then **H**, then **S**, one key at a time.
+
+Inside Neovim itself you can see this list with the `:Khelp` command.
+
+## Global shortcuts
+
+Shortcuts that do not belong to a specific plugin: window navigation, resizing, and visual editing.
+
+- **Configuration:** [`lua/config/keymaps.lua`](https://github.com/F4NT0/nvim/blob/main/lua/config/keymaps.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Esc" /> | Clears the highlight from the last search |
+| <Kbd windows="Ctrl+H" /> | Moves the cursor to the left window |
+| <Kbd windows="Ctrl+J" /> | Moves the cursor to the window below |
+| <Kbd windows="Ctrl+K" /> | Moves the cursor to the window above |
+| <Kbd windows="Ctrl+Right" /> | Increases the window width |
+| <Kbd windows="Ctrl+Left" /> | Decreases the window width |
+| <Kbd windows="Ctrl+Up" /> | Increases the window height |
+| <Kbd windows="Ctrl+Down" /> | Decreases the window height |
+| <Kbd windows=">" /> (visual mode) | Indents while keeping the selection |
+| <Kbd windows="<" /> (visual mode) | Removes indentation while keeping the selection |
+| <Kbd windows="J" /> (visual mode) | Moves the selected lines down |
+| <Kbd windows="K" /> (visual mode) | Moves the selected lines up |
+
+## Barbar
+
+Tab bar for open buffers, with pinned tabs and quick navigation.
+
+- **Plugin:** [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)
+- **Configuration:** [`lua/plugins/interface/barbar.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/interface/barbar.lua) and the shortcuts in [`lua/config/keymaps.lua`](https://github.com/F4NT0/nvim/blob/main/lua/config/keymaps.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Alt+," /> | Goes to the previous tab |
+| <Kbd windows="Alt+." /> | Goes to the next tab |
+| <Kbd windows="Alt+<" /> | Moves the current tab one position to the left |
+| <Kbd windows="Alt+>" /> | Moves the current tab one position to the right |
+| <Kbd windows="Alt+1" /> to <Kbd windows="Alt+6" /> | Jumps straight to tab 1 through 6 |
+| <Kbd windows="Alt+P" /> | Pins the current tab |
+| <Kbd windows="Alt+C" /> | Closes the current tab |
+
+## LazyGit
+
+Terminal interface for Git, opened inside a floating window.
+
+- **Plugin:** [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
+- **Configuration:** [`lua/plugins/git-manager/lazygit.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/git-manager/lazygit.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Ctrl+L" /> | Opens LazyGit in a floating window |
+
+## Neo-tree
+
+Tree-style file explorer, opened on the left side of the screen.
+
+- **Plugin:** [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- **Configuration:** [`lua/plugins/interface/neotree.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/interface/neotree.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Ctrl+F" /> | Opens the file explorer |
+| <Kbd windows="Ctrl+X" /> | Closes the file explorer |
+
+## Telescope
+
+Fuzzy search for files and for content inside the project.
+
+- **Plugin:** [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- **Configuration:** [`lua/plugins/interface/telescope.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/interface/telescope.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Ctrl+Q" /> | Searches for files in the project |
+| <Kbd windows="Ctrl+S" /> | Searches for text inside the files (live grep) |
+
+## ToggleTerm
+
+Floating terminal, plus a separate terminal for running .NET projects.
+
+- **Plugin:** [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+- **Configuration:** [`lua/plugins/interface/terminal.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/interface/terminal.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Ctrl+T" /> | Opens or closes the floating terminal |
+| <Kbd windows="Space C T" /> | Closes the default terminal |
+| <Kbd windows="Space D" /> | Runs `dotnet run` on the current C# file or project |
+| <Kbd windows="Space X" /> | Closes the .NET terminal |
+
+## Shortcut help (nui)
+
+UI library used to open this shortcut manual inside Neovim.
+
+- **Plugin:** [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim)
+- **Configuration:** [`lua/plugins/interface/helper.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/interface/helper.lua)
+
+| Command | Description |
+| --- | --- |
+| `:Khelp` | Opens the shortcut manual in a floating window |
+
+## Treesitter
+
+Syntax highlighting and incremental selection based on the structure of the code.
+
+- **Plugin:** [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- **Configuration:** [`lua/plugins/interface/treesitter.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/interface/treesitter.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Ctrl+Space" /> | Starts the selection and expands it to the next code block |
+
+## nvim-surround
+
+Adds, removes, and changes delimiters (parentheses, quotes, HTML tags) around text.
+
+- **Plugin:** [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
+- **Configuration:** [`lua/plugins/programming/nvim-surround.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/programming/nvim-surround.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="y s i w )" /> | Wraps the word in parentheses: `word` becomes `(word)` |
+| <Kbd windows='y s $ "' /> | Wraps text in quotes until the end of the line: `some text` becomes `"some text"` |
+| <Kbd windows="d s ]" /> | Removes the surrounding brackets: `[delete]` becomes `delete` |
+| <Kbd windows="d s t" /> | Removes the HTML tag around the text |
+| <Kbd windows="d s f" /> | Removes the surrounding function call: `call(arg)` becomes `arg` |
+| <Kbd windows={"c s ' \""} /> | Changes single quotes to double quotes: `'word'` becomes `"word"` |
+| <Kbd windows="c s t h 1 Enter" /> | Changes the HTML tag to an `h1` |
+
+## Comment.nvim
+
+Comments and uncomments lines and code blocks according to the file's language.
+
+- **Plugin:** [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
+- **Configuration:** [`lua/plugins/programming/comment.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/programming/comment.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="g c c" /> | Comments or uncomments the current line |
+| <Kbd windows="g b c" /> | Comments or uncomments the current block |
+| <Kbd windows="g c o" /> | Inserts a comment on the line below |
+| <Kbd windows="g c O" /> | Inserts a comment on the line above |
+| <Kbd windows="g c A" /> | Inserts a comment at the end of the current line |
+
+## nvim-cmp
+
+Autocompletion with suggestions from the LSP, the buffer, paths, and snippets.
+
+- **Plugin:** [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- **Configuration:** [`lua/plugins/programming/cmp.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/programming/cmp.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Ctrl+K" /> | Selects the previous suggestion |
+| <Kbd windows="Ctrl+J" /> | Selects the next suggestion |
+| <Kbd windows="Ctrl+B" /> | Scrolls the documentation up |
+| <Kbd windows="Ctrl+F" /> | Scrolls the documentation down |
+| <Kbd windows="Ctrl+Space" /> | Opens the suggestions manually |
+| <Kbd windows="Ctrl+E" /> | Cancels the autocompletion |
+| <Kbd windows="Enter" /> | Confirms the selected suggestion |
+
+## todo-comments
+
+Highlights comments such as `TODO`, `FIX`, `HACK`, `WARN`, `PERF`, and `NOTE` and lists all of them in the project.
+
+- **Plugin:** [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+- **Configuration:** [`lua/plugins/programming/todo-comments.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/programming/todo-comments.lua) and the shortcut in [`lua/config/keymaps.lua`](https://github.com/F4NT0/nvim/blob/main/lua/config/keymaps.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Space T D" /> | Lists all TODO, FIX, HACK, WARN, PERF, and NOTE comments |
+| `:TodoQuickFix` | Shows the same list in the quickfix window |
+
+## Gitsigns
+
+Shows Git changes in the side of the file and lets you work with each changed chunk (hunk).
+
+- **Plugin:** [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- **Configuration:** [`lua/plugins/git-manager/gitsigns.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/git-manager/gitsigns.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Space H S" /> | Stages the current hunk |
+| <Kbd windows="Space H R" /> | Resets the current hunk |
+| <Kbd windows="Space H Shift+S" /> | Stages all hunks in the file |
+| <Kbd windows="Space H Shift+R" /> | Resets all hunks in the file |
+| <Kbd windows="Space H P" /> | Shows a preview of the hunk under the cursor |
+| <Kbd windows="Space H B" /> | Shows the author of the current line (blame) |
+| <Kbd windows="] c" /> | Goes to the next changed hunk |
+| <Kbd windows="[ c" /> | Goes to the previous changed hunk |
+
+## LSP
+
+Language Server client, responsible for code navigation, renaming, and diagnostics.
+
+- **Plugin:** [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- **Configuration:** [`lua/plugins/lsp/nvim-lspconfig.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/lsp/nvim-lspconfig.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Space C H" /> | Shows the documentation under the cursor (hover) |
+| <Kbd windows="Space C D" /> | Goes to the definition |
+| <Kbd windows="Space C Shift+D" /> | Goes to the declaration |
+| <Kbd windows="Space C R" /> | Lists the references |
+| <Kbd windows="Space C I" /> | Lists the implementations |
+| <Kbd windows="Space C Shift+R" /> | Renames the symbol |
+| <Kbd windows="Space C A" /> | Shows the available code actions |
+| <Kbd windows="Space C F" /> | Formats the current file |
+| <Kbd windows="Space S D" /> | Shows the diagnostic under the cursor |
+| <Kbd windows="Space D L" /> | Sends all diagnostics to the location list |
+
+## nvim-dap
+
+Debugger with a visual interface for breakpoints and step-by-step execution.
+
+- **Plugin:** [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
+- **Configuration:** [`lua/plugins/lsp/nvim-dap.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/lsp/nvim-dap.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Space D T" /> | Toggles a breakpoint |
+| <Kbd windows="Space D S" /> | Starts the session or continues execution |
+| <Kbd windows="Space D C" /> | Closes the dap-ui panels |
+| <Kbd windows="Space D O" /> | Runs the line and steps over functions (step over) |
+| <Kbd windows="Space D I" /> | Steps into the function (step into) |
+| <Kbd windows="Space D U" /> | Steps out of the function (step out) |
+
+## easy-dotnet
+
+.NET CLI commands straight from Neovim, such as run, test, build, and managing secrets.
+
+- **Plugin:** [GustavEikaas/easy-dotnet.nvim](https://github.com/GustavEikaas/easy-dotnet.nvim)
+- **Configuration:** [`lua/plugins/programming/easy-dotnet.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/programming/easy-dotnet.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Space N D" /> | Runs `dotnet run` |
+| <Kbd windows="Space N T" /> | Runs `dotnet test` |
+| <Kbd windows="Space N B" /> | Runs `dotnet build` |
+| <Kbd windows="Space N R" /> | Runs `dotnet restore` |
+| <Kbd windows="Space N S" /> | Opens the user secrets manager |
+
+## neotest
+
+Runs tests straight from the editor and shows the results in a panel.
+
+- **Plugin:** [nvim-neotest/neotest](https://github.com/nvim-neotest/neotest)
+- **Configuration:** [`lua/plugins/programming/neotest.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/programming/neotest.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Space T N" /> | Runs the test nearest to the cursor |
+| <Kbd windows="Space T F" /> | Runs all tests in the current file |
+| <Kbd windows="Space T A" /> | Runs all tests in the project |
+| <Kbd windows="Space T S" /> | Shows or hides the test summary panel |
+| <Kbd windows="Space T O" /> | Opens the output of the last test |
+
+## leetcode.nvim
+
+Solve LeetCode problems without leaving Neovim.
+
+- **Plugin:** [kawre/leetcode.nvim](https://github.com/kawre/leetcode.nvim)
+- **Configuration:** [`lua/plugins/programming/leetcode.lua`](https://github.com/F4NT0/nvim/blob/main/lua/plugins/programming/leetcode.lua)
+
+| Command | Description |
+| --- | --- |
+| <Kbd windows="Space L L" /> | Opens the main menu (`:Leet menu`) |
+| <Kbd windows="Space L D" /> | Opens the question of the day |
+| <Kbd windows="Space L R" /> | Opens a random question |
+| <Kbd windows="Space L P" /> | Opens the problem list (`:Leet list`) |
+| <Kbd windows="Space L T" /> | Runs the current solution against the test cases |
+| <Kbd windows="Space L S" /> | Submits the current solution |
+

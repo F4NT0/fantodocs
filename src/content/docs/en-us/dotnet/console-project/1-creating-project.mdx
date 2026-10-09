@@ -1,0 +1,124 @@
+---
+title: Creating a console project
+---
+import { FileTree } from '@astrojs/starlight/components';
+
+# What is a console project
+
+Console projects are simple .NET projects used to create examples or small pieces of code to validate some piece of information or need.
+
+We can create as many console projects as we like, and they are quite simple. I will explain each file and what it is for.
+
+## Creating a console project using the .NET CLI
+
+If you have the .NET compiler installed on your computer, you can create a project straight from your console. First, check which version of .NET you have installed.
+
+```bash title="Checking the .NET version in the terminal"
+dotnet --version
+```
+
+Now we can create an initial project template with the following command, and I will show the generated files:
+
+```bash title="Creating a console project called MyApp"
+dotnet new console -n MyApp
+```
+
+When we run this command, it creates the following files in a directory:
+
+<FileTree>
+
+- MyApp/
+    - MyApp.csproj
+    - Program.cs
+    - appsettings.Development.json
+    - appsettings.json
+
+</FileTree>
+
+A short description of each file:
+
+- <span style="color: orange">MyApp.csproj</span>
+    - XML file
+    - Defines which files are part of the build
+    - Manages dependencies (NuGet packages, references, etc.)
+    - Configures the build (.NET version, output type, etc.)
+    - Integrates with tools (dotnet CLI)
+    - NOTE: without this file, .NET would not know how to build or run the project.
+- <span style="color: orange">Program.cs</span>
+    - C# file with the startup code of our project, including Main().
+    - This is the entry point for our project's configuration. We can create multiple C# files with whatever we need and connect them in this file so they start when the project starts.
+- <span style="color: orange">appsettings.json</span>
+    - A JSON file holding the necessary settings in a structured way.
+    - Used for RabbitMQ settings, logs, database connections, etc.
+    - Contains all the settings needed for external projects or programs the application depends on.
+
+## Creating a console project with Visual Studio 2022
+
+### Visual Studio 2022 start page
+
+When you open Visual Studio 2022, it shows the most recently opened projects.
+
+On the same page there is the <span style="color: orange">Create new project</span> option, which takes us through a set of pages to create our project.
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/console-project/vs-createproject/1-mainstartpage.png?raw=true" alt="Visual Studio main page" width="800" /> 
+</td></tr></table>
+
+### List of project types
+
+Visual Studio 2022 shows a list of the project types we can create.
+
+In this case we must choose the <span style="color: orange">Console App</span> option and click Next to go to the following steps
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/console-project/vs-createproject/2-consoleappstart.png?raw=true" alt="List of project options" width="800" /> 
+</td></tr></table>
+
+### Define the project name and Solution name
+
+A <span style="color: orange">Solution</span> is a file that manages all connected projects. We use this file, with the <span style="color: orange">.sln</span> extension, to define how multiple projects are managed together. I will explain this file later, both in the console and in Visual Studio 2022.
+
+Now let's define the name of our console project; the solution file will get the same name.
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/console-project/vs-createproject/3-definenamelocation.png?raw=true" alt="Project name definition" width="800" /> 
+</td></tr></table>
+
+### Defining the project version
+
+Now we simply choose which version of .NET we want to use. In my case I use .NET 8.
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/console-project/vs-createproject/4-definedotnetversion.png?raw=true" alt="Define .net version" width="800" /> 
+</td></tr></table>
+
+### After creation in Visual Studio 2022
+
+When created through Visual Studio, our project is opened through the Solution, so the `.csproj` file is not shown: it was read and is displayed in our IDE by the <span style="color: orange">Solution Explorer</span> under the project name.
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/console-project/vs-createproject/5-solutionexplorer.png?raw=true" alt="Solution Explorer" width="800" /> 
+</td></tr></table>
+
+If we click on the name <span style="color: orange">MyApp</span>, it shows the contents of the <span style="color: orange">MyApp.csproj</span> file, which holds the configuration and the NuGet dependencies of the project.
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/console-project/vs-createproject/6-explaincsproj.png?raw=true" alt="csproj into visual studio" width="800" /> 
+</td></tr></table>
+
+If we click on <span style="color: orange">Program.cs</span>, we see the basic code automatically generated by Visual Studio so we can test the project build.
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/console-project/vs-createproject/7-explainprogramcs.png?raw=true" alt="Program in Visual Studio" width="800" />
+</td></tr></table>
+
+
+
+
+
+
+
+
+
+In the next step, I will show how to set up a solution and test projects.
+

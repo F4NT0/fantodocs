@@ -1,0 +1,97 @@
+---
+title: Instalando o clidocs
+description: Como instalar e testar o clidocs no Windows e no Linux
+---
+
+import { Aside, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Requisitos
+
+| Requisito | Para que serve |
+|---|---|
+| **Windows 10 / 11 (64 bits)** | Sistema suportado |
+| **PowerShell 5.1+** | Já vem no Windows, usado nos diálogos de arquivo |
+| **Neovim (`nvim`)** | Editar snippets |
+| **Git** | Sincronização com o GitHub |
+| **Windows Terminal (`wt`)** | Recomendado, abre o Neovim em uma nova aba |
+| **Nerd Font** (ex.: JetBrainsMono) | Ícones das pastas |
+| **Go 1.24+** | Somente para compilar do código-fonte |
+
+```powershell
+winget install Neovim.Neovim
+winget install Git.Git
+winget install Microsoft.WindowsTerminal
+```
+
+## Instalação
+
+<Tabs>
+  <TabItem label="Windows">
+
+### Opção A: instalador (recomendado)
+
+<Steps>
+1. Baixe `clidocs.exe` e `clidocs-install.exe` na [página de releases](https://github.com/F4NT0/clidocs/releases).
+2. Coloque os dois arquivos na mesma pasta.
+3. Execute o instalador como **Administrador**:
+
+   ```powershell
+   .\clidocs-install.exe
+   ```
+
+4. Escolha a pasta de instalação e confirme. O `clidocs` é adicionado ao `PATH` automaticamente.
+5. Abra um **novo** terminal e execute `clidocs`.
+</Steps>
+
+### Opção B: compilar do código-fonte
+
+```powershell
+git clone https://github.com/F4NT0/clidocs.git
+cd clidocs
+go mod tidy
+go build -o clidocs.exe .
+.\clidocs.exe
+```
+
+  </TabItem>
+  <TabItem label="Linux">
+
+<Aside type="caution" title="Linux ainda não é suportado">
+
+O clidocs usa APIs do Windows (por exemplo `syscall.NewLazyDLL`, PowerShell e diálogos nativos de arquivo). Ao compilar com `GOOS=linux`, o build falha. Hoje o projeto só roda no **Windows**.
+
+</Aside>
+
+No Linux, a alternativa é usar o **WSL 2** e executar o `clidocs.exe` pelo lado do Windows. Quando houver suporte nativo, esta página será atualizada.
+
+  </TabItem>
+</Tabs>
+
+## Testando o projeto
+
+Depois de instalar, abra o PowerShell e execute:
+
+```powershell
+# Abre a pasta padrão (%USERPROFILE%\clidocs_snippets)
+clidocs
+
+# Abre a pasta atual como raiz dos snippets
+clidocs .
+
+# Abre uma pasta específica
+clidocs C:\Users\Voce\meus-snippets
+```
+
+Um roteiro rápido de teste dentro do programa:
+
+<Steps>
+1. Na tela inicial, pressione `Enter` para usar a pasta padrão.
+2. No painel **Folders**, pressione `n` e crie uma pasta.
+3. No painel **Snippets** (`Tab`), pressione `n` e crie um arquivo, por exemplo `teste.go`.
+4. Pressione `Enter` para editar no Neovim e salve com `:wq`.
+5. Pressione `/` para buscar e `L` para mostrar os números de linha.
+6. Pressione `:` e digite `help` para ver os comandos do console.
+7. Pressione `q` para sair.
+</Steps>
+
+Os snippets ficam salvos em `%USERPROFILE%\clidocs_snippets\`.

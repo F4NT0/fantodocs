@@ -1,0 +1,47 @@
+---
+title: File structure
+description: How to show a file structure
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+# Using Starlight's FileTree
+
+We can show a project's file structure on the site using Starlight's `FileTree`.
+
+## Importing FileTree
+
+We add the following import after the frontmatter of the .mdx file:
+
+```js
+import { FileTree } from '@astrojs/starlight/components';
+```
+
+## FileTree example
+
+<FileTree>
+
+- Properties/
+    - launchSettings.json
+- obj/
+- Program.cs
+- MinimalProject.csproj
+- appsettings.Development.json
+- appsettings.json
+
+</FileTree>
+
+```js
+<FileTree>
+
+- Properties/
+    - launchSettings.json
+- obj/
+- Program.cs
+- MinimalProject.csproj
+- appsettings.Development.json
+- appsettings.json
+
+</FileTree>
+
+```

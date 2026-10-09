@@ -1,0 +1,40 @@
+---
+title: Adding Videos
+description: How to add videos to the site
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { VideoPlayer } from 'starlight-videos/components'
+
+<Aside type="caution" title="Attention" icon="seti:markdown">
+    - This setup comes from a plugin called `starlight-videos`.
+    - Initial documentation is at [https://starlight-videos.netlify.app/](https://starlight-videos.netlify.app/).
+    - [Official Repository](https://github.com/HiDeoo/starlight-videos).
+
+    ```js
+      npm i starlight-videos
+    ```
+</Aside>
+
+
+## How to add videos to the site
+
+- Import the `VideoPlayer` component in your page:
+
+```js
+import { VideoPlayer } from 'starlight-videos/components'
+```
+
+- Add the video to the site:
+
+<VideoPlayer link="https://youtu.be/zwxll667cwM"/>
+
+- This is the tag to add a standalone video like this:
+
+```js
+<VideoPlayer link="https://youtu.be/zwxll667cwM"/>
+```
+## Placing a video at the top of the page
+
+
+

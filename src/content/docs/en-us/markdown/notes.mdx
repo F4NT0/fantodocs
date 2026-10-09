@@ -1,0 +1,124 @@
+---
+title: Custom Notes
+description: Examples of notes
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+# Using Asides
+
+Asides is a component we can use to create custom notes.
+
+I use Asides to present important information.
+
+## Importing Asides in the mdx file
+<br></br>
+
+After the frontmatter of the mdx file, add the following import:
+
+```js
+import { Aside } from '@astrojs/starlight/components';
+```
+
+## Creating notes with custom titles
+
+<br></br>
+
+<Aside type="note" title="Note">
+  This is a note with a custom title.
+</Aside>
+
+```js
+<Aside type="note" title="Note">
+  This is a note with a custom title.
+</Aside>
+
+```
+
+<Aside type="tip" title="Tip">
+  This is a tip with a custom title.
+</Aside>
+
+```js
+<Aside type="tip" title="Tip">
+  This is a tip with a custom title.
+</Aside>
+```
+
+<Aside type="caution" title="Attention!">
+  This is a caution with a custom title.
+</Aside>
+
+```js
+<Aside type="caution" title="Attention!">
+  This is a caution with a custom title.
+</Aside>
+```
+
+<Aside type="danger" title="Danger!">
+  This is a danger with a custom title.
+</Aside>
+
+```js
+<Aside type="danger" title="Danger!">
+  This is a danger with a custom title.
+</Aside>
+```
+
+## Adding code
+
+<br></br>
+
+We can add code and other markdown details inside an Aside.
+
+<Aside type="caution" title="Attention!">
+  We can add code and other details using the following structure:
+
+  ```js
+  import { Aside } from '@astrojs/starlight/components';  
+  ```
+
+  We can also `highlight` a piece of information. 
+
+  We can add [Links]() and <span style="color: red">Highlight</span> information.
+</Aside>
+
+```js
+<Aside type="caution" title="Attention!">
+  We can add code and other details using the following structure:
+  
+  //put the ```js here  
+  import { Aside } from '@astrojs/starlight/components';  
+  //put the 3 closing backticks here
+  
+  We can also `highlight` a piece of information. 
+
+  We can add [Links]() and <span style="color: red">Highlight</span> information.
+</Aside>
+
+```
+
+## Adding custom icons
+
+<br></br>
+
+We can use custom icons available in Starlight
+
+<Aside type="note" title="Tip!" icon="seti:c-sharp">
+    This is an example of a tip for C# code.
+
+    ```csharp
+    Console.WriteLine("Hello World");
+    ```
+</Aside>
+
+```js
+<Aside type="note" title="Tip!" icon="seti:c-sharp">
+    This is an example of a tip for C# code.
+
+    //```csharp
+    Console.WriteLine("Hello World");
+    //``
+</Aside>
+
+```

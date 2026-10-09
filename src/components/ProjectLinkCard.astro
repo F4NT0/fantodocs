@@ -5,9 +5,12 @@ interface Props {
   language: string;
   languageIcon?: string;
   color?: string;
+  subtitle?: string;
+  type?: string;
+  typeColor?: string;
 }
 
-const { href, title, language, languageIcon, color = '#86efac' } = Astro.props;
+const { href, title, language, languageIcon, color = '#86efac', subtitle, type, typeColor = '#86efac' } = Astro.props;
 const iconUrl = languageIcon && (languageIcon.startsWith('/') || languageIcon.startsWith('http')
   ? languageIcon
   : `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${languageIcon}/${languageIcon}-original.svg`);
@@ -15,8 +18,12 @@ const iconUrl = languageIcon && (languageIcon.startsWith('/') || languageIcon.st
 
 <a class="project-card" href={href}>
   {iconUrl && <img class="project-card-icon" src={iconUrl} alt="" width="28" height="28" />}
-  <strong class="project-card-title">{title}</strong>
+  <div class="project-card-text">
+    <strong class="project-card-title">{title}</strong>
+    {subtitle && <span class="project-card-subtitle">{subtitle}</span>}
+  </div>
   <span class="project-card-badge" style={`--badge-color: ${color}`}>{language}</span>
+  {type && <span class="project-card-badge" style={`--badge-color: ${typeColor}`}>{type}</span>}
 </a>
 
 <style>
@@ -42,8 +49,19 @@ const iconUrl = languageIcon && (languageIcon.startsWith('/') || languageIcon.st
     margin: 0 !important;
   }
 
-  .project-card-title {
+  .project-card-text {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .project-card-subtitle {
+    font-size: 0.8rem;
+    color: var(--sl-color-gray-3);
+  }
+
+  .project-card-title {
     font-size: 1.15rem;
     color: var(--sl-color-white);
   }

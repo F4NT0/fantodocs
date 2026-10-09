@@ -1,0 +1,177 @@
+---
+title: 1. Generating the template
+description: How to create a MinimalAPI from the Terminal or Visual Studio
+---
+import { Steps } from '@astrojs/starlight/components'
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+import { Aside } from '@astrojs/starlight/components';
+
+<span style="color: orange">MinimalAPI</span> is a new request structure for REST APIs introduced in .NET 8 that helps us create REST APIs faster using a simple but efficient implementation.
+
+This new structure helps build REST APIs in .NET more quickly for a microservices architecture, reducing the need for a heavier structure for simple processes.
+
+
+<Aside type="caution" title="Attention!" icon="seti:c-sharp">
+    - Make sure you have .NET 8 or later installed.
+    - Check your dotnet version with `dotnet --version`.
+    - To install it, visit the [Official Website](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+</Aside>
+
+
+## Creating from the Terminal
+
+<br></br>
+
+<Steps>
+
+1. Check your .NET version with the following command:
+
+    ```bash title="Checking the version in the Terminal"
+    dotnet --version
+    ```
+
+2. Run the following command in your terminal:
+
+    ```bash title="Creating a MinimalAPI project template"
+    dotnet new web -n MinimalProject
+    ```
+
+3. Enter the newly created template:
+
+    ```bash title="Entering the project directory"
+    cd MinimalProject
+    ```
+
+</Steps>
+
+## Creating from Visual Studio 2022
+
+<br></br>
+
+<Steps>
+
+1. Start Visual Studio without opening a project and click `Create a new project`
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/minimal-api/1-generate-template/1-abrir-visual-studio.png?raw=true"/>
+2. Select the `ASP.NET Core Empty` project type
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/minimal-api/1-generate-template/2-criar-projeto-minimal.png?raw=true"/>
+3. Configure your project name and solution name
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/minimal-api/1-generate-template/3-configure-nome-local.png?raw=true"/>
+4. Choose the .NET version, preferably version 8 or later
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/minimal-api/1-generate-template/4-define-dotnet-8.png?raw=true"/>
+5. It will be created automatically and show the `home page` and its files on the right
+    <img src="https://github.com/F4NT0/fantodocs/blob/main/public/dotnet/minimal-api/1-generate-template/5-home-page.png?raw=true"/>
+
+</Steps>
+
+
+## File organization
+
+<br></br>
+
+The `dotnet new web` command creates a template project with an example route, defined in the `Program.cs` file.
+
+Inside the directory you will find the following structure:
+
+import { FileTree } from '@astrojs/starlight/components'
+
+<FileTree>
+
+- Properties/
+    - launchSettings.json
+- obj/
+- Program.cs
+- MinimalProject.csproj
+- appsettings.Development.json
+- appsettings.json
+
+</FileTree>
+
+A bit of information about each file:
+
+- <span style="color: orange">properties/launchSettings.json</span> &#8594; Used in .NET Core to configure how the project starts during development (when we run the project in Visual Studio or with the `dotnet run` command in the terminal).
+- <span style="color: orange">obj/</span> &#8594; A directory generated automatically by .NET during the project build (`dotnet build`). It stores temporary files used by the compiler and works as a cache to speed up future builds. It should be ignored by `.gitignore` so it is not pushed to the remote repository, and it can be deleted because it is recreated every time you run a build.
+- <span style="color: orange">Program.cs</span> &#8594; The entry point of a .NET project, where the application starts running. This file defines how the application is initialized and holds all the methods and commands we use in our project.
+- <span style="color: orange">MinimalProject.csproj</span> &#8594; A `*.csproj` file is an XML file that tells .NET which files are part of the project, lists the NuGet packages used (external dependencies), defines the project type, and holds the build settings, .NET version, directories, etc. 
+- <span style="color: orange">appSettings.json</span> &#8594; This file stores application settings such as connection strings, API keys, logging configuration, and much more. We can define different settings for each environment we have (Prod, Dev, Testing, among others), which avoids using the same settings in test and production environments.
+
+## Default initial code
+
+<br></br>
+
+These are the template files that come with the application:
+
+### Configuration files
+
+<Tabs>
+<TabItem label="launchSettings.json" icon="seti:json">
+```json
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5020",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7179;http://localhost:5020",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+```
+</TabItem>
+<TabItem label="appsettings.json" icon="seti:json">
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
+</TabItem>
+</Tabs>
+
+### .NET files
+
+
+<Tabs>
+<TabItem label="Program.cs" icon="seti:c-sharp">
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/", () => "Hello World!");
+
+app.Run();
+```
+</TabItem>
+<TabItem label="MinimalProject.csproj" icon="seti:xml">
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
+```
+</TabItem>
+</Tabs>

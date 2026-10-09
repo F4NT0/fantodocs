@@ -1,0 +1,47 @@
+---
+title: Loop - WHILE
+description: How to use While in C#
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:c-sharp">
+  - Keeps running as long as the defined condition is `true`.
+  - The word <span style="color: magenta">while</span> is reserved.
+  - There is only one condition and it is checked `BEFORE` starting.  
+</Aside>
+
+Base structure of a while:
+
+```csharp title="Incrementer.cs"
+var value = 0;
+
+while (value <= 5)
+{
+    Console.WriteLine(value);
+    value++;
+}
+
+// OUTPUT
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+```
+
+We can create a while that runs forever:
+
+```csharp title="Loop.cs"
+var value = 0;
+
+while (true)
+{
+    Console.WriteLine(value);
+    value++;
+}
+
+// It will keep adding forever
+```
+

@@ -1,0 +1,154 @@
+---
+title: Diagrams with Mermaid
+description: Using Mermaid in markdown
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+# Using Mermaid
+
+Mermaid is a tool that turns text into diagrams, such as flowcharts, sequence diagrams, and class diagrams.
+
+I use Mermaid to explain flows and structures visually, without needing images.
+
+## How it is configured in the project
+
+<br></br>
+
+The `astro-mermaid` plugin is configured in `astro.config.mjs`, before `starlight`:
+
+```js
+import mermaid from 'astro-mermaid';
+
+integrations: [
+  mermaid({
+    theme: 'neutral',
+    autoTheme: true,
+  }),
+  starlight({ /* ... */ }),
+],
+```
+
+- `theme: 'neutral'`: base theme of the diagrams.
+- `autoTheme: true`: the diagram automatically changes color when we switch between the light and dark themes.
+
+<Aside type="caution" title="Attention!">
+  `mermaid()` must come **before** `starlight()` in the `integrations` list, otherwise the diagrams are not rendered.
+</Aside>
+
+## Creating a diagram
+
+<br></br>
+
+No import is needed. Just create a code block with the `mermaid` language:
+
+````md
+```mermaid
+graph TD
+    A[Start] --> B{Did it work?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> B
+```
+````
+
+Result:
+
+```mermaid
+graph TD
+    A[Start] --> B{Did it work?}
+    B -->|Yes| C[Great!]
+    B -->|No| D[Debug]
+    D --> B
+```
+
+## Flowchart direction
+
+<br></br>
+
+After `graph` we indicate the direction:
+
+| Code | Direction |
+|--------|---------|
+| `TD` or `TB` | Top to bottom |
+| `BT` | Bottom to top |
+| `LR` | Left to right |
+| `RL` | Right to left |
+
+```mermaid
+graph LR
+    A[Code] --> B[Build] --> C[Deploy]
+```
+
+## Sequence diagram
+
+<br></br>
+
+Useful to show the communication between systems:
+
+````md
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant API
+    participant DB as Database
+    U->>API: GET /products
+    API->>DB: SELECT * FROM products
+    DB-->>API: Result
+    API-->>U: 200 OK
+```
+````
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant API
+    participant DB as Database
+    U->>API: GET /products
+    API->>DB: SELECT * FROM products
+    DB-->>API: Result
+    API-->>U: 200 OK
+```
+
+## Class diagram
+
+<br></br>
+
+Useful for object-oriented programming studies:
+
+````md
+```mermaid
+classDiagram
+    class Animal {
+        +string Name
+        +Speak()
+    }
+    class Dog {
+        +Speak()
+    }
+    Animal <|-- Dog
+```
+````
+
+```mermaid
+classDiagram
+    class Animal {
+        +string Name
+        +Speak()
+    }
+    class Dog {
+        +Speak()
+    }
+    Animal <|-- Dog
+```
+
+## Other types of diagrams
+
+<br></br>
+
+Mermaid supports several other types, such as `stateDiagram-v2`, `erDiagram`, `gantt`, `pie`, and `journey`.
+
+<Aside type="tip" title="Tip">
+  We can test and build diagrams in the online editor [mermaid.live](https://mermaid.live) and then copy the code to the page.
+  The full list of diagrams is in the [official documentation](https://mermaid.js.org/intro/).
+</Aside>

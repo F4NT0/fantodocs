@@ -1,0 +1,31 @@
+---
+title: FantoDocs
+description: Fanto Documentations
+template: splash
+hero:
+  tagline: Software Engineer Documentations
+  image:
+    file: ../../../assets/intro/term.svg
+  actions:
+    - text: Open
+      link: /fantodocs/en-us/enter/
+      icon: right-arrow
+      variant: secondary
+    - text: Github
+      link: https://github.com/F4NT0
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import ProjectLinkCard from '../../../components/ProjectLinkCard.astro';
+
+## My latest projects
+
+<CardGrid>
+	<ProjectLinkCard title="cash-ctrl" subtitle="Personal finance in the terminal." href="https://github.com/F4NT0/cash-ctrl" language="C#" color="#a179dc" type="TUI" />
+	<ProjectLinkCard title="Neovim" subtitle="My Neovim configuration." href="https://github.com/F4NT0/nvim" language="Lua" color="#4263eb" type="TUI" />
+	<ProjectLinkCard title="clidocs" subtitle="Documentation in the terminal." href="https://github.com/F4NT0/clidocs" language="Go" color="#38bdf8" type="TUI" />
+	<ProjectLinkCard title="JsonFormatter" subtitle="JSON formatter." href="https://github.com/F4NT0/JsonFormatter" language="C#" color="#a179dc" type="Desktop" typeColor="#9A00FF" />
+	<ProjectLinkCard title="daily-dev-tui" subtitle="TUI to search the Daily.dev API." href="https://github.com/F4NT0/daily-dev-tui" language="Go" color="#38bdf8" type="TUI" />
+</CardGrid>

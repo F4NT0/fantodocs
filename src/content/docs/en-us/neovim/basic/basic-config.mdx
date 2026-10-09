@@ -1,0 +1,321 @@
+---
+title: My Neovim Configuration
+description: How to organize Neovim with Lua files
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
+import { Kbd } from 'starlight-kbd/components';
+import { Aside } from '@astrojs/starlight/components';
+import { FileTree } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+
+Here you will find the structure and configuration of the Neovim setup I implemented
+
+## Why use Lua to configure Neovim?
+
+<Aside type="caution" title="Benefits of this config" icon="vim">
+
+Neovim 0.5+ introduced native support for Lua as a configuration language, offering several advantages over traditional Vimscript:
+
+- <Badge text="Performance" variant="tip" /> : Lua is much faster
+- <Badge text="Modularity" variant="tip" />: Organizing code into modules makes maintenance easier
+- <Badge text="Typing" variant="tip" />: Lua is dynamically typed but more robust
+- <Badge text="Ecosystem" variant="tip" />: Access to Lua libraries and LSP integration
+- <Badge text="Readability" variant="tip" />: Cleaner and more modern syntax
+- <Badge text="Community" variant="tip" />: Most new plugins are written in Lua
+
+</Aside>
+
+## Directory Structure
+
+The Neovim structure with Lua follows a modular pattern that separates settings by category:
+
+<FileTree>
+
+- init.lua
+- lazy-lock.json
+- .luarc.json
+- lua/
+  - config/
+    - autocmds.lua
+    - keymaps.lua
+    - lazy.lua
+    - options.lua
+    - theme.lua
+  - plugins/
+    - init.lua
+    - git-manager/
+    - interface/
+    - lsp/
+    - markdown/
+    - programming/
+
+</FileTree>
+
+## Main File: init.lua
+
+`init.lua` is the entry point of the configuration. It should be minimal, delegating the work to smaller modules:
+
+```lua title="init.lua"
+
+-- Enables the Lua module cache (huge startup gain on Neovim 0.9+).
+if vim.loader and vim.loader.enable then
+  vim.loader.enable()
+end
+
+-- Leader keys must be set before any plugin spec is loaded.
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- Loads the configuration modules.
+require("config.options")
+require("config.lazy")
+require("config.keymaps")
+require("config.autocmds")
+
+```
+
+### Why this order?
+
+1. **options first**: Basic settings that do not depend on plugins
+2. **lazy next**: The plugin manager must be loaded before the plugins
+3. **keymaps**: Mappings that work without specific plugins
+4. **autocmds**: Events that depend on other settings
+
+## Configuration Modules (lua/config/)
+
+### options.lua
+
+Pure Neovim settings that do not require plugins:
+
+```lua title="options.lua"
+local opt = vim.opt
+
+-- Indentation
+opt.expandtab    = true   -- converts tabs to spaces
+opt.tabstop      = 2      -- visual width of a tab
+opt.softtabstop  = 2      -- spaces inserted when pressing <Tab>
+opt.shiftwidth   = 2      -- spaces used for auto-indent
+opt.autoindent   = true   -- copies indent from the current line
+opt.smartindent  = true   -- smart indentation for new lines
+
+-- UI
+opt.number         = true               -- shows absolute line numbers
+opt.relativenumber = false              -- set to true for hybrid numbers
+opt.cursorline     = true               -- highlights the current line
+opt.signcolumn     = "yes"              -- always renders the sign column
+opt.termguicolors  = true               -- 24-bit colors
+opt.showmode       = false              -- the mode is shown by lualine
+```
+
+### lazy.lua
+
+Bootstrap of the lazy.nvim plugin manager:
+
+```lua title="lazy.lua"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  spec = {
+    { import = "plugins" },  -- Imports all plugins from lua/plugins/
+  },
+  defaults = {
+    lazy    = false,      -- plugins opt in to lazy loading
+    version = false,      -- always uses the latest commit
+  },
+  performance = {
+    cache = { enabled = true },
+    rtp = {
+      disabled_plugins = {
+        "gzip", "tarPlugin", "tohtml", "tutor", "zipPlugin",
+        "netrwPlugin", "matchit", "matchparen", "spellfile",
+      },
+    },
+  },
+})
+```
+
+### keymaps.lua
+
+Global mappings that do not depend on specific plugins:
+
+```lua title="keymaps.lua"
+local map = function(mode, lhs, rhs, opts)
+  opts = vim.tbl_extend("force", { silent = true }, opts or {})
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
+
+-- Window navigation
+map("n", "<C-h>", "<C-w>h", { desc = "Window: move left"  })
+map("n", "<C-j>", "<C-w>j", { desc = "Window: move down"  })
+map("n", "<C-k>", "<C-w>k", { desc = "Window: move up"    })
+map("n", "<C-l>", "<C-w>l", { desc = "Window: move right" })
+
+-- Clear search highlight
+map("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
+```
+
+### autocmds.lua
+
+Lightweight autocommands for Neovim events:
+
+```lua title="autocmds.lua"
+-- Briefly highlights the yanked region
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group    = augroup("highlight_yank"),
+  callback = function() vim.highlight.on_yank({ timeout = 150 }) end,
+})
+
+-- Removes trailing whitespace on save (except markdown)
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group    = augroup("trim_whitespace"),
+  callback = function()
+    if vim.bo.filetype == "markdown" or vim.bo.filetype == "mdx" then return end
+    local save = vim.fn.winsaveview()
+    vim.cmd([[keepjumps %s/\s\+$//e]])
+    vim.fn.winrestview(save)
+  end,
+})
+```
+
+### theme.lua
+
+Shared color palette used by all plugins:
+
+```lua title="theme.lua"
+return {
+  -- Backgrounds
+  bg          = "#0d0d0d",   -- primary background
+  bg_alt      = "#0d0d0d",   -- elevated surfaces
+  bg_float    = "#0d0d0d",   -- floating windows
+
+  -- Foregrounds
+  fg          = "#c9d1d9",   -- primary text
+  fg_strong   = "#e6edf3",   -- titles, focused elements
+  fg_muted    = "#6e7681",   -- comments, hints
+
+  -- Semantic accents
+  green       = "#3fb950",   -- success, additions
+  blue        = "#58a6ff",   -- info, links
+  orange      = "#e8912d",   -- warnings
+  red         = "#ff7b72",   -- errors, deletions
+  yellow      = "#d29922",   -- caution, modifications
+  purple      = "#bc8cff",   -- C# / .NET accent
+}
+```
+
+## Plugin System (lua/plugins/)
+
+### plugins/init.lua
+
+Loader that imports the plugin groups:
+
+```lua title="plugins/init.lua"
+return {
+  { import = "plugins.interface"   },
+  { import = "plugins.lsp"         },
+  { import = "plugins.markdown"    },
+  { import = "plugins.programming" },
+  { import = "plugins.git-manager" },
+}
+```
+
+### Organization by Category
+
+Each category is a directory with an individual `.lua` file for each plugin:
+
+- **interface/**: UI plugins (telescope, neotree, dashboard, etc.)
+- **lsp/**: LSP plugins (nvim-lspconfig, mason, nvim-dap)
+- **programming/**: Development plugins (cmp, neotest, comment, etc.)
+- **git-manager/**: Git plugins (gitsigns, lazygit)
+- **markdown/**: Markdown-specific plugins
+
+## How to Configure Neovim to Read Lua Files
+
+<Steps>
+
+1. Create the configuration directory
+
+   <Tabs>
+   <TabItem label="Windows" icon="seti:windows">
+
+   ```bash title="Creating the directory on Windows"
+   mkdir $env:LOCALAPPDATA\nvim
+   ```
+
+   </TabItem>
+   <TabItem label="Linux" icon="seti:linux">
+
+   ```bash title="Creating the directory on Linux"
+   mkdir -p ~/.config/nvim
+   ```
+
+   </TabItem>
+   </Tabs>
+
+2. Create the init.lua file
+
+   <Tabs>
+   <TabItem label="Windows" icon="seti:windows">
+
+   ```bash title="Creating init.lua on Windows"
+   New-Item -Path "$env:LOCALAPPDATA\nvim\init.lua" -ItemType File
+   ```
+
+   </TabItem>
+   <TabItem label="Linux" icon="seti:linux">
+
+   ```bash title="Creating init.lua on Linux"
+   touch ~/.config/nvim/init.lua
+   ```
+
+   </TabItem>
+   </Tabs>
+
+3. Add the directory structure
+
+   <Tabs>
+   <TabItem label="Windows" icon="seti:windows">
+
+   ```bash title="Creating the structure on Windows"
+   mkdir $env:LOCALAPPDATA\nvim\lua
+   mkdir $env:LOCALAPPDATA\nvim\lua\config
+   mkdir $env:LOCALAPPDATA\nvim\lua\plugins
+   ```
+
+   </TabItem>
+   <TabItem label="Linux" icon="seti:linux">
+
+   ```bash title="Creating the structure on Linux"
+   mkdir -p ~/.config/nvim/lua/config
+   mkdir -p ~/.config/nvim/lua/plugins
+   ```
+
+   </TabItem>
+   </Tabs>
+
+4. Copy the configuration files
+
+   Copy the files from your Neovim repository into the corresponding directories.
+
+5. Restart Neovim
+
+   ```bash title="Restarting Neovim"
+   nvim
+   ```
+
+   lazy.nvim will automatically install the plugins on the first run.
+
+</Steps>
+

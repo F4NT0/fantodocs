@@ -3,10 +3,11 @@ import Default from '@astrojs/starlight/components/PageTitle.astro';
 
 const id = Astro.locals.starlightRoute.entry.id.replace(/\.mdx?$/, '');
 const [lang, topic] = id.split('/');
+const en = lang === 'en-us';
 const topics: Record<string, string> = {
   markdown: 'Markdown',
-  csharp: 'Estudos C#',
-  dotnet: 'Estudos .NET',
+  csharp: en ? 'C# Studies' : 'Estudos C#',
+  dotnet: en ? '.NET Studies' : 'Estudos .NET',
   neovim: 'Neovim IDE',
   arch: 'Arch Linux',
   ai: 'AI',
@@ -14,7 +15,7 @@ const topics: Record<string, string> = {
 const label = topics[topic];
 const isTopicIntro = id === `${lang}/${topic}/intro`;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const backLabel = isTopicIntro ? 'Página Inicial' : label;
+const backLabel = isTopicIntro ? (en ? 'Home Page' : 'Página Inicial') : label;
 const href = isTopicIntro ? `${base}/${lang}/initial-page/` : `${base}/${lang}/${topic}/intro/`;
 const showBack = label && backLabel;
 ---

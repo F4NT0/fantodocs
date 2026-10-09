@@ -1,0 +1,118 @@
+---
+title: Prompt Engineering
+---
+import { Aside } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:powershell">
+    Prompt Engineering is the practice of designing, testing, and optimizing prompts (text written by a human to talk to an AI) for language models (LLMs), with the goal of obtaining more accurate, useful, and controlled responses.
+</Aside>
+
+
+
+## Why does it matter?
+
+To get the answer you want from an AI, which looks for patterns and structures in information, the human has to provide a good explanation. If what you want is not explicit, the AI starts to `hallucinate`: it returns an answer that is often incorrect, mixing up topics and stating falsehoods that can harm the process you were counting on.
+
+A well-crafted prompt can turn a generic answer into a highly specialized solution.
+
+## Prompt-building process
+
+<Steps>
+    1. Understand the model: Know how the chosen model (Gemini, ChatGPT, Copilot) works, including its limitations and capabilities.
+    2. Write the prompt:
+        - Clarity: Avoid ambiguity in your prompt.
+        - Context: Provide as much relevant information as possible.
+        - Format: Use lists, examples, instructions, etc.
+    3. Iterate and adjust:
+        - Test variations and compare the results.
+        - Measure the quality of the answers.
+        - Refine based on feedback or metrics.
+</Steps>
+
+## Prompting techniques
+
+- Few-shot prompting: Give examples in the prompt.
+- Chain-of-thought prompting: Lead the model to think step by step.
+- Zero-shot prompting: Ask direct questions without any example.
+- Prompt templates: Create reusable structures for recurring tasks.
+
+### Zero-shot
+
+- No example is provided.
+- Suited to simpler answers, nothing specific.
+- Direct questions without preparation.
+
+```shell
+Write a caption for a photo of an artisan coffee shop.
+```
+
+### One-shot
+
+- One example is provided.
+- Gives the AI an example of something specific.
+- The AI follows the given model to create the text.
+
+```shell
+Write a caption for a photo of an artisan coffee shop.
+Example caption: Nothing beats starting the day with a special coffee made with care.
+Now write a similar caption for a new post.
+```
+
+### Few-shot
+
+- A few examples are provided.
+- Prepare 3 or more examples so the model can build a pattern that guides its answer.
+
+```shell
+Explain what discipline is following these models:
+
+Example 1:
+Question: What is Productivity?
+Answer: The ability to produce more results with less effort.
+
+Example 2:
+Question: What is Focus?
+Answer: The skill of directing your attention to a single task.
+
+Example 3:
+Question: What is Motivation?
+Answer: Motivation is the inner energy that drives a person to act.
+```
+
+### Role Play technique
+
+- Assigns a role to the AI.
+- It filters its knowledge to focus on that specific role.
+- The type of answer changes to match the role.
+- Combining a role with examples and more details delivers a complete answer with fewer mistakes.
+
+```shell
+Act as a Software Engineer with knowledge of C#, .NET, and ASP.NET Core.
+Explain directly how Garbage Collection works in .NET and show me an example of using it.
+```
+
+## CARE Framework
+
+<span style="color: lightblue">C</span><span style="color: yellow">A</span><span style="color: tomato">R</span><span style="color: lightgreen">E</span> is a structured way to build more effective prompts. Here are the steps:
+
+<span style="color: lightblue">Context</span> → Set the scene, explain the background of the problem, and give the AI any details you find useful for thinking about it.
+
+<span style="color: yellow">Ask</span> → Be clear about what you want and what kind of answer you expect from the AI.
+
+<span style="color: tomato">Rules</span> → Define the desired limits: tone, length, style, and the expected audience for the answer.
+
+<span style="color: lightgreen">Example</span> → If you know of an example that can help the AI reach better results, write it down; the more examples, the better the outcome.
+
+### Example
+
+This is a very vague prompt:
+
+```md
+Help me write an update message for my team
+```
+
+This is a prompt using the CARE pattern:
+
+<span style="color: lightblue">You are helping a project lead communicate an update to remote teams.</span> <span style="color: yellow">Write a friendly and concise message</span> <span style="color: tomato">of at most 100 words summarizing the project timeline.</span> <span style="color: lightgreen">Use a tone similar to "Quick update for everyone - here is what has changed..."</span>.
+

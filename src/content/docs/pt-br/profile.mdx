@@ -1,5 +1,5 @@
 ---
-title: Sobre mim
+title: Meu Currículo
 description: PT-BR versão do meu Resume
 ---
 
@@ -45,15 +45,23 @@ import ImageCard from '../../../components/ImageCard.astro';
 ### Projetos desenvolvidos para empresas
 
 <CardGrid>
-  <LinkCard
-    title="Joinfut"
+  <ImageCard
     href="https://www.instagram.com/join.fut/"
-    description="Aplicativo em Flutter para auxiliar novos jogadores de futebol"
+    image="/fantodocs/projects/joinfut.jpg"
+    title="Joinfut"
+    subtitle="Aplicativo em Flutter para auxiliar novos jogadores de futebol."
+    language="Flutter"
+    languageIcon="flutter"
+    badges={[{ text: 'App', color: '#3b82f6'}]}
   />
-  <LinkCard
-    title="ControleMateriais"
+  <ImageCard
     href="https://github.com/lfbreciclagemeletronica/Controle-Materiais"
-    description="Software Desktop para gerenciamento de materiais eletrônicos para descarte."
+    image="/fantodocs/projects/controle-materiais.png"
+    title="ControleMateriais"
+    subtitle="Gerenciamento de materiais eletrônicos para descarte."
+    language="C#"
+    languageIcon="csharp"
+    badges={[{ text: 'Desktop', color: '#9A00FF'}]}
   />
 </CardGrid>
 
@@ -96,6 +104,15 @@ import ImageCard from '../../../components/ImageCard.astro';
     language="C#"
     languageIcon="csharp"
     badges={[{ text: 'Desktop', color: '#9A00FF'}]}
+  />
+  <ImageCard
+    href="https://github.com/F4NT0/daily-dev-tui"
+    image="/fantodocs/projects/daily-dev-tui.png"
+    title="daily-dev-tui"
+    subtitle="TUI para pesquisar na API do Daily.dev."
+    language="go"
+    languageIcon="go"
+    badges={[{ text: 'TUI', color: '#86efac'}]}
   />
 </CardGrid>
 

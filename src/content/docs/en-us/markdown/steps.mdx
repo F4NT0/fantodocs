@@ -1,0 +1,72 @@
+---
+title: Showing steps to follow
+description: Using steps in markdown
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+# How to use steps in the project
+
+For when we want to show, step by step, what must be done in a project.
+
+## Importing steps in the mdx file
+
+We can use the following import to start using `steps`:
+
+```js
+import { Steps } from '@astrojs/starlight/components';
+```
+
+## Practical example of steps
+
+<br></br>
+
+Let's say you want to show how to create a project from the terminal:
+
+<Steps>
+
+1. Check your .NET version with the following command:
+
+    ```bash title="Checking the version in the Terminal"
+    dotnet --version
+    ```
+
+2. Run the following command in your terminal:
+
+    ```bash title="Creating a MinimalAPI project template"
+    dotnet new web -n MinimalProject
+    ```
+
+3. Enter the newly created template:
+
+    ```bash title="Entering the project directory"
+    cd MinimalProject
+    ```
+
+</Steps>
+
+
+```js
+<Steps>
+
+1. Check your .NET version with the following command:
+
+    //```bash title="Checking the version in the Terminal"
+    dotnet --version
+    //``
+
+2. Run the following command in your terminal:
+
+    //```bash title="Creating a MinimalAPI project template"
+    dotnet new web -n MinimalProject
+    //``
+
+3. Enter the newly created template:
+
+    //```bash title="Entering the project directory"
+    cd MinimalProject
+    //``
+
+</Steps>
+
+```

@@ -1,0 +1,221 @@
+---
+title: Data types
+description: Data types in C#
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Summary" icon="seti:c-sharp">
+
+    - also known as: `built-in types`
+    - They store the value itself, not a reference to an item in memory
+    - They are classified as:
+        - Simple Types
+        - Enumerators (Enums)
+        - Structures (Structs)
+        - Nullable Types
+</Aside>
+
+# Simple Types
+
+## Byte
+
+---
+
+- The `byte` type has 8 bits and only accepts positive values.
+- The `sbyte` type allows negative values (types that can hold the _-_ sign are called signed)
+- `byte` (8 bits) = from 0 to 255
+- `sbyte` (8 bits) = from -128 to 127
+
+```csharp
+
+byte myByte = 127;
+
+```
+
+---
+
+## Integers
+
+- `short`
+    - has 16 bits
+    - from -32768 to 32767
+- `ushort` 
+    - accepts positive values only
+    - has 16 bits
+    - from 0 to 65535
+- `int`
+    - has 32 bits
+    - from -2147483648 to 2147483647
+- `uint`
+    - accepts positive values only
+    - has 32 bits
+    - 0 to 4294967295
+- `long`
+    - has 64 bits
+    - from -9223372036854775808 to 9223372036854775807
+- `ulong`
+    - accepts positive values only
+    - has 64 bits
+    - from 0 to 18446744073709551615
+
+
+```csharp
+
+uint age1 = 25;
+short age2 = 25;
+long age3 = 25;
+
+```
+
+## Real numbers
+
+- `float`
+    - Can be positive or negative
+    - Holds at most 32 bits
+    - from **-3.402823e38** to **3.402823e38**
+    - Ex: 23.5 is written as **23.5f**
+    - We must put an f at the end of the value
+- `double`
+    - Can be positive or negative
+    - Holds at most 64 bits
+    - from **-1.79769313486232e308** to **1.79769313486232e308**
+    - The default type for a decimal value
+    - Ex: 23.5 is written as **23.5**
+- `decimal`
+    - Can be positive or negative
+    - Holds at most 128 bits
+    - from **1.0 x 10e-28** to **7.9 x 10e28**
+    - Ex: 23.5 is written as **23.5m**
+    - We must put an m at the end of the value
+
+```csharp
+
+double salary = 2.500;
+var salary = 2.500; // var automatically picks double
+float salary = 2.500f;
+decimal salary = 2.500m;
+
+```
+
+## Booleans
+
+- Stores only __true__ or __false__
+- We use the reserved word __bool__ for booleans
+
+```csharp
+
+bool userRegistered = false;
+bool userRegistered = true;
+var userRegistered = false; // Already inferred as Boolean
+
+```
+
+## Char
+
+- Stores a single character in Unicode format
+- We use the reserved word __char__ to define the value
+- A char value is assigned with single quotes
+- It has 16 bits, which fits any character
+
+```csharp
+
+char value = 'a';
+var value = 'd'; // Already inferred as Char
+
+```
+
+## String
+
+- Stores a sequence of characters
+- Defined by the reserved word __string__
+- Its size depends on the length of the string
+- It is assigned using double quotes
+
+```csharp
+
+string oneLetter = "C"; // we can use just one letter
+string manyLetters = "Characters";
+var manyLetters = "1234"; // Already inferred as String
+
+```
+
+## Var
+
+- Used in place of a type name
+- The type is set by the first value assigned and does not change throughout the project
+- Use var once you are comfortable with the existing types
+- It is especially useful with complex types, since it avoids repeating long names
+
+```csharp
+
+// With complex types
+IEnumerable<MyComplexType> student = new List<MyComplexType>();
+var student = new List<MyComplexType>();
+
+```
+
+## Object
+
+- Generic type that accepts any value or object
+- Use it when you do not know the type of the data or when it can be of several different types
+- It has no IntelliSense (editor help) because the type is unknown
+- Avoid using Object unless it is for generic classes or really needed
+- We use it when we do not want to define an initial value
+
+```csharp
+
+object quantity; // we can declare it without a value
+quantity = 1;
+quantity = 2.5; // since it accepts anything, we can change its value and the program will not complain
+
+```
+
+## Nullable Types
+
+- __Null__ means the value is empty or nonexistent
+- It is different from zero or an empty string
+- Primitive or complex types can receive the null value
+- The type must be marked as a Nullable Type
+- We can assign __null__ to an object
+- We use __?__ together with the type to make it a Nullable Type
+- If a null value is dereferenced, the project will throw an error
+
+```csharp
+
+int? age = null;
+byte? value = 123;
+
+```
+
+## Alias
+
+- An alias is a nickname that every .NET type has.
+- All the types shown so far are aliases.
+- Since C# is __Case Sensitive__, it does not matter which one we use, but using the aliases is recommended.
+
+
+
+| Alias  | Original Type |
+| ------ | ------------- |
+| string | System.String |
+| int    | Int32         |
+
+
+## Default Values
+
+- All C# primitive types come with a default value
+- They are never initialized as null
+- If no value is provided, the default value is used
+
+
+
+| Type    | Default Value |
+| ------- | ------------- |
+| int     | 0             |
+| float   | 0             |
+| decimal | 0             |
+| bool    | false         |
+| char    | '0'           |
+| string  | ""            |
+

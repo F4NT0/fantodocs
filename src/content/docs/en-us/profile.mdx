@@ -1,0 +1,118 @@
+---
+title: My Resume
+description: EN-US version of my resume
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+import ImageCard from '../../../components/ImageCard.astro';
+
+<table align="center"><tr><td align="center" width="9999">
+    <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/me2.png`} alt="Gabriel Stundner" width="300" /> 
+</td></tr></table>
+
+<div class="profile-id">
+  <div class="profile-name">Gabriel Fanto Stundner</div>
+  <div class="profile-role">Software Engineer</div>
+</div>
+
+<style is:global>{`
+  .profile-id { text-align:center; margin-top:1.2rem; font-family:'JetBrainsMonoNerd','JetBrains Mono',monospace; }
+  .profile-name { font-size:1.8rem; font-weight:700; letter-spacing:0.04em; color:#07090a; }
+  .profile-role { font-size:1rem; letter-spacing:0.25em; text-transform:uppercase; color:#16a34a; margin-top:0.3rem; }
+  :root[data-theme='dark'] .profile-name { color:#ffffff; }
+  :root[data-theme='dark'] .profile-role { color:#4ade80; }
+  :root[data-theme='dark'] .gh-chart { filter: invert(1) hue-rotate(180deg) brightness(1.3) saturate(1.4); }
+`}</style>
+
+<div style="text-align:center; overflow-x:auto; margin-top:1rem;">
+  <a href="https://github.com/F4NT0" target="_blank" rel="noopener noreferrer">
+    <img class="gh-chart" src="https://ghchart.rshah.org/40c463/F4NT0" alt="F4NT0's GitHub contributions" style="max-width:100%; min-width:600px;" />
+  </a>
+</div>
+
+### Education and Career
+
+- Graduated with a Bachelor's degree in Software Engineering from [PUCRS](https://portal.pucrs.br/en/ensino/cursos/graduacao/engenharia-de-software/) in 2023.
+- Engineer of high-impact, scalable systems in the management domain.
+- I currently work as a Software Engineer at [Dell Technologies](https://www.dell.com/en-us/lp/dt/who-we-are?msockid=13a6ae50813463391d39bb2080e2622b)
+
+### Goals
+
+- <Badge text="Short term" variant="caution" />: Mid-level .NET Software Engineer.
+- <Badge text="Long term" variant="success" />: Software Architect.
+
+### Projects built for companies
+
+<CardGrid>
+  <ImageCard
+    href="https://www.instagram.com/join.fut/"
+    image="/fantodocs/projects/joinfut.jpg"
+    title="Joinfut"
+    subtitle="Flutter app that helps new football players get started."
+    language="Flutter"
+    languageIcon="flutter"
+    badges={[{ text: 'App', color: '#3b82f6'}]}
+  />
+  <ImageCard
+    href="https://github.com/lfbreciclagemeletronica/Controle-Materiais"
+    image="/fantodocs/projects/controle-materiais.png"
+    title="ControleMateriais"
+    subtitle="Management of electronic materials for disposal."
+    language="C#"
+    languageIcon="csharp"
+    badges={[{ text: 'Desktop', color: '#9A00FF'}]}
+  />
+</CardGrid>
+
+
+### Personal projects
+
+<CardGrid>
+  <ImageCard
+    href="https://github.com/F4NT0/cash-ctrl"
+    image="/fantodocs/projects/cash-ctrl.png"
+    title="cash-ctrl"
+    subtitle="Personal finance in the terminal."
+    language="C#"
+    languageIcon="csharp"
+    badges={[{ text: 'TUI', color: '#86efac' }]}
+  />
+  <ImageCard
+    href="https://github.com/F4NT0/nvim"
+    image="/fantodocs/projects/neovim.png"
+    title="Neovim"
+    language="lua"
+    languageIcon="lua"
+    subtitle="My Neovim configuration."
+    badges={[{ text: 'TUI', color: '#86efac'}]}
+  />
+  <ImageCard
+    href="https://github.com/F4NT0/clidocs"
+    image="/fantodocs/projects/clidocs.png"
+    title="clidocs"
+    subtitle="Documentation in the terminal."
+    language="go"
+    languageIcon="go"
+    badges={[{ text: 'TUI', color: '#86efac'}]}
+  />
+  <ImageCard
+    href="https://github.com/F4NT0/JsonFormatter"
+    image="/fantodocs/projects/jsonformatter.png"
+    title="JsonFormatter"
+    subtitle="JSON formatter."
+    language="C#"
+    languageIcon="csharp"
+    badges={[{ text: 'Desktop', color: '#9A00FF'}]}
+  />
+  <ImageCard
+    href="https://github.com/F4NT0/daily-dev-tui"
+    image="/fantodocs/projects/daily-dev-tui.png"
+    title="daily-dev-tui"
+    subtitle="TUI to search the Daily.dev API."
+    language="go"
+    languageIcon="go"
+    badges={[{ text: 'TUI', color: '#86efac'}]}
+  />
+</CardGrid>
+
